@@ -183,6 +183,8 @@ const PreAssessmentForm = () => {
         status,
       };
 
+      console.log(ssn, setSsn);
+
       const response = await fetch('/api/pre-assessment', {
         method: 'POST',
         headers: {

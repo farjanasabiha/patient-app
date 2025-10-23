@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { PlusIcon, Search } from "lucide-react";
+import {Search } from "lucide-react";
 import activePatientData from "@/data/ActivePatientData";
 import {
   ReusableTable,
@@ -28,7 +28,6 @@ const ActivePatientTable: React.FC = () => {
   const [selectedLocation, setSelectedLocation] =
     useState<string>("All");
   const [searchTerm, setSearchTerm] = useState("");
-  const [isSearching, setIsSearching] = useState(false);
   const [isAssignRNOpen, setIsAssignRNOpen] = useState(false);
   const [isNoteOpen, setIsNoteOpen] = useState(false);
 
@@ -193,6 +192,7 @@ const ActivePatientTable: React.FC = () => {
     }
 
     return icons;
+    console.log(setSelectedLocation);
   };
 
   // Filter and search data
@@ -261,7 +261,6 @@ const ActivePatientTable: React.FC = () => {
           expandedContent={expandedContent}
           emergencyIcons={getEmergencyIcons}
           actionButtons={actionButtons}
-          isLoading={isSearching}
           emptyStateMessage="No patients found"
           initialRowsPerPage={10}
           rowsPerPageOptions={[5, 10, 15, 20, 25, 30]}

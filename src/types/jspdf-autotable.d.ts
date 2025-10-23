@@ -3,12 +3,12 @@ declare module 'jspdf-autotable' {
 
   interface AutoTableOptions {
     startY?: number;
-    head?: any[][];
-    body?: any[][];
+    head?: string;
+    body?: string;
     theme?: 'striped' | 'grid' | 'plain';
-    headStyles?: any;
+    headStyles?: string;
     margin?: { left?: number; right?: number; top?: number; bottom?: number };
-    styles?: any;
+    styles?: string;
   }
 
   function autoTable(doc: jsPDF, options: AutoTableOptions): void;

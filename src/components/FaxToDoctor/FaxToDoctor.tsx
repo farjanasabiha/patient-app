@@ -16,7 +16,6 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { DatePicker } from "@/components/ui/date-picker";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import { SignaturePad } from "@/components/ui/signature-pad";
 import DynamicDiagnosis, {
   Diagnosis,

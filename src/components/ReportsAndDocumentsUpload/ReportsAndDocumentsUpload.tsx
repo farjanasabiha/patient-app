@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
 import { PlusIcon, FileUp, Eye, Pencil } from "lucide-react";
 import {
@@ -41,7 +41,7 @@ const ReportsAndDocumentsUpload: React.FC = () => {
       header: "Actions",
       accessor: () => "",
       width: "20%",
-      cellRenderer: (row: ReportsAndDocuments) => (
+      cellRenderer: (ReportsAndDocuments) => (
         <div className="flex gap-5">
           <button
             type="button"

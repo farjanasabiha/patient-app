@@ -255,10 +255,10 @@ export function ReusableTable<T>({
 }: ReusableTableProps<T>) {
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(initialRowsPerPage);
-  const [expandedRows, setExpandedRows] = useState<Array<any>>([]);
+  const [expandedRows, setExpandedRows] = useState<Array<string>>([]);
 
   // Toggle row expansion
-  const toggleRow = (id: any) => {
+  const toggleRow = (id: string) => {
     setExpandedRows((prev) =>
       prev.includes(id) ? prev.filter((rowId) => rowId !== id) : [...prev, id]
     );

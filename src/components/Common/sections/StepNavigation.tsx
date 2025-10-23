@@ -41,6 +41,8 @@ export const StepNavigation = ({
     setSubmitError(null);
     setSubmitSuccess(false);
 
+    console.log(submitError, submitSuccess);
+
     try {
       // Call the original onSubmit if provided
       if (onSubmit) {

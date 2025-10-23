@@ -3,13 +3,11 @@ import { EmergencyIcon } from "@/components/ui/icons/EmergencyIcon";
 import { FaxIcon } from "@/components/ui/icons/FaxIcon";
 import { StarIcon } from "@/components/ui/icons/StarIcon";
 import { SupervisionIcon } from "@/components/ui/icons/SupervisionIcon";
-import { FileText, Clock, Phone } from "lucide-react";
+import { FileText, Clock } from "lucide-react";
 import { IconComponent } from "./icons";
 import { CareIcon } from "@/components/ui/icons/CareIcon";
-import { NoteSearchIcon } from "@/components/ui/icons/NoteSearchIcon";
 import { FileCheckIcon } from "@/components/ui/icons";
 import { DischargedIcon } from "@/components/ui/icons/DischargedIcon";
-import { FileEditIcon } from "@/components/ui/icons/FileEditIcon";
 
 
 export enum DocumentType {

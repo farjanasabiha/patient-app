@@ -21,7 +21,7 @@ export const generatePreAssessmentPDF = (data: PreAssessmentFormData) => {
   };
 
   // Helper function to add field
-  const addField = (label: string, value: any, checkNewPage = true) => {
+  const addField = (label: string, value: string, checkNewPage = true) => {
     if (checkNewPage && yPosition > 270) {
       doc.addPage();
       yPosition = 20;

@@ -340,7 +340,7 @@ export default function MedicalInfo1() {
             </p>
             
             <p className="text-gray-700">
-              For example: let's say patient has Dementia and can only tell me his name. I would then say: Patient is awake and alert-oriented X1. Because he only knew his name. He didn't know where he was, what year or day it was, or why he was in the hospital.
+              For example: let&apos;s say patient has Dementia and can only tell me his name. I would then say: Patient is awake and alert-oriented X1. Because he only knew his name. He didn&apos;t know where he was, what year or day it was, or why he was in the hospital.
             </p>
           </div>
         </div>
@@ -366,7 +366,7 @@ export default function MedicalInfo1() {
               Oriented to person
             </div>
             <div className="px-6 py-4 text-gray-900 ">
-              What's your name?
+              What&apos;s your name?
             </div>
             <div className="px-6 py-4 ">
               <Input
@@ -382,7 +382,7 @@ export default function MedicalInfo1() {
               Oriented to place
             </div>
             <div className="px-6 py-4 text-gray-900 ">
-              Where are we at right now?
+              Where&apos;re we at right now?
             </div>
             <div className="px-6 py-4 ">
               <Input
@@ -398,7 +398,7 @@ export default function MedicalInfo1() {
               Oriented to time
             </div>
             <div className="px-6 py-4 text-gray-900 ">
-              What's today's date, or what year is it?
+              What&apos;s today&apos;s date, or what year is it?
             </div>
             <div className="px-6 py-4 ">
               <Input
