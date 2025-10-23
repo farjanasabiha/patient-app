@@ -1,0 +1,15 @@
+export const ROUTES = {
+    PATIENT_CONTRACT: '/patient-contract-form',
+    PRE_ASSESSMENT: '/RM/pre-assessment',
+    NURSING_ASSESSMENT: '/nursing-assessment',
+    PLAN_OF_CARE: '/plan-of-care',
+    PATIENT_EMERGENCY: '/patient-emergency',
+    FOLLOW_UP_FIELD_SUPERVISION: '/follow-up-field-supervision',
+    FAX_TO_DOCTOR: '/fax-to-doctor',
+    HOME_HEALTH_QUALITY_MEASURE: '/home-health-quality-measure',
+    DISCHARGE_TRANSFER: '/discharge-transfer',
+    REPORTS_AND_DOCUMENTS_UPLOAD: '/reports-and-documents-upload',
+    AUTHORIZATION: '/authorization',
+    DFS: '/dfs',
+    PATIENT_ADMISSION_PACKET: '/patient-admission-packet',
+} as const;

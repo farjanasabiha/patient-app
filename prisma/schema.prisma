@@ -1,0 +1,170 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+
+// Main Pre-Assessment Model
+model PreAssessment {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Patient Demographics
+  patientFirstName  String
+  patientMiddleName String?
+  patientLastName   String
+  gender            String // male, female, other
+  dateOfBirth       DateTime
+  ssn               String
+  languagesSpoken   String?
+  
+  // Address Information
+  streetAddress1 String?
+  streetAddress2 String?
+  city           String?
+  state          String
+  zipCode        String?
+  county         String?
+  
+  // Contact Information
+  cellPhone     String
+  homePhone     String?
+  email         String
+  
+  // Location Coordinates (from LocationPicker)
+  latitude      Float?
+  longitude     Float?
+  
+  // Insurance Information
+  healthfirstId String
+  medicaidId    String
+  
+  // Vitals
+  heightFeet   Int
+  heightInches Int
+  weightLbs    Float
+  
+  // Medical History
+  preExistingConditions String?
+  needsHelpWith        String?
+  livesWith            String?
+  pets                 String?
+  mobilityAids         String? // cane/walker/wheelchair/hoyer lift
+  
+  // Authorized Hours (Monday to Sunday)
+  authorizedHours AuthorizedHours?
+  
+  // Start and End Time (Monday to Sunday)
+  scheduleTime    ScheduleTime?
+  
+  // Emergency Contacts (Array of contacts)
+  emergencyContacts EmergencyContact[]
+  
+  // Primary Care Physician
+  primaryCarePhysician PrimaryCarePhysician?
+  
+  // Pharmacy
+  pharmacy Pharmacy?
+  
+  // Status tracking
+  status String @default("draft") // draft, submitted, completed
+  
+  @@map("pre_assessments")
+}
+
+// Embedded Document for Authorized Hours
+type AuthorizedHours {
+  monday    Int @default(0)
+  tuesday   Int @default(0)
+  wednesday Int @default(0)
+  thursday  Int @default(0)
+  friday    Int @default(0)
+  saturday  Int @default(0)
+  sunday    Int @default(0)
+}
+
+// Embedded Document for Schedule Time
+type ScheduleTime {
+  monday    DaySchedule?
+  tuesday   DaySchedule?
+  wednesday DaySchedule?
+  thursday  DaySchedule?
+  friday    DaySchedule?
+  saturday  DaySchedule?
+  sunday    DaySchedule?
+}
+
+type DaySchedule {
+  startTime String // Format: "09:00 AM"
+  endTime   String // Format: "05:00 PM"
+}
+
+// Embedded Document for Emergency Contact
+type EmergencyContact {
+  id           String  @default(uuid())
+  firstName    String
+  lastName     String
+  relationship String
+  cellPhone    String
+  homePhone    String?
+  email        String?
+  isPrimary    Boolean @default(false) // To mark the first contact as primary
+}
+
+// Embedded Document for Primary Care Physician
+type PrimaryCarePhysician {
+  firstName      String?
+  lastName       String?
+  npi            String?
+  phoneNumber    String?
+  faxNumber      String?
+  email          String?
+  streetAddress1 String?
+  streetAddress2 String?
+  city           String?
+  state          String?
+  zipCode        String?
+}
+
+// Embedded Document for Pharmacy
+type Pharmacy {
+  name           String?
+  phoneNumber    String?
+  faxNumber      String?
+  email          String?
+  streetAddress1 String?
+  streetAddress2 String?
+  city           String?
+  state          String?
+  zipCode        String?
+}
+
+// Optional: User model if you need authentication
+model User {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  email     String   @unique
+  name      String?
+  role      String   @default("user") // user, admin, nurse, etc.
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@map("users")
+}
+
+// Optional: Audit Log for tracking changes
+model AuditLog {
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  preAssessmentId  String   @db.ObjectId
+  action           String   // created, updated, submitted
+  performedBy      String?  // User ID or name
+  performedAt      DateTime @default(now())
+  changes          Json?    // Store the changes made
+  
+  @@map("audit_logs")
+}

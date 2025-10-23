@@ -1,0 +1,33 @@
+import React from "react";
+import { cn } from "@/lib/utils";
+
+interface EditIconProps {
+  width?: number;
+  height?: number;
+  className?: string;
+}
+
+export const EditIcon: React.FC<EditIconProps> = ({
+  width = 20,
+  height = 20,
+  className = "",
+}) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 18 19"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn("transition-colors", className)}
+    >
+      <path
+        d="M9 5.50012L1 13.5001V17.5001L5 17.5001L13 9.5001M9 5.50012L11.8686 2.63146L11.8704 2.62976C12.2652 2.23488 12.463 2.03709 12.691 1.96301C12.8919 1.89775 13.1082 1.89775 13.3091 1.96301C13.5369 2.03704 13.7345 2.2346 14.1288 2.62892L15.8686 4.36872C16.2646 4.76474 16.4627 4.96284 16.5369 5.19117C16.6022 5.39201 16.6021 5.60835 16.5369 5.8092C16.4628 6.03736 16.265 6.23516 15.8695 6.63061L15.8686 6.63146L13 9.5001M9 5.50012L13 9.5001"
+        className="stroke-current"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
