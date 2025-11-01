@@ -8,49 +8,50 @@ import { Textarea } from "../ui/textarea";
 export default function InstrumentalActivities() {
   return (
     <div className="mx-auto px-[1px]">
+      <div className="space-y-4 sm:space-y-6 grid grid-cols-2 gap-10">
       {/* Instrumental Activities Section */}
       <CollapsibleSection
         title="Instrumental Activities of Daily Living"
-        className="w-full text-[#7E22CE]"
+        className="w-full"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 px-3">
           {/* First Column - Preparing Food */}
           <div className="flex flex-col gap-0.5">
-            <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+            <FormLabel>
               Preparing Food
             </FormLabel>
             <RadioGroup>
-              <div className="space-y-4 2xl:space-y-2">
+              <div className="space-y-2 sm:space-y-3 lg:space-y-4 2xl:space-y-2 text-black">
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="independent" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Independent
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="adequate" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Adequate if ingredients supplied
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="inadequate" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Can make or buy meals but diet is inadequate
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="unable" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Physically or mentally unable to prepare food
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="no-opportunity" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     No opportunity to prepare food or chooses not to prepare
                     food
-                  </FormLabel>
+                  </label>
                 </div>
               </div>
             </RadioGroup>
@@ -58,47 +59,47 @@ export default function InstrumentalActivities() {
 
           {/* Second Column - Housekeeping */}
           <div className="flex flex-col gap-0.5">
-            <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+            <FormLabel>
               Housekeeping
             </FormLabel>
             <RadioGroup>
-              <div className="space-y-4 2xl:space-y-2">
+              <div className="space-y-2 sm:space-y-3 lg:space-y-4 2xl:space-y-2 text-black">
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="independent" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Independent
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="needs-help" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Generally independent but needs help with heavier tasks
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="light-tasks" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Can perform only light tasks adequately
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="light-tasks-inadequate" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Performs light tasks but not adequately
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="needs-supervision" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Needs regular help and/or supervision
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="no-opportunity" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     No opportunity to do housework or chooses not to do
                     housework
-                  </FormLabel>
+                  </label>
                 </div>
               </div>
             </RadioGroup>
@@ -106,40 +107,40 @@ export default function InstrumentalActivities() {
 
           {/* Third Column - Shopping */}
           <div className="flex flex-col gap-0.5">
-            <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+            <FormLabel>
               Shopping
             </FormLabel>
             <RadioGroup>
-              <div className="space-y-4 2xl:space-y-2">
+              <div className="space-y-2 sm:space-y-3 lg:space-y-4 2xl:space-y-2 text-black">
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="independent" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Independent
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="small-items" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Independent but for small items only
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="accompanied" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Can shop if accompanied
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="unable" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Physically or mentally unable to shop
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="no-opportunity" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     No opportunity to shop or chooses not to shop
-                  </FormLabel>
+                  </label>
                 </div>
               </div>
             </RadioGroup>
@@ -147,52 +148,52 @@ export default function InstrumentalActivities() {
 
           {/* Fourth Column - Transportation */}
           <div className="flex flex-col gap-0.5">
-            <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+            <FormLabel>
               Transportation
             </FormLabel>
             <RadioGroup>
-              <div className="space-y-4 2xl:space-y-2">
+              <div className="space-y-2 sm:space-y-3 lg:space-y-4 2xl:space-y-2 text-black">
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="private-vehicle" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Uses private vehicle
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="taxi-bus" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Uses taxi or bus
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="independent" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Independent
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="accompanied" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Must be accompanied
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="driven" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Must be driven
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="unable" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Physically or mentally unable to travel
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="ambulance" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Needs ambulance for transporting
-                  </FormLabel>
+                  </label>
                 </div>
               </div>
             </RadioGroup>
@@ -200,41 +201,41 @@ export default function InstrumentalActivities() {
 
           {/* Fifth Column - Telephones */}
           <div className="flex flex-col gap-0.5">
-            <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+            <FormLabel>
               Telephones
             </FormLabel>
             <RadioGroup>
-              <div className="space-y-4 2xl:space-y-2">
+              <div className="space-y-2 sm:space-y-3 lg:space-y-4 2xl:space-y-2 text-black">
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="independent" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Independent
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="dial-known" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Can dial well known numbers
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="answers-only" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Answers telephone only
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="unable" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Physically or mentally unable to use telephone
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="no-opportunity" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     No opportunity to use telephone or chooses not to use
                     telephone
-                  </FormLabel>
+                  </label>
                 </div>
               </div>
             </RadioGroup>
@@ -242,41 +243,41 @@ export default function InstrumentalActivities() {
 
           {/* Sixth Column - Medications/Treatments */}
           <div className="flex flex-col gap-0.5">
-            <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+            <FormLabel>
               Medications/Treatments
             </FormLabel>
             <RadioGroup>
-              <div className="space-y-4 2xl:space-y-2">
+              <div className="space-y-2 sm:space-y-3 lg:space-y-4 2xl:space-y-2 text-black">
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="responsible" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Completely responsible for self
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="requires-reminder" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Requires reminder or assistance
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="prepared" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Responsible if medications prepared in Blistopax
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="unable" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none -mt-4">
+                  <label>
                     Physically or mentally unable to take medications and
                     conduct treatments
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="resists" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Resists taking medication or conducting treatments
-                  </FormLabel>
+                  </label>
                 </div>
               </div>
             </RadioGroup>
@@ -289,16 +290,16 @@ export default function InstrumentalActivities() {
         title="Additional Notes"
         className="w-full text-[#7E22CE]"
       >
-        <div className="w-full">
-          <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+        <div className="w-full px-3">
+          <FormLabel>
             Additional Notes
           </FormLabel>
           <Textarea
             placeholder="Enter Text"
-            className="w-full min-h-[100px] mt-0.5 px-2.5 py-1.5 border border-[#8E8E93] rounded text-sm font-normal text-[#1C1C1E] font-['Poppins'] resize-none"
           />
         </div>
       </CollapsibleSection>
+      </div>
     </div>
   );
 }

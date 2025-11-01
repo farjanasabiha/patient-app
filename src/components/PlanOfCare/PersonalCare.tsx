@@ -16,10 +16,10 @@ import { CollapsibleSection } from "@/components/Common/sections/CollapsibleSect
 export default function PersonalCare() {
   return (
     <div className="mx-auto px-[1px]">
-      <div className="space-y-6 grid grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10">
         {/* Patient's Functional Limitations Section */}
         <CollapsibleSection title="Patient's Functional Limitations">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-10 px-3">
             {/* Select Limitations */}
             <div className="flex flex-col gap-0.5">
               <FormLabel className="text-xs font-semibold text-[#8E8E93]">
@@ -180,7 +180,7 @@ export default function PersonalCare() {
         {/* Personal Care Section */}
         <CollapsibleSection title="Personal Care">
           {/* Brush Teeth/Clean Dentures */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3 px-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 mb-3 px-3">
             <div className="flex flex-col gap-0.5">
               <FormLabel className="text-xs font-semibold text-[#8E8E93]">
                 Brush Teeth/Clean Dentures
@@ -213,7 +213,7 @@ export default function PersonalCare() {
           </div>
 
           {/* Clean Hearing Aid(s) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3 px-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 mb-3 px-3">
             <div className="flex flex-col gap-0.5">
               <FormLabel className="text-xs font-semibold text-[#8E8E93]">
                 Clean Hearing Aid(s)
@@ -245,7 +245,7 @@ export default function PersonalCare() {
           </div>
 
           {/* Clean Nasal Cannula */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3 px-3     ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 mb-3 px-3">
             <div className="flex flex-col gap-0.5">
               <FormLabel className="text-xs font-semibold text-[#8E8E93]">
                 Clean Nasal Cannula
@@ -277,7 +277,7 @@ export default function PersonalCare() {
           </div>
 
           {/* Shave (Electric) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3 px-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 mb-3 px-3">
             <div className="flex flex-col gap-0.5">
               <FormLabel className="text-xs font-semibold text-[#8E8E93]">
                 Shave (Electric)
@@ -309,7 +309,7 @@ export default function PersonalCare() {
           </div>
 
           {/* Routine Skin Care */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3 px-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 mb-3 px-3">
             <div className="flex flex-col gap-0.5">
               <FormLabel className="text-xs font-semibold text-[#8E8E93]">
                 Routine Skin Care
@@ -341,7 +341,7 @@ export default function PersonalCare() {
           </div>
 
           {/* Dressing/Undressing */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3 px-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 mb-3 px-3">
             <div className="flex flex-col gap-0.5">
               <FormLabel className="text-xs font-semibold text-[#8E8E93]">
                 Dressing/Undressing
@@ -373,7 +373,7 @@ export default function PersonalCare() {
           </div>
 
           {/* Bath */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3 px-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 mb-3 px-3">
             <div className="flex flex-col gap-0.5">
               <FormLabel className="text-xs font-semibold text-[#8E8E93]">
                 Bath
@@ -413,7 +413,7 @@ export default function PersonalCare() {
           </div>
 
           {/* Hair Care */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3 px-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 mb-3 px-3">
             <div className="flex flex-col gap-0.5">
               <FormLabel className="text-xs font-semibold text-[#8E8E93]">
                 Hair Care
@@ -453,7 +453,7 @@ export default function PersonalCare() {
           </div>
 
           {/* Toileting */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3 px-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 mb-3 px-3">
             <div className="flex flex-col gap-0.5">
               <FormLabel className="text-xs font-semibold text-[#8E8E93]">
                 Toileting
@@ -500,7 +500,7 @@ export default function PersonalCare() {
           </div>
 
           {/* Nail Care */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3 px-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 mb-3 px-3">
             <div className="flex flex-col gap-0.5">
               <FormLabel className="text-xs font-semibold text-[#8E8E93]">
                 Nail Care
@@ -532,7 +532,7 @@ export default function PersonalCare() {
           </div>
 
           {/* Foot Care */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3 px-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 mb-3 px-3">
             <div className="flex flex-col gap-0.5">
               <FormLabel className="text-xs font-semibold text-[#8E8E93]">
                 Foot Care
@@ -564,7 +564,7 @@ export default function PersonalCare() {
           </div>
 
           {/* Incontinent Care */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3 px-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 mb-3 px-3">
             <div className="flex flex-col gap-0.5">
               <FormLabel className="text-xs font-semibold text-[#8E8E93]">
                 Incontinent Care

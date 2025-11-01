@@ -68,7 +68,7 @@ export default function FallRiskTALS() {
 
   return (
     <div className="mx-auto px-[1px]">
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         {/* History of Falls Section */}
         <CollapsibleSection title="History of Falls">
           <div className="flex flex-col items-start gap-3">
@@ -79,7 +79,7 @@ export default function FallRiskTALS() {
 
             {/* Falls checkbox - matches design spec */}
             <div className="flex flex-col items-start gap-3 w-full">
-              <div className="flex flex-row items-center gap-2 w-full h-6">
+              <div className="flex flex-row items-center gap-2 w-full min-h-[24px]">
                 <div className="flex-none order-0 w-6 h-6">
                   <Checkbox
                     id="falls-prior"
@@ -96,8 +96,8 @@ export default function FallRiskTALS() {
               </div>
 
               {/* Information Obtained From - matches design spec */}
-              <div className="flex flex-row items-center gap-6 w-full h-[51px]">
-                <div className="flex flex-col items-start gap-0.5 w-[calc(100%/3)]">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 w-full min-h-[51px]">
+                <div className="flex flex-col items-start gap-0.5 w-full sm:w-[calc(100%/3)]">
                   <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins'] h-[18px] w-full">
                     Information Obtained From
                   </FormLabel>
@@ -124,8 +124,8 @@ export default function FallRiskTALS() {
                   </div>
 
                   {/* Input fields row */}
-                  <div className="flex flex-row items-center gap-6 w-full h-[51px]">
-                    <div className="flex flex-col items-start gap-0.5 w-[calc(100%/3)]">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 w-full min-h-[51px]">
+                    <div className="flex flex-col items-start gap-0.5 w-full sm:w-[calc(100%/3)]">
                       <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins'] h-[18px] w-full">
                         {index === 0 ? "Last Fall" : "Previous Fall"}
                       </FormLabel>
@@ -134,7 +134,7 @@ export default function FallRiskTALS() {
                         className="h-[31px] px-2.5 py-1.5 border border-[#8E8E93] rounded text-sm font-normal text-[#1C1C1E] font-['Poppins'] w-full"
                       />
                     </div>
-                    <div className="flex flex-col items-start gap-0.5 w-[calc(100%/3)]">
+                    <div className="flex flex-col items-start gap-0.5 w-full sm:w-[calc(100%/3)]">
                       <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins'] h-[18px] w-full">
                         How
                       </FormLabel>
@@ -149,7 +149,7 @@ export default function FallRiskTALS() {
                         </SelectContent>
                       </Select>
                     </div>
-                    <div className="flex flex-col items-start gap-0.5 w-[calc(100%/3)]">
+                    <div className="flex flex-col items-start gap-0.5 w-full sm:w-[calc(100%/3)]">
                       <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins'] h-[18px] w-full">
                         Where? / Comments
                       </FormLabel>
@@ -170,7 +170,7 @@ export default function FallRiskTALS() {
           {/* Automatic High Risk Status Box */}
           <div className="flex flex-col items-start p-0 bg-white rounded-[10px] flex-none order-12 self-stretch flex-grow-0 border border-[#C7C7CC] overflow-hidden">
             {/* Header Row */}
-            <div className="flex flex-row items-center p-0 bg-white flex-none order-0 self-stretch flex-grow-0 h-[45px] border-b border-[#C7C7CC]">
+            <div className="flex flex-row items-center p-0 bg-white flex-none order-0 self-stretch flex-grow-0 min-h-[45px] border-b border-[#C7C7CC]">
               <div className="flex flex-row items-center p-[12px_15px] gap-[10px] flex-grow">
                 <span className="font-['Poppins'] font-semibold text-[14px] leading-[21px] flex items-center text-[#1C1C1E] flex-grow">
                   Automatic High Risk Status (if ticked, then Fall Risk is
@@ -180,7 +180,7 @@ export default function FallRiskTALS() {
             </div>
 
             {/* First Checkbox Row */}
-            <div className="flex flex-row items-center p-0 bg-white flex-none order-1 self-stretch flex-grow-0 h-[48px] border-b border-[#C7C7CC]">
+            <div className="flex flex-row items-center p-0 bg-white flex-none order-1 self-stretch flex-grow-0 min-h-[48px] border-b border-[#C7C7CC]">
               <div className="flex flex-row items-center p-[12px_15px] gap-[10px] flex-grow">
                 <div className="flex flex-row items-center p-0 gap-[8px] flex-grow">
                   <div className="flex-none order-0 w-[24px] h-[24px]">
@@ -201,7 +201,7 @@ export default function FallRiskTALS() {
             </div>
 
             {/* Second Checkbox Row */}
-            <div className="flex flex-row items-center p-0 bg-white flex-none order-2 self-stretch flex-grow-0 h-[48px]">
+            <div className="flex flex-row items-center p-0 bg-white flex-none order-2 self-stretch flex-grow-0 min-h-[48px]">
               <div className="flex flex-row items-center p-[12px_15px] gap-[10px] flex-grow">
                 <div className="flex flex-row items-center p-0 gap-[8px] flex-grow">
                   <div className="flex-none order-0 w-[24px] h-[24px]">
@@ -230,7 +230,7 @@ export default function FallRiskTALS() {
 
             {/* Risk Level Values */}
             <div className="flex flex-col items-start p-0 gap-[4px] flex-none order-1 self-stretch flex-grow-0">
-              <div className="flex flex-row items-center p-0 gap-[24px] flex-none order-0 self-stretch flex-grow-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 items-center p-0 gap-[24px] flex-none order-0 self-stretch flex-grow-0">
                 {/* Low Risk */}
                 <div className="flex flex-row items-center p-0 gap-[2px] flex-none order-0 flex-grow-1">
                   <span className="font-['Poppins'] font-semibold text-[14px] leading-[21px] flex items-center text-[#1C1C1E] flex-none order-0 flex-grow-0">
@@ -265,9 +265,9 @@ export default function FallRiskTALS() {
           </div>
 
           {/* Risk Factor Table */}
-          <div className="w-full border border-[#C7C7CC] rounded-lg overflow-hidden mt-6">
+          <div className="w-full border border-[#C7C7CC] rounded-lg overflow-x-auto mt-6">
             {/* Header Row */}
-            <div className="flex flex-row items-center w-full h-[45px] bg-white border-b border-[#C7C7CC]">
+            <div className="flex flex-row items-center w-full min-w-[600px] min-h-[45px] bg-white border-b border-[#C7C7CC]">
               <div className="flex items-center px-[15px] py-3 flex-[3]">
                 <span className="text-sm font-semibold text-[#1C1C1E] font-['Poppins']">
                   Risk Factor
@@ -286,7 +286,7 @@ export default function FallRiskTALS() {
             </div>
 
             {/* Recent Falls Row */}
-            <div className="flex flex-row items-center w-full h-[68px] bg-white border-b border-[#C7C7CC]">
+            <div className="flex flex-row items-center w-full min-w-[600px] min-h-[68px] bg-white border-b border-[#C7C7CC]">
               <div className="flex flex-col justify-center px-[15px] py-3 flex-[3]">
                 <span className="text-sm font-semibold text-[#1C1C1E] font-['Poppins']">
                   Recent Falls
@@ -315,7 +315,7 @@ export default function FallRiskTALS() {
             </div>
 
             {/* Medical History Row */}
-            <div className="flex flex-row items-center w-full h-[89px] bg-white border-b border-[#C7C7CC]">
+            <div className="flex flex-row items-center w-full min-w-[600px] min-h-[89px] bg-white border-b border-[#C7C7CC]">
               <div className="flex flex-col justify-center px-[15px] py-3 flex-[3]">
                 <span className="text-sm font-semibold text-[#1C1C1E] font-['Poppins']">
                   Medical History
@@ -345,7 +345,7 @@ export default function FallRiskTALS() {
             </div>
 
             {/* Psychological Row */}
-            <div className="flex flex-row items-center w-full h-[89px] bg-white border-b border-[#C7C7CC]">
+            <div className="flex flex-row items-center w-full min-w-[600px] min-h-[89px] bg-white border-b border-[#C7C7CC]">
               <div className="flex flex-col justify-center px-[15px] py-3 flex-[3]">
                 <span className="text-sm font-semibold text-[#1C1C1E] font-['Poppins']">
                   Psychological
@@ -375,7 +375,7 @@ export default function FallRiskTALS() {
             </div>
 
             {/* Cognitive Status Row */}
-            <div className="flex flex-row items-center w-full h-[89px] bg-white border-b border-[#C7C7CC]">
+            <div className="flex flex-row items-center w-full min-w-[600px] min-h-[89px] bg-white border-b border-[#C7C7CC]">
               <div className="flex flex-col justify-center px-[15px] py-3 flex-[3]">
                 <span className="text-sm font-semibold text-[#1C1C1E] font-['Poppins']">
                   Cognitive Status
@@ -404,7 +404,7 @@ export default function FallRiskTALS() {
             </div>
 
             {/* Fall Risk Status Row */}
-            <div className="flex flex-row items-center w-full">
+            <div className="flex flex-row items-center w-full min-w-[600px] min-h-[45px]">
               <div className="flex flex-col justify-center px-[15px] flex-[3]">
                 <span className="font-['Poppins'] font-semibold text-[14px] leading-[21px] flex items-center text-[#1C1C1E]">
                   Fall Risk Status
@@ -438,7 +438,8 @@ export default function FallRiskTALS() {
 
         {/* Risk Factor Checklist */}
         <CollapsibleSection title="Part 2: Risk Factor Checklist">
-          <div className="flex flex-col bg-white border border-[#C7C7CC] rounded-[10px]">
+          <div className="overflow-x-auto">
+          <div className="flex flex-col bg-white border border-[#C7C7CC] rounded-[10px] min-w-[600px]">
             {/* Header Row */}
             <div className="flex items-center border-b border-[#C7C7CC] rounded-t-[10px]">
               <div className="flex items-center p-3 flex-[2]">
@@ -529,6 +530,7 @@ export default function FallRiskTALS() {
                 </div>
               </div>
             ))}
+          </div>
           </div>
         </CollapsibleSection>
 

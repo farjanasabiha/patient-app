@@ -14,12 +14,11 @@ export default function MedicalInfo2() {
         <Checkbox className="border-2 border-[#8E8E93]" />
       </div>
       <div className="flex flex-col justify-center items-start gap-0.5 flex-1 order-1 w-[269.67px] h-[54px]">
-        <FormLabel className="text-sm font-normal text-[#1C1C1E] w-full h-[21px] flex items-center pointer-events-none font-['Poppins']">
+        <FormLabel>
           {label}
         </FormLabel>
         <Input
           placeholder="Enter Text"
-          className="h-[31px] px-2.5 py-1.5 border border-[#8E8E93] rounded text-sm font-normal text-[#1C1C1E] font-['Poppins'] w-full"
         />
       </div>
     </div>
@@ -27,35 +26,32 @@ export default function MedicalInfo2() {
 
   return (
     <div className="mx-auto px-[1px]">
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6 grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Medication & Safety Section */}
         <CollapsibleSection title="Medication & Safety">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 px-3">
             <div>
-              <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+              <FormLabel>
                 Medication Allergies, Food, and Other Allergies
               </FormLabel>
               <Input
                 placeholder="Allergies"
-                className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5"
               />
             </div>
             <div>
-              <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+              <FormLabel>
                 Drug Interactions
               </FormLabel>
               <Input
                 placeholder="Interactions"
-                className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5"
               />
             </div>
             <div>
-              <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+              <FormLabel>
                 Safety Measures
               </FormLabel>
               <Input
                 placeholder="Safety Measures"
-                className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5"
               />
             </div>
           </div>
@@ -63,18 +59,18 @@ export default function MedicalInfo2() {
 
         {/* Prognosis Section */}
         <CollapsibleSection title="Prognosis">
-          <div>
-            <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+          <div className="px-3">
+            <FormLabel>
               Prognosis
             </FormLabel>
-            <RadioGroup defaultValue="fair" className="space-y-2">
+            <RadioGroup defaultValue="fair" className="space-y-2 grid grid-cols-3">
               {["Poor", "Guarded", "Fair", "Good", "Excellent"].map((value) => (
-                <div key={value} className="flex items-center gap-2">
+                <div key={value} className="flex items-start gap-2">
                   <RadioGroupItem
                     value={value.toLowerCase()}
                     id={value.toLowerCase()}
                   />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                  <FormLabel>
                     {value}
                   </FormLabel>
                 </div>
@@ -85,60 +81,60 @@ export default function MedicalInfo2() {
 
         {/* Dental Care Section */}
         <CollapsibleSection title="Dental Care">
-          <div className="space-y-4">
-            <div className="grid grid-cols-3 gap-6">
+          <div className="space-y-4 px-3">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Does patient have dental problems?
                 </FormLabel>
-                <RadioGroup className="space-y-2">
+                <RadioGroup className="flex gap-4 items-center">
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="yes" id="dental-yes" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       Yes
                     </FormLabel>
                   </div>
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="no" id="dental-no" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       No
                     </FormLabel>
                   </div>
                 </RadioGroup>
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Is patient under care of dentist?
                 </FormLabel>
-                <RadioGroup className="space-y-2">
+                <RadioGroup className="flex gap-4 items-center">
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="yes" id="dentist-yes" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       Yes
                     </FormLabel>
                   </div>
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="no" id="dentist-no" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       No
                     </FormLabel>
                   </div>
                 </RadioGroup>
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Can patient clean food effectively?
                 </FormLabel>
-                <RadioGroup className="space-y-2">
+                <RadioGroup className="flex gap-4 items-center">
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="yes" id="clean-yes" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       Yes
                     </FormLabel>
                   </div>
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="no" id="clean-no" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       No
                     </FormLabel>
                   </div>
@@ -147,7 +143,7 @@ export default function MedicalInfo2() {
             </div>
 
             <div>
-              <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+              <FormLabel>
                 Dental State
               </FormLabel>
               <div className="grid grid-cols-1 gap-2">
@@ -162,7 +158,7 @@ export default function MedicalInfo2() {
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <Checkbox id={item.toLowerCase().replace(/\s+/g, "-")} />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       {item}
                     </FormLabel>
                   </div>
@@ -170,39 +166,37 @@ export default function MedicalInfo2() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Dentist Name
                 </FormLabel>
                 <Input
                   placeholder="Dentist Name"
-                  className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5"
                 />
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Dentist Phone Number
                 </FormLabel>
                 <Input
                   placeholder="123 456 7890"
-                  className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5"
                 />
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Dentist Visit
                 </FormLabel>
-                <RadioGroup className="space-y-2">
+                <RadioGroup className="flex gap-4 items-center">
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="current" id="dentist-current" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       Current
                     </FormLabel>
                   </div>
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="no" id="dentist-visit-no" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       No
                     </FormLabel>
                   </div>
@@ -214,12 +208,12 @@ export default function MedicalInfo2() {
 
         {/* Vision Section */}
         <CollapsibleSection title="Vision">
-          <div className="space-y-4">
+          <div className="space-y-4 px-3">
 
 
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
                           <div>
-              <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+              <FormLabel>
                 Select Vision
               </FormLabel>
               <div className="grid grid-cols-1 gap-2">
@@ -232,7 +226,7 @@ export default function MedicalInfo2() {
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <Checkbox id={item.toLowerCase().replace(/\s+/g, "-")} />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       {item}
                     </FormLabel>
                   </div>
@@ -240,63 +234,63 @@ export default function MedicalInfo2() {
               </div>
             </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Cataracts
                 </FormLabel>
-                <RadioGroup className="space-y-2">
+                <RadioGroup className="flex gap-4 items-center">
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="left" id="left-eye" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       Left Eye
                     </FormLabel>
                   </div>
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="right" id="right-eye" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       Right Eye
                     </FormLabel>
                   </div>
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="both" id="both-eyes" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       Both
                     </FormLabel>
                   </div>
                 </RadioGroup>
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Macular Degeneration
                 </FormLabel>
-                <RadioGroup className="space-y-2">
+                <RadioGroup className="flex gap-4 items-center">
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="yes" id="macular-yes" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       Yes
                     </FormLabel>
                   </div>
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="no" id="macular-no" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       No
                     </FormLabel>
                   </div>
                 </RadioGroup>
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Wears Glasses
                 </FormLabel>
-                <RadioGroup className="space-y-2">
+                <RadioGroup className="flex gap-4 items-center">
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="yes" id="glasses-yes" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       Yes
                     </FormLabel>
                   </div>
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="no" id="glasses-no" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       No
                     </FormLabel>
                   </div>
@@ -304,39 +298,37 @@ export default function MedicalInfo2() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-5">
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Ophthalmologist Name
                 </FormLabel>
                 <Input
                   placeholder="Ophthalmologist Name"
-                  className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5"
                 />
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Ophthalmologist Phone Number
                 </FormLabel>
                 <Input
                   placeholder="123 456 7890"
-                  className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5"
                 />
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Ophthalmologist Visit
                 </FormLabel>
-                <RadioGroup className="space-y-2">
+                <RadioGroup className="flex gap-4 items-center">
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="current" id="ophthal-current" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       Current
                     </FormLabel>
                   </div>
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="no" id="ophthal-no" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       No
                     </FormLabel>
                   </div>
@@ -348,11 +340,11 @@ export default function MedicalInfo2() {
 
         {/* Hearing Section */}
         <CollapsibleSection title="Hearing">
-          <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-6">
+          <div className="space-y-4 px-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
-                  Select Hearing
+                <FormLabel>
+                    Select Hearing
                 </FormLabel>
                 <div className="space-y-2">
                   {[
@@ -367,7 +359,6 @@ export default function MedicalInfo2() {
                       <Checkbox id={item.toLowerCase().replace(/\s+/g, "-")} />
                       <FormLabel
                         htmlFor={item.toLowerCase().replace(/\s+/g, "-")}
-                        className="text-sm font-normal text-[#1C1C1E] pointer-events-none"
                       >
                         {item}
                       </FormLabel>
@@ -376,19 +367,19 @@ export default function MedicalInfo2() {
                 </div>
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Uses Hearing Aid(s)
                 </FormLabel>
                 <RadioGroup className="space-y-2">
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="yes" id="hearing-aid-yes" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       Yes
                     </FormLabel>
                   </div>
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="no" id="hearing-aid-no" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       No
                     </FormLabel>
                   </div>
@@ -396,7 +387,6 @@ export default function MedicalInfo2() {
                     <RadioGroupItem value="left" id="left-ear" />
                     <FormLabel
                       htmlFor="left-ear"
-                      className="text-sm font-normal text-[#1C1C1E] pointer-events-none"
                     >
                       Left Ear
                     </FormLabel>
@@ -405,7 +395,6 @@ export default function MedicalInfo2() {
                     <RadioGroupItem value="right" id="right-ear" />
                     <FormLabel
                       htmlFor="right-ear"
-                      className="text-sm font-normal text-[#1C1C1E] pointer-events-none"
                     >
                       Right Ear
                     </FormLabel>
@@ -414,39 +403,37 @@ export default function MedicalInfo2() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   ENT Name
                 </FormLabel>
                 <Input
                   placeholder="ENT Name"
-                  className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5"
                 />
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   ENT Phone Number
                 </FormLabel>
                 <Input
                   placeholder="123 456 7890"
-                  className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5"
                 />
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   ENT Visit
                 </FormLabel>
                 <RadioGroup className="space-y-2">
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="current" id="ent-current" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       Current
                     </FormLabel>
                   </div>
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="no" id="ent-no" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                    <FormLabel>
                       No
                     </FormLabel>
                   </div>
@@ -456,12 +443,25 @@ export default function MedicalInfo2() {
           </div>
         </CollapsibleSection>
 
-        {/* Mental Health Section */}
+
+
+        {/* Additional Notes Section */}
+        <CollapsibleSection title="Additional Notes">
+          <div className="px-3">
+            <FormLabel>
+              Additional Notes
+            </FormLabel>
+            <Textarea
+              placeholder="Enter Text"
+            />
+          </div>
+        </CollapsibleSection>
+                {/* Mental Health Section */}
         <CollapsibleSection title="Mental Health">
-          <div className="space-y-6">
-            <div className="grid grid-cols-3 gap-6">
+          <div className="space-y-4 sm:space-y-6 px-3">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Attitude
                 </FormLabel>
                 <div className="space-y-2">
@@ -477,7 +477,6 @@ export default function MedicalInfo2() {
                       <Checkbox id={`attitude-${item.toLowerCase()}`} />
                       <FormLabel
                         htmlFor={`attitude-${item.toLowerCase()}`}
-                        className="text-sm font-normal text-[#1C1C1E] pointer-events-none"
                       >
                         {item}
                       </FormLabel>
@@ -486,7 +485,7 @@ export default function MedicalInfo2() {
                 </div>
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Mental Status
                 </FormLabel>
                 <div className="space-y-2">
@@ -503,7 +502,6 @@ export default function MedicalInfo2() {
                       <Checkbox id={`mental-${item.toLowerCase()}`} />
                       <FormLabel
                         htmlFor={`mental-${item.toLowerCase()}`}
-                        className="text-sm font-normal text-[#1C1C1E] pointer-events-none"
                       >
                         {item}
                       </FormLabel>
@@ -513,7 +511,7 @@ export default function MedicalInfo2() {
                 </div>
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Appearances
                 </FormLabel>
                 <div className="space-y-2">
@@ -534,7 +532,6 @@ export default function MedicalInfo2() {
                         htmlFor={`appearance-${item
                           .toLowerCase()
                           .replace(/\s+/g, "-")}`}
-                        className="text-sm font-normal text-[#1C1C1E] pointer-events-none"
                       >
                         {item}
                       </FormLabel>
@@ -544,9 +541,9 @@ export default function MedicalInfo2() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Self Direction
                 </FormLabel>
                 <div className="space-y-2">
@@ -566,7 +563,6 @@ export default function MedicalInfo2() {
                         htmlFor={`direction-${item
                           .toLowerCase()
                           .replace(/\s+/g, "-")}`}
-                        className="text-sm font-normal text-[#1C1C1E] pointer-events-none"
                       >
                         {item}
                       </FormLabel>
@@ -575,7 +571,7 @@ export default function MedicalInfo2() {
                 </div>
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Behavioral
                 </FormLabel>
                 <div className="space-y-2">
@@ -602,7 +598,6 @@ export default function MedicalInfo2() {
                         htmlFor={`behavioral-${item
                           .toLowerCase()
                           .replace(/\s+/g, "-")}`}
-                        className="text-sm font-normal text-[#1C1C1E] pointer-events-none"
                       >
                         {item}
                       </FormLabel>
@@ -611,7 +606,7 @@ export default function MedicalInfo2() {
                 </div>
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Influences
                 </FormLabel>
                 <div className="space-y-2">
@@ -635,7 +630,6 @@ export default function MedicalInfo2() {
                         htmlFor={`influences-${item
                           .toLowerCase()
                           .replace(/\s+/g, "-")}`}
-                        className="text-sm font-normal text-[#1C1C1E] pointer-events-none"
                       >
                         {item}
                       </FormLabel>
@@ -645,9 +639,9 @@ export default function MedicalInfo2() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Thought Content
                 </FormLabel>
                 <div className="space-y-2">
@@ -662,7 +656,9 @@ export default function MedicalInfo2() {
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-2">
                       <Checkbox id={`thought-${item.toLowerCase()}`} />
-                      <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                      <FormLabel
+                        htmlFor={`thought-${item.toLowerCase()}`}
+                      >
                         {item}
                       </FormLabel>
                     </div>
@@ -670,7 +666,7 @@ export default function MedicalInfo2() {
                 </div>
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Perceptions
                 </FormLabel>
                 <div className="space-y-2">
@@ -683,7 +679,9 @@ export default function MedicalInfo2() {
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-2">
                       <Checkbox id={`perception-${item.toLowerCase()}`} />
-                      <FormLabel className="text-sm font-normal text-[#1C1C1E] pointer-events-none">
+                      <FormLabel
+                        htmlFor={`perception-${item.toLowerCase()}`}
+                      >
                         {item}
                       </FormLabel>
                     </div>
@@ -692,7 +690,7 @@ export default function MedicalInfo2() {
                 </div>
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Cognitions
                 </FormLabel>
                 <div className="space-y-2">
@@ -702,7 +700,6 @@ export default function MedicalInfo2() {
                         <Checkbox id={`cognition-${item.toLowerCase()}`} />
                         <FormLabel
                           htmlFor={`cognition-${item.toLowerCase()}`}
-                          className="text-sm font-normal text-[#1C1C1E] pointer-events-none"
                         >
                           {item}
                         </FormLabel>
@@ -714,16 +711,16 @@ export default function MedicalInfo2() {
             </div>
 
             {/* Insight and Judgment Row */}
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+                <FormLabel>
                   Insights
                 </FormLabel>
                 <div className="space-y-2 mt-2">
                   {["Good", "Partial", "None"].map((item) => (
                     <div key={item} className="flex items-center gap-2">
                       <Checkbox className="w-6 h-6" />
-                      <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                      <FormLabel>
                         {item}
                       </FormLabel>
                     </div>
@@ -731,14 +728,14 @@ export default function MedicalInfo2() {
                 </div>
               </div>
               <div>
-                <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+                <FormLabel>
                   Judgment
                 </FormLabel>
                 <div className="space-y-2 mt-2">
                   {["Good", "Adequate", "None"].map((item) => (
                     <div key={item} className="flex items-center gap-2">
                       <Checkbox className="w-6 h-6" />
-                      <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                      <FormLabel>
                         {item}
                       </FormLabel>
                     </div>
@@ -746,19 +743,6 @@ export default function MedicalInfo2() {
                 </div>
               </div>
             </div>
-          </div>
-        </CollapsibleSection>
-
-        {/* Additional Notes Section */}
-        <CollapsibleSection title="Additional Notes">
-          <div>
-            <FormLabel className="text-xs font-semibold text-[#8E8E93]">
-              Additional Notes
-            </FormLabel>
-            <Textarea
-              placeholder="Enter Text"
-              className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5 min-h-[120px] resize-none"
-            />
           </div>
         </CollapsibleSection>
       </div>

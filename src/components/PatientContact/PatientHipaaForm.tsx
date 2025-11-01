@@ -89,8 +89,8 @@ export default function HIPAAAuthorizationForm() {
             {/* Personal Information Section */}
             <div className="flex flex-col items-start gap-3 w-full">
               {/* First Row - Name Fields */}
-              <div className="flex flex-row items-center gap-6 w-full">
-                <div className="flex flex-col items-start gap-0.5 flex-1 w-[301.67px]">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 w-full">
+                <div className="flex flex-col items-start gap-0.5 w-full">
                   <FormLabel className="text-xs font-semibold text-[#8E8E93] font-poppins leading-[18px] w-full">
                     First Name
                   </FormLabel>
@@ -104,7 +104,7 @@ export default function HIPAAAuthorizationForm() {
                   />
                 </div>
 
-                <div className="flex flex-col items-start gap-0.5 flex-1 w-[301.67px]">
+                <div className="flex flex-col items-start gap-0.5 w-full">
                   <FormLabel className="text-xs font-semibold text-[#8E8E93] font-poppins leading-[18px] w-full">
                     Middle Name
                   </FormLabel>
@@ -118,7 +118,7 @@ export default function HIPAAAuthorizationForm() {
                   />
                 </div>
 
-                <div className="flex flex-col items-start gap-0.5 flex-1 w-[301.67px]">
+                <div className="flex flex-col items-start gap-0.5 w-full">
                   <FormLabel className="text-xs font-semibold text-[#8E8E93] font-poppins leading-[18px] w-full">
                     Last Name
                   </FormLabel>
@@ -134,8 +134,8 @@ export default function HIPAAAuthorizationForm() {
               </div>
 
               {/* Second Row - DOB and SSN */}
-              <div className="flex flex-row items-center gap-6 w-full">
-                <div className="flex flex-col items-start gap-0.5 flex-1 w-[301.67px]">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 w-full">
+                <div className="flex flex-col items-start gap-0.5 w-full">
                   <FormLabel className="text-xs font-semibold text-[#8E8E93] font-poppins leading-[18px] w-full">
                     Date of Birth
                   </FormLabel>
@@ -158,7 +158,7 @@ export default function HIPAAAuthorizationForm() {
                   </div>
                 </div>
 
-                <div className="flex flex-col items-start gap-0.5 flex-1 w-[301.67px]">
+                <div className="flex flex-col items-start gap-0.5 w-full">
                   <FormLabel className="text-xs font-semibold text-[#8E8E93] font-poppins leading-[18px] w-full">
                     Social Security Number
                   </FormLabel>
@@ -172,12 +172,12 @@ export default function HIPAAAuthorizationForm() {
                   />
                 </div>
 
-                <div className="flex-1 w-[301.67px]"></div>
+                <div className="hidden md:block"></div>
               </div>
 
               {/* Third Row - Address Line 1, 2, and City */}
-              <div className="flex flex-row items-center gap-6 w-full">
-                <div className="flex flex-col items-start gap-0.5 flex-1 w-[301.67px]">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 w-full">
+                <div className="flex flex-col items-start gap-0.5 w-full">
                   <FormLabel className="text-xs font-semibold text-[#8E8E93] font-poppins leading-[18px] w-full">
                     Street Address Line 1
                   </FormLabel>
@@ -191,7 +191,7 @@ export default function HIPAAAuthorizationForm() {
                   />
                 </div>
 
-                <div className="flex flex-col items-start gap-0.5 flex-1 w-[301.67px]">
+                <div className="flex flex-col items-start gap-0.5 w-full">
                   <FormLabel className="text-xs font-semibold text-[#8E8E93] font-poppins leading-[18px] w-full">
                     Street Address Line 2
                   </FormLabel>
@@ -205,7 +205,7 @@ export default function HIPAAAuthorizationForm() {
                   />
                 </div>
 
-                <div className="flex flex-col items-start gap-0.5 flex-1 w-[301.67px]">
+                <div className="flex flex-col items-start gap-0.5 w-full">
                   <FormLabel className="text-xs font-semibold text-[#8E8E93] font-poppins leading-[18px] w-full">
                     City
                   </FormLabel>
@@ -221,8 +221,8 @@ export default function HIPAAAuthorizationForm() {
               </div>
 
               {/* Fourth Row - State and ZIP Code */}
-              <div className="flex flex-row items-center gap-6 w-full">
-                <div className="flex flex-col items-start gap-0.5 flex-1 w-[301.67px]">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 w-full">
+                <div className="flex flex-col items-start gap-0.5 w-full">
                   <FormLabel className="text-xs font-semibold text-[#8E8E93] font-poppins leading-[18px] w-full">
                     State
                   </FormLabel>
@@ -243,7 +243,7 @@ export default function HIPAAAuthorizationForm() {
                   </Select>
                 </div>
 
-                <div className="flex flex-col items-start gap-0.5 flex-1 w-[301.67px]">
+                <div className="flex flex-col items-start gap-0.5 w-full">
                   <FormLabel className="text-xs font-semibold text-[#8E8E93] font-poppins leading-[18px] w-full">
                     ZIP Code
                   </FormLabel>
@@ -277,7 +277,7 @@ export default function HIPAAAuthorizationForm() {
               7. Name and address of health provider or entity to release
               information:
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-4 sm:gap-x-6">
               <div className="flex flex-col gap-0.5">
                 <FormLabel>Name</FormLabel>
                 <Input
@@ -291,7 +291,7 @@ export default function HIPAAAuthorizationForm() {
               <div className="hidden md:block"></div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-4 sm:gap-x-6">
               <div className="flex flex-col gap-0.5">
                 <FormLabel>Street Address Line 1</FormLabel>
                 <Input
@@ -327,7 +327,7 @@ export default function HIPAAAuthorizationForm() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-4 sm:gap-x-6">
               <div className="flex flex-col gap-0.5">
                 <FormLabel>State</FormLabel>
                 <Select
@@ -365,7 +365,7 @@ export default function HIPAAAuthorizationForm() {
               8. Name and address of person(s) or category of person to whom
               this information will be sent
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-4 sm:gap-x-6">
               <div className="flex flex-col gap-0.5">
                 <FormLabel>First Name</FormLabel>
                 <Input
@@ -407,7 +407,7 @@ export default function HIPAAAuthorizationForm() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-4 sm:gap-x-6">
               <div className="flex flex-col gap-0.5">
                 <FormLabel>Street Address Line 1</FormLabel>
                 <Input
@@ -446,7 +446,7 @@ export default function HIPAAAuthorizationForm() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-4 sm:gap-x-6">
               <div className="flex flex-col gap-0.5">
                 <FormLabel>State</FormLabel>
                 <Select
@@ -487,7 +487,7 @@ export default function HIPAAAuthorizationForm() {
 
             <div className="flex flex-col items-start gap-1 w-full">
               {/* First Row - Medical Records and Dates */}
-              <div className="grid grid-cols-3 items-center gap-6 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-3 items-start md:items-center gap-3 sm:gap-4 md:gap-6 w-full">
                 <div className="flex flex-row items-center gap-2">
                   <Checkbox
                     id="medicalRecords"
@@ -557,7 +557,7 @@ export default function HIPAAAuthorizationForm() {
               </div>
 
               {/* Third Row - Other with Text Input */}
-              <div className="grid grid-cols-3 items-center gap-6 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-3 items-start md:items-center gap-3 sm:gap-4 md:gap-6 w-full">
                 <div className="flex flex-row items-center gap-2">
                   <Checkbox
                     id="other"
@@ -577,7 +577,7 @@ export default function HIPAAAuthorizationForm() {
                     Other
                   </FormLabel>
                 </div>
-                <div className="col-span-2">
+                <div className="md:col-span-2">
                   <Textarea
                     placeholder="Enter Text"
                     value={formData.otherInfo}
@@ -590,7 +590,7 @@ export default function HIPAAAuthorizationForm() {
               </div>
 
               {/* Fourth Row - Treatment Types */}
-              <div className="grid grid-cols-3 items-center gap-6 w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center gap-3 sm:gap-4 md:gap-6 w-full">
                 <div className="flex flex-row items-center gap-2">
                   <Checkbox
                     id="alcoholDrug"
@@ -655,15 +655,15 @@ export default function HIPAAAuthorizationForm() {
           </div>
 
           {/* Authorization to Discuss Section */}
-          <div className="flex flex-col items-start gap-0.5 w-[953px]">
-            <h3 className="text-sm font-semibold text-[#1c1c1e] h-[21px] w-full font-poppins flex items-center">
+          <div className="flex flex-col items-start gap-0.5 w-full">
+            <h3 className="text-sm font-semibold text-[#1c1c1e] h-full w-full font-poppins flex items-center">
               9 (b). Authorization to discuss health information
             </h3>
 
             {/* First Row */}
-            <div className="flex flex-row items-center gap-6 w-full h-[54px]">
-              <div className="flex flex-col items-start gap-0.5 flex-1 w-[301.67px]">
-                <FormLabel className="text-sm font-normal text-[#1c1c1e] h-[21px] w-full font-poppins">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 w-full">
+              <div className="flex flex-col items-start gap-0.5 w-full">
+                <FormLabel className="text-sm font-normal text-[#1c1c1e] w-full font-poppins">
                   By initializing here,
                 </FormLabel>
                 <Input
@@ -676,8 +676,8 @@ export default function HIPAAAuthorizationForm() {
                 />
               </div>
 
-              <div className="flex flex-col items-start gap-0.5 flex-1 w-[301.67px]">
-                <FormLabel className="text-sm font-normal text-[#1c1c1e] h-[21px] w-full font-poppins">
+              <div className="flex flex-col items-start gap-0.5 w-full">
+                <FormLabel className="text-sm font-normal text-[#1c1c1e] w-full font-poppins">
                   I authorize
                 </FormLabel>
                 <Input
@@ -690,13 +690,13 @@ export default function HIPAAAuthorizationForm() {
                 />
               </div>
 
-              <div className="flex-1 w-[301.67px]"></div>
+              <div className="hidden md:block"></div>
             </div>
 
             {/* Second Row */}
-            <div className="flex flex-row items-start gap-6 w-full h-[54px]">
-              <div className="flex flex-col items-start gap-0.5 w-[627.33px]">
-                <FormLabel className="text-sm font-normal text-[#1c1c1e] h-[21px] w-full font-poppins flex items-center">
+            <div className="grid grid-cols-1 gap-3 sm:gap-4 md:gap-6 w-full">
+              <div className="flex flex-col items-start gap-0.5 w-full">
+                <FormLabel className="text-sm font-normal text-[#1c1c1e] h-full w-full font-poppins flex items-center">
                   to discuss my health information with my attorney, or a
                   government agency, listed here:
                 </FormLabel>
@@ -709,14 +709,13 @@ export default function HIPAAAuthorizationForm() {
                   className="h-[31px] px-[10px] py-[5px] border-[#8E8E93]"
                 />
               </div>
-              <div className="w-[301.67px]"></div>
             </div>
           </div>
 
           {/* Reason for Release Section */}
-          <div className="flex flex-row items-start gap-6 w-full">
-            <div className="flex flex-col items-start gap-0.5 flex-1 w-[301.67px]">
-              <h3 className="text-sm font-semibold text-[#1c1c1e] h-[21px] w-full font-poppins">
+          <div className="grid grid-cols-1 md:grid-cols-3 items-start gap-3 sm:gap-4 md:gap-6 w-full">
+            <div className="flex flex-col items-start gap-0.5 w-full  gap-y-3 gap-x-6">
+              <h3 className="text-sm font-semibold text-[#1c1c1e] w-full font-poppins">
                 10. Reason for release of information
               </h3>
 
@@ -764,8 +763,8 @@ export default function HIPAAAuthorizationForm() {
                 </div>
               </div>
             </div>
-            <div className="flex-1 w-[301.67px]"></div>
-            <div className="flex-1 w-[301.67px]"></div>
+            <div className="hidden md:block"></div>
+            <div className="hidden md:block"></div>
           </div>
 
           {/* Final Section */}

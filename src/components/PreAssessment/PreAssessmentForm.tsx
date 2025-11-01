@@ -274,7 +274,7 @@ const PreAssessmentForm = () => {
     return (
       <div key={contact.id} className="space-y-3">
         {/* Number and Border */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <span className="text-sm font-semibold text-[#1C1C1E] font-poppins">
             {index + 1}.
           </span>
@@ -284,14 +284,14 @@ const PreAssessmentForm = () => {
             <PrimaryButton
               variant="outline"
               size="sm"
-              className="w-8 h-8 p-1 border-red-300 text-red-500 hover:bg-red-50"
+              className="w-7 h-7 sm:w-8 sm:h-8 p-1 border-red-300 text-red-500 hover:bg-red-50"
               onClick={() => removeEmergencyContact(contact.id)}
             >
-              <Trash2 className="w-4 h-4" />
+              <Trash2 className="w-3 h-3 sm:w-4 sm:h-4" />
             </PrimaryButton>
           )}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-4 sm:gap-x-6">
           <div className="flex flex-col gap-0.5">
             <FormLabel required={isFirst}>
               Emergency Contact First Name
@@ -370,13 +370,13 @@ const PreAssessmentForm = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {/* Patient Demographics */}
       <CollapsibleSection
         title="Pre-Assessment - Patient Demographics"
-        className="mt-6"
+        className="mt-4 sm:mt-6"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-4 sm:gap-x-6">
           {/* Name Fields */}
           <div className="flex flex-col gap-0.5">
             <FormLabel required>Patient First Name</FormLabel>
@@ -554,11 +554,11 @@ const PreAssessmentForm = () => {
 
       {/* Vitals */}
       <CollapsibleSection title="Vitals">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-4 sm:gap-x-6">
           {/* Height */}
           <div className="flex flex-col gap-0.5">
             <FormLabel required>Height</FormLabel>
-            <div className="flex gap-3">
+            <div className="flex gap-2 sm:gap-3">
               {/* Feet input */}
               <div className="relative flex-1">
                 <Input
@@ -703,8 +703,8 @@ const PreAssessmentForm = () => {
 
       {/* Authorized Hours */}
       <CollapsibleSection title="Authorization">
-        <div className="p-4 bg-[#e2f7ff] rounded-lg">
-          <div className="bg-white p-4 space-y-4 rounded-lg">
+        <div className="p-3 sm:p-4 bg-[#e2f7ff] rounded-lg">
+          <div className="bg-white p-3 sm:p-4 space-y-3 sm:space-y-4 rounded-lg">
             {/* Authorization Information */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
               <div className="flex flex-col gap-0.5">
@@ -742,55 +742,57 @@ const PreAssessmentForm = () => {
               <div></div>
             </div>
 
-            <div className="bg-white rounded-[10px] border border-[#C7C7CC]">
-              {/* Header Row */}
-              <div className="flex border-b border-[#C7C7CC]">
-                {[
-                  "MON (hrs)",
-                  "TUE (hrs)",
-                  "WED (hrs)",
-                  "THU (hrs)",
-                  "FRI (hrs)",
-                  "SAT (hrs)",
-                  "SUN (hrs)",
-                ].map((day) => (
-                  <div
-                    key={day}
-                    className="flex-1 px-3.5 py-3 text-center text-sm font-semibold text-[#1C1C1E] font-poppins"
-                  >
-                    {day}
-                  </div>
-                ))}
-              </div>
+            <div className="overflow-x-auto  sm:mx-0">
+              <div className="bg-white rounded-[10px] border border-[#C7C7CC] min-w-[640px]">
+                {/* Header Row */}
+                <div className="flex border-b border-[#C7C7CC]">
+                  {[
+                    "MON (hrs)",
+                    "TUE (hrs)",
+                    "WED (hrs)",
+                    "THU (hrs)",
+                    "FRI (hrs)",
+                    "SAT (hrs)",
+                    "SUN (hrs)",
+                  ].map((day) => (
+                    <div
+                      key={day}
+                      className="flex-1 px-2 sm:px-3.5 py-2 sm:py-3 text-center text-xs sm:text-sm font-semibold text-[#1C1C1E] font-poppins"
+                    >
+                      {day}
+                    </div>
+                  ))}
+                </div>
 
-              {/* Input Row */}
-              <div className="flex">
-                {(
-                  [
-                    "monday",
-                    "tuesday",
-                    "wednesday",
-                    "thursday",
-                    "friday",
-                    "saturday",
-                    "sunday",
-                  ] as const
-                ).map((day) => (
-                  <div key={day} className="flex-1 px-3.5 py-3">
-                    <Input
-                      type="number"
-                      value={authorizedHours[day]}
-                      onChange={(e) =>
-                        updateAuthorizedHours(day, parseInt(e.target.value) || 0)
-                      }
-                      className="text-center"
-                    />
-                  </div>
-                ))}
+                {/* Input Row */}
+                <div className="flex">
+                  {(
+                    [
+                      "monday",
+                      "tuesday",
+                      "wednesday",
+                      "thursday",
+                      "friday",
+                      "saturday",
+                      "sunday",
+                    ] as const
+                  ).map((day) => (
+                    <div key={day} className="flex-1 px-2 sm:px-3.5 py-2 sm:py-3">
+                      <Input
+                        type="number"
+                        value={authorizedHours[day]}
+                        onChange={(e) =>
+                          updateAuthorizedHours(day, parseInt(e.target.value) || 0)
+                        }
+                        className="text-center text-sm"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-[10px] p-4">
+            <div className="bg-white rounded-[10px] p-3 sm:p-4">
               {/* Additional Authorization Information */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
                 <div className="flex flex-col gap-0.5">
@@ -818,83 +820,85 @@ const PreAssessmentForm = () => {
 
       {/* Start and End Time */}
       <CollapsibleSection title="Preferred Start and End Time">
-        <div className="bg-white rounded-[10px] border border-[#C7C7CC]">
-          {/* Header Row */}
-          <div className="flex border-b border-[#C7C7CC]">
-            <div className="w-24 px-3.5 py-3 text-sm font-semibold text-[#1C1C1E] font-poppins">
-              Days
-            </div>
-            {["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].map((day) => (
-              <div
-                key={day}
-                className="flex-1 px-3.5 py-3 text-center text-sm font-semibold text-[#1C1C1E] font-poppins"
-              >
-                {day}
+        <div className="overflow-x-auto  sm:mx-0">
+          <div className="bg-white rounded-[10px] border border-[#C7C7CC] min-w-[768px]">
+            {/* Header Row */}
+            <div className="flex border-b border-[#C7C7CC]">
+              <div className="w-20 sm:w-24 px-2 sm:px-3.5 py-2 sm:py-3 text-xs sm:text-sm font-semibold text-[#1C1C1E] font-poppins">
+                Days
               </div>
-            ))}
-          </div>
+              {["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].map((day) => (
+                <div
+                  key={day}
+                  className="flex-1 px-2 sm:px-3.5 py-2 sm:py-3 text-center text-xs sm:text-sm font-semibold text-[#1C1C1E] font-poppins"
+                >
+                  {day}
+                </div>
+              ))}
+            </div>
 
-          {/* Start Time Row */}
-          <div className="flex border-b border-[#C7C7CC]">
-            <div className="w-24 px-3.5 py-3 text-sm font-semibold text-[#1C1C1E] font-poppins">
-              Start Time
-            </div>
-            {(
-              [
-                "monday",
-                "tuesday",
-                "wednesday",
-                "thursday",
-                "friday",
-                "saturday",
-                "sunday",
-              ] as const
-            ).map((day) => (
-              <div key={day} className="flex-1 px-3.5 py-3">
-                <Input
-                  value={scheduleTime[day]?.startTime || ""}
-                  onChange={(e) =>
-                    updateScheduleTime(day, "startTime", e.target.value)
-                  }
-                  className="text-center"
-                />
+            {/* Start Time Row */}
+            <div className="flex border-b border-[#C7C7CC]">
+              <div className="w-20 sm:w-24 px-2 sm:px-3.5 py-2 sm:py-3 text-xs sm:text-sm font-semibold text-[#1C1C1E] font-poppins">
+                Start Time
               </div>
-            ))}
-          </div>
+              {(
+                [
+                  "monday",
+                  "tuesday",
+                  "wednesday",
+                  "thursday",
+                  "friday",
+                  "saturday",
+                  "sunday",
+                ] as const
+              ).map((day) => (
+                <div key={day} className="flex-1 px-2 sm:px-3.5 py-2 sm:py-3">
+                  <Input
+                    value={scheduleTime[day]?.startTime || ""}
+                    onChange={(e) =>
+                      updateScheduleTime(day, "startTime", e.target.value)
+                    }
+                    className="text-center text-xs sm:text-sm"
+                  />
+                </div>
+              ))}
+            </div>
 
-          {/* End Time Row */}
-          <div className="flex">
-            <div className="w-24 px-3.5 py-3 text-sm font-semibold text-[#1C1C1E] font-poppins">
-              End Time
-            </div>
-            {(
-              [
-                "monday",
-                "tuesday",
-                "wednesday",
-                "thursday",
-                "friday",
-                "saturday",
-                "sunday",
-              ] as const
-            ).map((day) => (
-              <div key={day} className="flex-1 px-3.5 py-3">
-                <Input
-                  value={scheduleTime[day]?.endTime || ""}
-                  onChange={(e) =>
-                    updateScheduleTime(day, "endTime", e.target.value)
-                  }
-                  className="text-center"
-                />
+            {/* End Time Row */}
+            <div className="flex">
+              <div className="w-20 sm:w-24 px-2 sm:px-3.5 py-2 sm:py-3 text-xs sm:text-sm font-semibold text-[#1C1C1E] font-poppins">
+                End Time
               </div>
-            ))}
+              {(
+                [
+                  "monday",
+                  "tuesday",
+                  "wednesday",
+                  "thursday",
+                  "friday",
+                  "saturday",
+                  "sunday",
+                ] as const
+              ).map((day) => (
+                <div key={day} className="flex-1 px-2 sm:px-3.5 py-2 sm:py-3">
+                  <Input
+                    value={scheduleTime[day]?.endTime || ""}
+                    onChange={(e) =>
+                      updateScheduleTime(day, "endTime", e.target.value)
+                    }
+                    className="text-center text-xs sm:text-sm"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </CollapsibleSection>
 
       {/* Emergency Contact */}
       <CollapsibleSection title="Emergency Contact">
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {emergencyContacts.map((contact, index) =>
             renderEmergencyContact(contact, index)
           )}
@@ -903,10 +907,10 @@ const PreAssessmentForm = () => {
           <div className="flex justify-end">
             <PrimaryButton
               size="lg"
-              className="w-[48px] h-[48px] rounded-[24px] p-[12px]"
+              className="w-[40px] h-[40px] sm:w-[48px] sm:h-[48px] rounded-[20px] sm:rounded-[24px] p-[10px] sm:p-[12px]"
               onClick={addEmergencyContact}
             >
-              <Plus className="w-6 h-6" />
+              <Plus className="w-5 h-5 sm:w-6 sm:h-6" />
             </PrimaryButton>
           </div>
         </div>
@@ -1139,10 +1143,10 @@ const PreAssessmentForm = () => {
       </CollapsibleSection>
 
       {/* Form Actions */}
-      <div className="flex items-center justify-between gap-10">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-10">
         <PrimaryButton
           variant="outline"
-          className="px-14 py-2"
+          className="px-8 sm:px-14 py-2 w-full sm:w-auto"
           onClick={() => window.history.back()}
           disabled={isSubmitting}
         >
@@ -1150,7 +1154,7 @@ const PreAssessmentForm = () => {
         </PrimaryButton>
 
         <PrimaryButton
-          className="px-14 py-2"
+          className="px-8 sm:px-14 py-2 w-full sm:w-auto"
           onClick={() => handleSubmit("submitted")}
           disabled={isSubmitting}
         >
@@ -1167,15 +1171,15 @@ const PreAssessmentForm = () => {
 
       {/* Success/Error Messages */}
       {submitError && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-md text-red-700">
+        <div className="p-3 sm:p-4 bg-red-50 border border-red-200 rounded-md text-red-700 text-sm sm:text-base">
           Error: {submitError}
         </div>
       )}
       {submitSuccess && submittedData && (
-        <div className="p-4 bg-green-50 border border-green-200 rounded-md">
-          <div className="flex items-center justify-between">
+        <div className="p-3 sm:p-4 bg-green-50 border border-green-200 rounded-md">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                 <svg
                   className="w-5 h-5 text-white"
                   fill="none"
@@ -1191,17 +1195,17 @@ const PreAssessmentForm = () => {
                 </svg>
               </div>
               <div>
-                <p className="text-green-800 font-semibold">
+                <p className="text-green-800 font-semibold text-sm sm:text-base">
                   Form submitted successfully!
                 </p>
-                <p className="text-green-700 text-sm">
+                <p className="text-green-700 text-xs sm:text-sm">
                   Your pre-assessment has been saved.
                 </p>
               </div>
             </div>
             <PrimaryButton
               onClick={() => downloadPreAssessmentPDF(submittedData)}
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 w-full sm:w-auto justify-center"
             >
               <Download className="w-4 h-4" />
               Download PDF

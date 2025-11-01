@@ -11,12 +11,12 @@ export default function MedicalInfo1() {
   return (
     <div className="mx-auto px-[1px]">
       {/* Form Sections */}
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         {/* Height, Weight, Vital Signs Section */}
         <CollapsibleSection title="Height, Weight, Vital Signs">
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col px-3">
             {/* First Row */}
-            <div className="flex flex-row items-center gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6">
 
                         {/* Height */}
 <div className="flex flex-col gap-0.5 flex-1">
@@ -50,7 +50,6 @@ export default function MedicalInfo1() {
               <Input
                 type="number"
                 placeholder="100"
-                className="pr-12"
               />
               <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-500">
                 lbs
@@ -60,13 +59,12 @@ export default function MedicalInfo1() {
 
 {/* Blood Pressure */}
 <div className="flex flex-col gap-0.5 flex-1">
-  <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+  <FormLabel>
     Blood Pressure
   </FormLabel>
 
   <div className="relative w-full">
     <Input
-      className="w-full text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5 pr-14"
       placeholder="120/80"
     />
     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-normal text-[#1C1C1E]">
@@ -78,13 +76,12 @@ export default function MedicalInfo1() {
 
 {/* Temperature */}
 <div className="flex flex-col gap-0.5 flex-1">
-  <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+  <FormLabel>
     Temperature
   </FormLabel>
 
   <div className="relative w-full">
     <Input
-      className="w-full text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5 pr-10"
       placeholder="97.2"
     />
     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-normal text-[#1C1C1E]">
@@ -96,13 +93,12 @@ export default function MedicalInfo1() {
 
 {/* Pulse */}
 <div className="flex flex-col gap-0.5 flex-1">
-  <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+  <FormLabel>
     Pulse
   </FormLabel>
 
   <div className="relative w-full">
     <Input
-      className="w-full text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5 pr-12"
       placeholder="78"
     />
     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-normal text-[#1C1C1E]">
@@ -114,13 +110,12 @@ export default function MedicalInfo1() {
 
 {/* Respirations */}
 <div className="flex flex-col gap-0.5 flex-1">
-  <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+  <FormLabel>
     Respirations
   </FormLabel>
 
   <div className="relative w-full">
     <Input
-      className="w-full text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5 pr-12"
       placeholder="19"
     />
     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-normal text-[#1C1C1E]">
@@ -132,16 +127,15 @@ export default function MedicalInfo1() {
             </div>
 
             {/* Second Row */}
-            <div className="flex flex-row gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
 {/* Oxygen Saturation */}
 <div className="flex flex-col gap-0.5 flex-1">
-  <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+  <FormLabel>
     Oxygen Saturation
   </FormLabel>
 
   <div className="relative w-full">
     <Input
-      className="w-full text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5 pr-10"
       placeholder="98"
     />
     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-normal text-[#1C1C1E]">
@@ -153,7 +147,7 @@ export default function MedicalInfo1() {
 
               {/* Weight Status */}
               <div className="flex flex-col gap-0.5 flex-1">
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Weight Status
                 </FormLabel>
                 <RadioGroup className="flex flex-col gap-2">
@@ -161,7 +155,6 @@ export default function MedicalInfo1() {
                     <RadioGroupItem value="increase" id="increase" />
                     <FormLabel
                       htmlFor="increase"
-                      className="text-sm font-normal text-[#1C1C1E]"
                     >
                       Increase
                     </FormLabel>
@@ -170,7 +163,6 @@ export default function MedicalInfo1() {
                     <RadioGroupItem value="static" id="static" />
                     <FormLabel
                       htmlFor="static"
-                      className="text-sm font-normal text-[#1C1C1E]"
                     >
                       Static
                     </FormLabel>
@@ -179,7 +171,6 @@ export default function MedicalInfo1() {
                     <RadioGroupItem value="decrease" id="decrease" />
                     <FormLabel
                       htmlFor="decrease"
-                      className="text-sm font-normal text-[#1C1C1E]"
                     >
                       Decrease
                     </FormLabel>
@@ -189,7 +180,7 @@ export default function MedicalInfo1() {
 
               {/* Reason for weight change */}
               <div className="flex flex-col gap-0.5 flex-1">
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Reason for any weight change
                 </FormLabel>
                 <Textarea
@@ -200,10 +191,10 @@ export default function MedicalInfo1() {
             </div>
 
             {/* Third Row */}
-            <div className="flex flex-row gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
               {/* Pain */}
               <div className="flex flex-col gap-0.5 flex-1">
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Pain
                 </FormLabel>
                 <RadioGroup className="flex flex-col gap-2">
@@ -211,7 +202,6 @@ export default function MedicalInfo1() {
                     <RadioGroupItem value="yes" id="pain-yes" />
                     <FormLabel
                       htmlFor="pain-yes"
-                      className="text-sm font-normal text-[#1C1C1E]"
                     >
                       Yes
                     </FormLabel>
@@ -220,7 +210,6 @@ export default function MedicalInfo1() {
                     <RadioGroupItem value="no" id="pain-no" />
                     <FormLabel
                       htmlFor="pain-no"
-                      className="text-sm font-normal text-[#1C1C1E]"
                     >
                       No
                     </FormLabel>
@@ -230,22 +219,20 @@ export default function MedicalInfo1() {
 
               {/* Level of pain */}
               <div className="flex flex-col gap-0.5 flex-1">
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Level of pain
                 </FormLabel>
                 <Input
-                  className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5"
                   placeholder="7"
                 />
               </div>
 
               {/* Location & Description */}
               <div className="flex flex-col gap-0.5 flex-1">
-                <FormLabel className="text-xs font-semibold text-[#8E8E93]">
+                <FormLabel>
                   Location & Description
                 </FormLabel>
                 <Input
-                  className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5"
                   placeholder="Location & Description"
                 />
               </div>
@@ -255,7 +242,7 @@ export default function MedicalInfo1() {
 
         {/* Medical Information Section */}
         <CollapsibleSection title="Medical Information">
-          <div className="space-y-3">
+          <div className="space-y-3 px-3">
             <div>
               <FormLabel>History of Present Illness</FormLabel>
               <Textarea className="min-h-[80px]" placeholder="Enter Text" />
@@ -326,13 +313,14 @@ export default function MedicalInfo1() {
 
                 {/* Alert & Oriented (A & O) Score */}
         <CollapsibleSection title="Alert & Oriented (A & O)">
-  <div className="bg-gray-100 rounded-lg shadow-sm p-6 mb-6">
-          <h2 className="text-xl font-semibold text-center mb-4">AO Score</h2>
+<div className=' px-3'>
+    <div className="bg-gray-100 rounded-lg shadow-sm p-4 sm:p-6 mb-6">
+          <h2 className="text-lg sm:text-xl font-semibold text-center mb-4">AO Score</h2>
           
           <div className="space-y-3">
-            <div>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2">
               <span className="font-semibold">AO: X1, X2, X3, X4</span>
-              <span className="ml-8">Alert and oriented to person, place, time, and situation</span>
+              <span className="sm:ml-8">Alert and oriented to person, place, time, and situation</span>
             </div>
             
             <p className="text-gray-700">
@@ -346,29 +334,29 @@ export default function MedicalInfo1() {
         </div>
 
         {/* Assessment Form Card */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden  border border-gray-200">
+        <div className="bg-white rounded-lg shadow-md overflow-x-auto border border-gray-200">
           {/* Table Header */}
-          <div className="grid grid-cols-[200px_1fr_1fr] bg-white border border-gray-200">
-            <div className="px-6 py-4 font-semibold text-gray-900">
+          <div className="grid grid-cols-[150px_1fr_1fr] sm:grid-cols-[200px_1fr_1fr] bg-white border border-gray-200 min-w-[600px]">
+            <div className="px-3 sm:px-6 py-4 font-semibold text-gray-900 text-sm sm:text-base">
               AO: X1, X2, X3, X4
             </div>
-            <div className="px-6 py-4 font-semibold text-gray-900 ">
+            <div className="px-3 sm:px-6 py-4 font-semibold text-gray-900 text-sm sm:text-base">
               Question
             </div>
-            <div className="px-6 py-4 font-semibold text-gray-900 ">
+            <div className="px-3 sm:px-6 py-4 font-semibold text-gray-900 text-sm sm:text-base">
               Patient Response
             </div>
           </div>
 
           {/* Oriented to person */}
-          <div className="grid grid-cols-[200px_1fr_1fr] border border-gray-200">
-            <div className="px-6 py-4 text-gray-900">
+          <div className="grid grid-cols-[150px_1fr_1fr] sm:grid-cols-[200px_1fr_1fr] border border-gray-200 min-w-[600px]">
+            <div className="px-3 sm:px-6 py-4 text-gray-900 text-sm sm:text-base">
               Oriented to person
             </div>
-            <div className="px-6 py-4 text-gray-900 ">
+            <div className="px-3 sm:px-6 py-4 text-gray-900 text-sm sm:text-base">
               What&apos;s your name?
             </div>
-            <div className="px-6 py-4 ">
+            <div className="px-3 sm:px-6 py-4">
               <Input
                 type="text"
                 placeholder="Enter response or no response"
@@ -377,14 +365,14 @@ export default function MedicalInfo1() {
           </div>
 
           {/* Oriented to place */}
-          <div className="grid grid-cols-[200px_1fr_1fr] border border-gray-200">
-            <div className="px-6 py-4 text-gray-900">
+          <div className="grid grid-cols-[150px_1fr_1fr] sm:grid-cols-[200px_1fr_1fr] border border-gray-200 min-w-[600px]">
+            <div className="px-3 sm:px-6 py-4 text-gray-900 text-sm sm:text-base">
               Oriented to place
             </div>
-            <div className="px-6 py-4 text-gray-900 ">
+            <div className="px-3 sm:px-6 py-4 text-gray-900 text-sm sm:text-base">
               Where&apos;re we at right now?
             </div>
-            <div className="px-6 py-4 ">
+            <div className="px-3 sm:px-6 py-4">
               <Input
                 type="text"
                 placeholder="Enter response or no response"
@@ -393,14 +381,14 @@ export default function MedicalInfo1() {
           </div>
 
           {/* Oriented to time */}
-          <div className="grid grid-cols-[200px_1fr_1fr] border border-gray-200">
-            <div className="px-6 py-4 text-gray-900">
+          <div className="grid grid-cols-[150px_1fr_1fr] sm:grid-cols-[200px_1fr_1fr] border border-gray-200 min-w-[600px]">
+            <div className="px-3 sm:px-6 py-4 text-gray-900 text-sm sm:text-base">
               Oriented to time
             </div>
-            <div className="px-6 py-4 text-gray-900 ">
+            <div className="px-3 sm:px-6 py-4 text-gray-900 text-sm sm:text-base">
               What&apos;s today&apos;s date, or what year is it?
             </div>
-            <div className="px-6 py-4 ">
+            <div className="px-3 sm:px-6 py-4">
               <Input
                 type="text"
                 placeholder="Enter response or no response"
@@ -409,14 +397,14 @@ export default function MedicalInfo1() {
           </div>
 
           {/* Oriented to situation */}
-          <div className="grid grid-cols-[200px_1fr_1fr] border border-gray-200">
-            <div className="px-6 py-4 text-gray-900">
+          <div className="grid grid-cols-[150px_1fr_1fr] sm:grid-cols-[200px_1fr_1fr] border border-gray-200 min-w-[600px]">
+            <div className="px-3 sm:px-6 py-4 text-gray-900 text-sm sm:text-base">
               Oriented to situation
             </div>
-            <div className="px-6 py-4 text-gray-900 ">
+            <div className="px-3 sm:px-6 py-4 text-gray-900 text-sm sm:text-base">
               Why are you talking to me?
             </div>
-            <div className="px-6 py-4 ">
+            <div className="px-3 sm:px-6 py-4">
               <Input
                 type="text"
                 placeholder="Enter response or no response"
@@ -425,11 +413,11 @@ export default function MedicalInfo1() {
           </div>
 
           {/* AO Score */}
-          <div className="grid grid-cols-[200px_1fr_1fr] border border-gray-200">
-            <div className="px-6 py-4 text-gray-900">
+          <div className="grid grid-cols-[150px_1fr_1fr] sm:grid-cols-[200px_1fr_1fr] border border-gray-200 min-w-[600px]">
+            <div className="px-3 sm:px-6 py-4 text-gray-900 text-sm sm:text-base">
               AO Score
             </div>
-            <div className="px-6 py-4  col-span-2">
+            <div className="px-3 sm:px-6 py-4 col-span-2">
               <Input
                 type="text"
                 placeholder="Enter X1, X2, X3, or X4"
@@ -437,13 +425,14 @@ export default function MedicalInfo1() {
             </div>
           </div>
         </div>
+</div>
         </CollapsibleSection>
 
 
 
         {/* Additional Notes Section */}
         <CollapsibleSection title="Additional Notes">
-          <div>
+          <div className="px-3">
             <FormLabel>Additional Notes</FormLabel>
             <Textarea className="min-h-[80px]" placeholder="Enter Text" />
           </div>
@@ -451,10 +440,11 @@ export default function MedicalInfo1() {
 
         {/* Medications Section */}
         <CollapsibleSection title="Medications">
-          {/* Frequency Table */}
+<div className="px-3">
+            {/* Frequency Table */}
           <div className="bg-[#e5e5ea] p-4 rounded mb-6">
             <h3 className="text-lg font-semibold mb-4 text-center">Frequency</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
               <div>
                 <span className="font-medium">QD or qd:</span>
                 <span className="ml-2">Once daily</span>
@@ -493,7 +483,7 @@ export default function MedicalInfo1() {
           {/* Quantity Table */}
           <div className="bg-[#e5e5ea] p-4 rounded mb-6">
             <h3 className="text-lg font-semibold mb-4 text-center">Quantity</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
               <div>
                 <span className="font-medium">tab(s):</span>
                 <span className="ml-2">Tablet(s)</span>
@@ -531,6 +521,7 @@ export default function MedicalInfo1() {
             showFrequencyGuide={false}
             showQuantityGuide={false}
           />
+</div>
         </CollapsibleSection>
       </div>
     </div>

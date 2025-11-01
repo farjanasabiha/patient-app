@@ -10,51 +10,51 @@ import { CollapsibleSection } from "@/components/Common/sections/CollapsibleSect
 export default function LivingHabits() {
   return (
     <div className="mx-auto px-[1px]">
-      <div className="space-y-6 grid grid-cols-3 gap-10">
+      <div className="space-y-4 sm:space-y-6 grid grid-cols-2 gap-10">
         {/* Smoking Habits Section */}
         <CollapsibleSection title="Smoking Habits">
-<div className="grid grid-cols-1 md:grid-cols-2 items-start justify-between gap-3 px-3">
+<div className="grid grid-cols-1 md:grid-cols-2 items-start justify-between gap-3 sm:gap-6 px-3">
   <div className="md:justify-self-start">
-    <FormLabel className="text-lg mb-6 font-medium text-[#8E8E93] font-['Poppins']">
+    <FormLabel>
       Client Smokes
     </FormLabel>
-    <RadioGroup className="">
+    <RadioGroup className="flex items-center gap-5">
       <div className="flex items-center gap-2">
         <RadioGroupItem value="yes" id="smoking-yes" />
-        <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+        <label>
           Yes
-        </FormLabel>
+        </label>
       </div>
       <div className="flex items-center gap-2">
         <RadioGroupItem value="no" id="smoking-no" />
-        <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+        <label>
           No
-        </FormLabel>
+        </label>
       </div>
     </RadioGroup>
   </div>
   
 
   <div className="md:justify-self-end">
-    <FormLabel className="text-lg mb-6 font-medium text-[#8E8E93] font-['Poppins']">
+    <FormLabel>
       Degree of Problem
     </FormLabel>
     <RadioGroup>
       <div className="flex items-center gap-2">
         <RadioGroupItem value="mild" id="smoking-mild" />
-        <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+        <FormLabel>
           No Problem
         </FormLabel>
       </div>
       <div className="flex items-center gap-2">
         <RadioGroupItem value="moderate" id="smoking-moderate" />
-        <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+        <FormLabel>
           Some Problem
         </FormLabel>
       </div>
       <div className="flex items-center gap-2">
         <RadioGroupItem value="severe" id="smoking-severe" />
-        <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+        <FormLabel>
           Major Problem
         </FormLabel>
       </div>
@@ -66,46 +66,46 @@ export default function LivingHabits() {
 
         {/* Alcohol Consumption Section */}
         <CollapsibleSection title="Alcohol Consumption">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-3">
-            <div>
-              <FormLabel className="text-lg mb-6 font-medium text-[#8E8E93] font-['Poppins']">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 px-3">
+            <div className="md:justify-self-start">
+              <FormLabel>
                 Client Drinks
               </FormLabel>
-              <RadioGroup>
+              <RadioGroup className="flex items-center gap-5">
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="yes" id="alcohol-yes" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     Yes
-                  </FormLabel>
+                  </label>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="no" id="alcohol-no" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <label>
                     No
-                  </FormLabel>
+                  </label>
                 </div>
               </RadioGroup>
             </div>
-            <div>
-              <FormLabel className="text-lg mb-6 font-medium text-[#8E8E93] font-['Poppins']">
+            <div className="md:justify-self-end">
+              <FormLabel>
                 Degree of Problem
               </FormLabel>
               <RadioGroup>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="mild" id="alcohol-mild" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <FormLabel>
                     No Problem
                   </FormLabel>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="moderate" id="smoking-moderate" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <FormLabel>
                     Some Problem
                   </FormLabel>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="severe" id="smoking-severe" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <FormLabel>
                     Major Problem
                   </FormLabel>
                 </div>
@@ -116,15 +116,15 @@ export default function LivingHabits() {
 
         {/* Eating Habits Section */}
         <CollapsibleSection title="Eating Habits">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 px-3">
             <div>
-              <FormLabel className="text-lg mb-6 font-medium text-[#8E8E93] font-['Poppins']">
+              <FormLabel>
                 Select Diet
               </FormLabel>
               <RadioGroup>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="independent" id="eating-independent" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <FormLabel>
                     Good
                   </FormLabel>
                 </div>
@@ -133,34 +133,33 @@ export default function LivingHabits() {
                     value="needs-assistance"
                     id="eating-assistance"
                   />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <FormLabel>
                     Fair
                   </FormLabel>
                 </div>
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="dependent" id="eating-dependent" />
-                  <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                  <FormLabel>
                     Poor
                   </FormLabel>
                 </div>
               </RadioGroup>
             </div>
             <div>
-              <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+              <FormLabel>
                 Comments
               </FormLabel>
               <Textarea
                 placeholder="Enter Text"
-                className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5 min-h-[100px] resize-none"
               />
             </div>
           </div>
         </CollapsibleSection>
         {/* Current Diet Section */}
         <CollapsibleSection title="Current Diet">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 px-3">
             <div>
-              <FormLabel className="text-lg mb-6 font-medium text-[#8E8E93] font-['Poppins']">
+              <FormLabel>
                 Select Diet
               </FormLabel>
               <div className="space-y-2">
@@ -174,7 +173,7 @@ export default function LivingHabits() {
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <Checkbox className="w-6 h-6" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                    <FormLabel>
                       {item}
                     </FormLabel>
                   </div>
@@ -183,21 +182,19 @@ export default function LivingHabits() {
             </div>
 <div className="space-y-3">
               <div>
-              <FormLabel className="text-lg mb-6 font-medium text-[#8E8E93] font-['Poppins']">
+              <FormLabel>
                 Takes Supplement (E.g. Ensure)
               </FormLabel>
               <Input
                 placeholder="Supplements"
-                className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5"
               />
             </div>
             <div>
-              <FormLabel className="text-lg mb-6 font-medium text-[#8E8E93] font-['Poppins']">
+              <FormLabel>
                 Nutritional Requirement
               </FormLabel>
               <Input
                 placeholder="Nutritional Requirement"
-                className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5"
               />
             </div>
 </div>
@@ -206,13 +203,12 @@ export default function LivingHabits() {
 
         {/* Additional Notes Section */}
         <CollapsibleSection title="Additional Notes">
-          <div>
-            <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+          <div className="px-3">
+            <FormLabel>
               Additional Notes
             </FormLabel>
             <Textarea
               placeholder="Enter Text"
-              className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5 min-h-[100px] resize-none w-full"
             />
           </div>
         </CollapsibleSection>

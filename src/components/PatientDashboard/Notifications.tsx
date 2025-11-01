@@ -25,7 +25,7 @@ export const Notifications: React.FC<{ title?: string; items: NotificationItem[]
       <h3 className="font-poppins font-semibold text-[14px] leading-[21px] text-[#1C1C1E]">
         {title}
       </h3>
-      <ul className=" w-full grid grid-cols-2 gap-x-10 gap-y-4">
+      <ul className=" w-full grid grid-cols-1 xl:grid-cols-2 gap-x-10 gap-y-4">
         {items.map((item, index) => (
           <li
             key={index}

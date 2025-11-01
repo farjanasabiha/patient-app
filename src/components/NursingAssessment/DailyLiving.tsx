@@ -10,11 +10,11 @@ import { Textarea } from "../ui/textarea";
 
 export default function DailyLiving() {
   const OtherCheckboxWithInput = ({ label }: { label: string }) => (
-    <div className="flex flex-row items-start gap-2 h-[54px]">
+    <div className="flex flex-row items-start gap-2 min-h-[54px]">
       <div className="flex-none order-0 w-6 h-6">
         <Checkbox className="border-2 border-[#8E8E93]" />
       </div>
-      <div className="flex flex-col justify-center items-start gap-0.5 w-[calc(66.67vw/3)] order-1 h-[54px]">
+      <div className="flex flex-col justify-center items-start gap-0.5 flex-1 order-1 min-h-[54px]">
         <FormLabel className="text-sm font-normal text-[#1C1C1E] w-full h-[21px] flex items-center pointer-events-none font-['Poppins']">
           {label}
         </FormLabel>
@@ -28,10 +28,10 @@ export default function DailyLiving() {
 
   return (
     <div className="mx-auto px-[1px]">
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         {/* Communication Section */}
         <CollapsibleSection title="Communication">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
             <div>
               <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
                 Languages Spoken
@@ -174,7 +174,7 @@ export default function DailyLiving() {
 
         {/* Activities of Daily Living Section */}
         <CollapsibleSection title="Activities of Daily Living">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
             <div>
               <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
                 Mobility Aids
@@ -308,7 +308,7 @@ export default function DailyLiving() {
 
         {/* Transferring Section */}
         <CollapsibleSection title="Transferring">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
             <div>
               <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
                 Transfer Ability
@@ -343,10 +343,11 @@ export default function DailyLiving() {
                         Needs Assistance
                       </FormLabel>
                       <div className="pl-0 mt-2 space-y-2">
-                        <div className="flex items-center gap-3">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
                           <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none flex-shrink-0">
                             Needs supervision transferring to:
                           </FormLabel>
+                          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                           <div className="flex items-center gap-2">
                             <Checkbox className="w-6 h-6" />
                             <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
@@ -365,11 +366,13 @@ export default function DailyLiving() {
                               Toilet
                             </FormLabel>
                           </div>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-3">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
                           <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none flex-shrink-0">
                             Needs intermittent assistance transferring to:
                           </FormLabel>
+                          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                           <div className="flex items-center gap-2">
                             <Checkbox className="w-6 h-6" />
                             <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
@@ -388,11 +391,13 @@ export default function DailyLiving() {
                               Toilet
                             </FormLabel>
                           </div>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-3">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
                           <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none flex-shrink-0">
                             Needs continued assistance transferring to:
                           </FormLabel>
+                          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                           <div className="flex items-center gap-2">
                             <Checkbox className="w-6 h-6" />
                             <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
@@ -410,6 +415,7 @@ export default function DailyLiving() {
                             <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
                               Toilet
                             </FormLabel>
+                          </div>
                           </div>
                         </div>
                       </div>
@@ -429,7 +435,7 @@ export default function DailyLiving() {
 
         {/* Bathing Section */}
         <CollapsibleSection title="Bathing">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
             <div className="col-span-2">
               <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
                 Bathing
@@ -633,7 +639,7 @@ export default function DailyLiving() {
 
         {/* Eating Section */}
         <CollapsibleSection title="Eating">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
             <div className="col-span-2">
               <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
                 Eating
@@ -705,7 +711,7 @@ export default function DailyLiving() {
 
         {/* Bladder Control Section */}
         <CollapsibleSection title="Bladder Control">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
             <div className="col-span-2">
               <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
                 Bladder Control
@@ -765,7 +771,7 @@ export default function DailyLiving() {
 
         {/* Bowel Control Section */}
         <CollapsibleSection title="Bowel Control">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
             <div className="col-span-2">
               <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
                 Bowel Control
@@ -825,7 +831,7 @@ export default function DailyLiving() {
 
         {/* Toileting Section */}
         <CollapsibleSection title="Toileting">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
             <div className="col-span-2">
               <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
                 Toileting
@@ -857,7 +863,7 @@ export default function DailyLiving() {
 
         {/* Exercising Section */}
         <CollapsibleSection title="Exercising">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
             <div className="col-span-2">
               <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
                 Exercising
@@ -979,7 +985,7 @@ export default function DailyLiving() {
 
         {/* Additional Notes Section */}
         <CollapsibleSection title="Additional Notes">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
             <div className="col-span-3">
               <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
                 Additional Notes

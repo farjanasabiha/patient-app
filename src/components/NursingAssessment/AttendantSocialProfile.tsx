@@ -9,30 +9,29 @@ import { Textarea } from "../ui/textarea";
 
 export default function AttendantSocialProfile() {
   const OtherCheckboxWithInput = ({ label }: { label: string }) => (
-    <div className="flex flex-row items-start gap-2 h-[54px]">
+    <div className="flex flex-row items-start gap-2 min-h-[54px]">
       <div className="flex-none order-0 w-6 h-6">
         <Checkbox className="border-2 border-[#8E8E93]" />
       </div>
-      <div className="flex flex-col justify-center items-start gap-0.5 w-[calc(66.67vw/3)] order-1 h-[54px]">
-        <FormLabel className="text-sm font-normal text-[#1C1C1E] w-full h-[21px] flex items-center pointer-events-none font-['Poppins']">
+      <div className="flex flex-col justify-center items-start gap-0.5 flex-1 order-1 min-h-[54px]">
+        <FormLabel>
           {label}
         </FormLabel>
         <Input
           placeholder="Enter Text"
-          className="h-[31px] px-2.5 py-1.5 border border-[#8E8E93] rounded text-sm font-normal text-[#1C1C1E] font-['Poppins'] w-full"
         />
       </div>
     </div>
   );
   return (
     <div className="mx-auto px-[1px]">
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6 grid grid-cols-2 gap-10">
         {/* Attendant Profile Section */}
         <CollapsibleSection title="Attendant Profile">
-          <div className="flex flex-row items-start gap-6">
+          <div className="flex flex-col md:flex-row items-start gap-3 sm:gap-6 px-3">
             {/* Attendant */}
             <div className="flex flex-col items-start gap-0.5 flex-1">
-              <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+              <FormLabel>
                 Attendant
               </FormLabel>
               <div className="flex flex-col gap-2 w-full">
@@ -40,7 +39,6 @@ export default function AttendantSocialProfile() {
                   <Checkbox id="independent" className="w-6 h-6" />
                   <FormLabel
                     htmlFor="independent"
-                    className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none"
                   >
                     Independent
                   </FormLabel>
@@ -49,7 +47,6 @@ export default function AttendantSocialProfile() {
                   <Checkbox id="needs-attendant" className="w-6 h-6" />
                   <FormLabel
                     htmlFor="needs-attendant"
-                    className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none"
                   >
                     Needs an attendant
                   </FormLabel>
@@ -59,14 +56,14 @@ export default function AttendantSocialProfile() {
 
             {/* Attendant needs met by */}
             <div className="flex flex-col items-start gap-0.5 flex-1">
-              <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+              <FormLabel>
                 Attendant needs met by
               </FormLabel>
               <div className="flex flex-col gap-2 w-full">
                 {["Spouse", "Friend", "Family"].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <Checkbox className="w-6 h-6" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                    <FormLabel>
                       {item}
                     </FormLabel>
                   </div>
@@ -77,7 +74,7 @@ export default function AttendantSocialProfile() {
 
             {/* Frequency of attendant assistance */}
             <div className="flex flex-col items-start gap-0.5 flex-1">
-              <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+              <FormLabel>
                 Frequency of attendant assistance
               </FormLabel>
               <div className="flex flex-col gap-2 w-full">
@@ -89,7 +86,7 @@ export default function AttendantSocialProfile() {
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <Checkbox className="w-6 h-6" />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                    <FormLabel>
                       {item}
                     </FormLabel>
                   </div>
@@ -101,10 +98,10 @@ export default function AttendantSocialProfile() {
 
         {/* Social Profile Section */}
         <CollapsibleSection title="Social Profile">
-          <div className="flex flex-row items-start gap-6">
+          <div className="flex flex-col md:flex-row items-start gap-3 sm:gap-6 px-3">
             {/* Housing */}
             <div className="flex flex-col items-start gap-0.5 flex-1">
-              <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+              <FormLabel>
                 Housing
               </FormLabel>
               <RadioGroup className="flex flex-col gap-2 w-full">
@@ -118,22 +115,21 @@ export default function AttendantSocialProfile() {
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <RadioGroupItem value={item.toLowerCase()} />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                    <label>
                       {item}
-                    </FormLabel>
+                    </label>
                   </div>
                 ))}
-                <div className="flex flex-row items-start gap-2 h-[54px]">
+                <div className="flex flex-row items-start gap-2 min-h-[54px]">
                   <div className="flex-none order-0 w-6 h-6">
                     <RadioGroupItem value="other" />
                   </div>
-                  <div className="flex flex-col justify-center items-start gap-0.5 w-[calc(66.67vw/3)] order-1 h-[54px]">
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] w-full h-[21px] flex items-center pointer-events-none font-['Poppins']">
+                  <div className="flex flex-col justify-center items-start gap-0.5 flex-1 order-1 min-h-[54px]">
+                    <label>
                       Other
-                    </FormLabel>
+                    </label>
                     <Input
                       placeholder="Enter Text"
-                      className="h-[31px] px-2.5 py-1.5 border border-[#8E8E93] rounded text-sm font-normal text-[#1C1C1E] font-['Poppins'] w-full"
                     />
                   </div>
                 </div>
@@ -142,7 +138,7 @@ export default function AttendantSocialProfile() {
 
             {/* Living Companions */}
             <div className="flex flex-col items-start gap-0.5 flex-1">
-              <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+              <FormLabel>
                 Living Companions
               </FormLabel>
               <RadioGroup className="flex flex-col gap-2 w-full">
@@ -159,9 +155,9 @@ export default function AttendantSocialProfile() {
                     <RadioGroupItem
                       value={item.toLowerCase().replace(/\s+/g, "-")}
                     />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                    <label>
                       {item}
-                    </FormLabel>
+                    </label>
                   </div>
                 ))}
               </RadioGroup>
@@ -169,16 +165,16 @@ export default function AttendantSocialProfile() {
 
             {/* Housing Area */}
             <div className="flex flex-col items-start gap-0.5 flex-1">
-              <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+              <FormLabel>
                 Housing Area
               </FormLabel>
               <RadioGroup className="flex flex-col gap-2 w-full">
                 {["Urban", "Rural"].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <RadioGroupItem value={item.toLowerCase()} />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                    <label>
                       {item}
-                    </FormLabel>
+                    </label>
                   </div>
                 ))}
               </RadioGroup>
@@ -186,9 +182,9 @@ export default function AttendantSocialProfile() {
           </div>
 
           {/* Housing Ownership */}
-          <div className="flex flex-row items-start gap-6 mt-6">
+          <div className="flex flex-col md:flex-row items-start gap-3 sm:gap-6 mt-4 sm:mt-6">
             <div className="flex flex-col items-start gap-0.5 flex-1">
-              <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+              <FormLabel>
                 Housing Ownership
               </FormLabel>
               <RadioGroup className="flex flex-col gap-2 w-full">
@@ -197,9 +193,9 @@ export default function AttendantSocialProfile() {
                     <RadioGroupItem
                       value={item.toLowerCase().replace(/\s+/g, "-")}
                     />
-                    <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
+                    <label>
                       {item}
-                    </FormLabel>
+                    </label>
                   </div>
                 ))}
               </RadioGroup>
@@ -211,27 +207,26 @@ export default function AttendantSocialProfile() {
 
         {/* Religion & Ethnicity Section */}
         <CollapsibleSection title="Religion & Ethnicity">
-          <div className="flex flex-row items-start gap-6">
+          <div className="flex flex-col md:flex-row items-start gap-3 sm:gap-6 px-3">
             <div className="flex flex-col items-start gap-0.5 flex-1">
-              <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+              <FormLabel>
                 Religion & Ethnicity
               </FormLabel>
               <div className="flex flex-col gap-2 w-full">
                 {["Religion", "Ethnicity"].map((item) => (
                   <div
                     key={item}
-                    className="flex flex-row items-start gap-2 h-[54px]"
+                    className="flex flex-row items-start gap-2 min-h-[54px]"
                   >
                     <div className="flex-none order-0 w-6 h-6">
                       <Checkbox className="border-2 border-[#8E8E93]" />
                     </div>
-                    <div className="flex flex-col justify-center items-start gap-0.5 w-[calc(66.67vw/3)] order-1 h-[54px]">
-                      <FormLabel className="text-sm font-normal text-[#1C1C1E] w-full h-[21px] flex items-center pointer-events-none font-['Poppins']">
+                    <div className="flex flex-col justify-center items-start gap-0.5 flex-1 order-1 min-h-[54px]">
+                      <label>
                         {item}
-                      </FormLabel>
+                      </label>
                       <Input
                         placeholder="Enter Text"
-                        className="h-[31px] px-2.5 py-1.5 border border-[#8E8E93] rounded text-sm font-normal text-[#1C1C1E] font-['Poppins'] w-full"
                       />
                     </div>
                   </div>
@@ -245,36 +240,33 @@ export default function AttendantSocialProfile() {
 
         {/* Orders for Discipline & Goals Section */}
         <CollapsibleSection title="Orders for Discipline & Goals">
-          <div className="flex flex-row items-start gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-3 sm:gap-6 px-3">
             {/* Orders of Discipline 1 */}
             <div className="flex flex-col items-start gap-0.5 flex-1">
-              <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+              <FormLabel>
                 Orders of Discipline 1
               </FormLabel>
               <Textarea
-                className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5 min-h-[220px] resize-none"
                 defaultValue="The RN to assess the patient and supervise the aide at least every six months. Additional assessments must be conducted as needed (PRN) in response to observable changes in the patient's condition, post-hospitalization, or following rehabilitation. The RN to document findings, update the care plan accordingly, and ensure compliance with state regulations."
               />
             </div>
 
             {/* Orders of Discipline 2 */}
             <div className="flex flex-col items-start gap-0.5 flex-1">
-              <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+              <FormLabel>
                 Orders of Discipline 2
               </FormLabel>
               <Textarea
-                className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5 min-h-[220px] resize-none"
                 defaultValue="PCA/HHA: To assist patient with ADLs/IADLs for 2-3 days per week, 6-8 hrs per visit."
               />
             </div>
 
             {/* Goals/Rehabilitation */}
             <div className="flex flex-col items-start gap-0.5 flex-1">
-              <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+              <FormLabel>
                 Goals/Rehabilitation
               </FormLabel>
               <Textarea
-                className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5 min-h-[220px] resize-none"
                 defaultValue="Assist with ADLs, Fall precaution and prevention, Maintain adequate nutrition and hydration, keep patient encouraged and motivated. watch for any unusual signs and symptoms, and if noted, report to the supervising RN."
               />
             </div>
@@ -283,13 +275,12 @@ export default function AttendantSocialProfile() {
 
         {/* Additional Notes Section */}
         <CollapsibleSection title="Additional Notes">
-          <div className="flex flex-col items-start gap-0.5 w-full">
-            <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
+          <div className="flex flex-col items-start gap-0.5 w-full px-3">
+            <FormLabel>
               Additional Notes
             </FormLabel>
             <Textarea
               placeholder="Enter Text"
-              className="text-sm font-normal text-[#1C1C1E] border-[#8E8E93] rounded px-2.5 py-1.5 min-h-[100px] resize-none w-full"
             />
           </div>
         </CollapsibleSection>

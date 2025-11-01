@@ -50,7 +50,7 @@ export default function DynamicDiagnosis({
   const DiagnosisContent = () => (
     <div className="flex flex-col gap-3">
       {diagnoses.map((diagnosis, index) => (
-        <div key={diagnosis.id} className="flex flex-col gap-3 mb-3">
+        <div key={diagnosis.id} className="flex flex-col gap-3 mb-3 px-3">
           {/* Section Header with Number and Delete Button */}
           <div className="flex items-center gap-4">
             <span className="text-sm font-semibold text-[#1C1C1E] font-poppins">

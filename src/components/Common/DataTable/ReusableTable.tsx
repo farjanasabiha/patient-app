@@ -303,8 +303,8 @@ export function ReusableTable<T>({
       className={`flex flex-col h-full bg-white rounded-[10px] ${className}`}
     >
       <div className="flex-grow overflow-hidden">
-        <div className="border border-[#c7c7cc] rounded-[10px] overflow-hidden min-w-full h-full">
-          <table className="w-full">
+        <div className="border border-[#c7c7cc] rounded-[10px] overflow-x-auto min-w-full h-full">
+          <table className="w-full min-w-[800px]">
             <thead>
               <tr
                 className="grid h-[45px] border-b border-[#c7c7cc]"

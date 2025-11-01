@@ -96,13 +96,13 @@ export const StepNavigation = ({
 
   return (
     <>
-      <div className="h-px bg-[#C7C7CC] mt-6" />
-      <div className="flex justify-between mt-6 gap-4">
-        <div className="flex justify-between gap-4">
+      <div className="h-px bg-[#C7C7CC] mt-4 sm:mt-6" />
+      <div className="flex flex-col sm:flex-row justify-between items-center mt-4 sm:mt-6 gap-3 sm:gap-4">
+        <div className="flex justify-start gap-2 sm:gap-4 w-full sm:w-auto order-2 sm:order-1">
           {(!isFirstStep || !hideBackOnFirst) && (
             <PrimaryButton
               variant="outline"
-              className="px-14 py-2"
+              className="px-8 sm:px-12 md:px-14 py-2 flex-1 sm:flex-none"
               onClick={onBack}
               disabled={isSubmitting}
             >
@@ -110,14 +110,14 @@ export const StepNavigation = ({
             </PrimaryButton>
           )}
         </div>
-        <div className="flex justify-center items-center">
-          <div className="text-sm text-[#8e8e93]">
-            {currentStep + 1}/{totalSteps}
+        <div className="flex justify-center items-center order-1 sm:order-2">
+          <div className="text-xs sm:text-sm text-[#8e8e93]">
+            Step {currentStep + 1} of {totalSteps}
           </div>
         </div>
-        <div className="flex justify-between gap-4">
+        <div className="flex justify-end gap-2 sm:gap-4 w-full sm:w-auto order-3">
           <PrimaryButton
-            className="px-14 py-2"
+            className="px-8 sm:px-12 md:px-14 py-2 flex-1 sm:flex-none"
             onClick={() => {
               if (isLastStep) {
                 handleSubmit();

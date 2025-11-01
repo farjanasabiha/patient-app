@@ -164,13 +164,12 @@ export default function ProfileForm({
   }, [formData, onChange]);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10">
       {/* Patient Demographics */}
       {sections.includes("demographics") && (
         <CollapsibleSection title="Patient Demographics">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-4 sm:gap-x-6 px-3">
             {/* SOC and MRN spanning 2 columns */}
-            <div className="md:col-span-2 flex gap-6">
               <div className="flex-1 flex flex-col gap-0.5">
                 <FormLabel required>Start of Care (SOC)</FormLabel>
                 <DatePicker
@@ -186,8 +185,6 @@ export default function ProfileForm({
                   onChange={(e) => handleFormChange("mrn", e.target.value)}
                 />
               </div>
-            </div>
-            <div></div>
 
             {/* Rest of the fields in 3 columns */}
             <div className="flex flex-col gap-0.5">
@@ -379,8 +376,8 @@ export default function ProfileForm({
           />
 
           {/* Service Information Section */}
-          <div className="flex flex-row items-center gap-6 mt-6">
-            <div className="flex flex-col gap-0.5 flex-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-4 sm:gap-x-6 mt-6">
+            <div className="flex flex-col gap-0.5">
               <FormLabel>Type of Service needed</FormLabel>
               <Input
                 placeholder="Service Type"
@@ -391,7 +388,7 @@ export default function ProfileForm({
               />
             </div>
 
-            <div className="flex flex-col gap-0.5 flex-1">
+            <div className="flex flex-col gap-0.5">
               <FormLabel>Level of Service needed</FormLabel>
               <div className="relative">
                 <Select
@@ -412,7 +409,7 @@ export default function ProfileForm({
               </div>
             </div>
 
-            <div className="flex flex-col gap-0.5 flex-1">
+            <div className="flex flex-col gap-0.5">
               {/* Empty column for grid alignment */}
             </div>
           </div>
@@ -422,7 +419,7 @@ export default function ProfileForm({
       {/* Primary Care Physician Information */}
       {sections.includes("physician") && (
         <CollapsibleSection title="Primary Care Physician Information">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-4 sm:gap-x-6 px-3">
             <div className="flex flex-col gap-0.5">
               <FormLabel>PCP First Name</FormLabel>
               <Input
@@ -536,7 +533,7 @@ export default function ProfileForm({
       {/* Pharmacy */}
       {sections.includes("pharmacy") && (
         <CollapsibleSection title="Pharmacy">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-4 sm:gap-x-6 px-3">
             <div className="flex flex-col gap-0.5">
               <FormLabel>Pharmacy Name</FormLabel>
               <Input
@@ -547,7 +544,6 @@ export default function ProfileForm({
                 }
               />
             </div>
-            <div className="md:col-span-2"></div>
             <div className="flex flex-col gap-0.5">
               <FormLabel>Phone Number</FormLabel>
               <Input

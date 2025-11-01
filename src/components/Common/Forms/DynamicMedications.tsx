@@ -79,7 +79,7 @@ export default function DynamicMedications({
   ];
 
   const MedicationContent = () => (
-    <div className={`space-y-6 ${className}`}>
+    <div className={`space-y-6 px-3 ${className}`}>
       {/* Frequency Guide */}
       {showFrequencyGuide && (
         <div className="bg-gray-100 rounded-md p-4">
@@ -137,12 +137,11 @@ export default function DynamicMedications({
             {/* Medication Form */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
               <div className="space-y-1">
-                <FormLabel className="text-xs font-semibold text-neutral-400">
+                <FormLabel>
                   Medication
                 </FormLabel>
                 <Input
                   placeholder="Enter medication"
-                  className="bg-sky-50"
                   value={medication.medication}
                   onChange={(e) =>
                     updateMedication(
@@ -154,12 +153,11 @@ export default function DynamicMedications({
                 />
               </div>
               <div className="space-y-1">
-                <FormLabel className="text-xs font-semibold text-neutral-400">
+                <FormLabel>
                   Dose
                 </FormLabel>
                 <Input
                   placeholder="Enter dose"
-                  className="bg-sky-50"
                   value={medication.dose}
                   onChange={(e) =>
                     updateMedication(medication.id, "dose", e.target.value)
@@ -167,7 +165,7 @@ export default function DynamicMedications({
                 />
               </div>
               <div className="space-y-1">
-                <FormLabel className="text-xs font-semibold text-neutral-400">
+                <FormLabel>
                   Frequency
                 </FormLabel>
                 <Select
@@ -176,7 +174,7 @@ export default function DynamicMedications({
                     updateMedication(medication.id, "frequency", value)
                   }
                 >
-                  <SelectTrigger className="bg-sky-50">
+                  <SelectTrigger className="">
                     <SelectValue placeholder="Select frequency" />
                   </SelectTrigger>
                   <SelectContent>
@@ -191,12 +189,11 @@ export default function DynamicMedications({
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
               <div className="space-y-1">
-                <FormLabel className="text-xs font-semibold text-neutral-400">
+                <FormLabel>
                   Route/Changes
                 </FormLabel>
                 <Input
                   placeholder="Enter route/changes"
-                  className="bg-sky-50"
                   value={medication.route}
                   onChange={(e) =>
                     updateMedication(medication.id, "route", e.target.value)

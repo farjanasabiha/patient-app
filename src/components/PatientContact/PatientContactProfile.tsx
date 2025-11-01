@@ -73,9 +73,9 @@ export default function PatientContactProfile() {
       <div className="space-y-6">
         {/* Patient Demographics */}
         <CollapsibleSection title="Patient Demographics">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-4 sm:gap-x-6">
             {/* SOC and MRN spanning 2 columns */}
-            <div className="md:col-span-2 flex gap-6">
+            <div className="md:col-span-2 flex flex-col sm:flex-row gap-3 sm:gap-6">
               <div className="flex-1 flex flex-col gap-0.5">
                 <FormLabel required>Start of Care (SOC)</FormLabel>
                 <DatePicker date={startOfCare} setDate={setStartOfCare} />
@@ -200,7 +200,7 @@ export default function PatientContactProfile() {
           />
 
             <div className="md:col-span-3">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                 {/* Column 1: Insurance options (vertical) */}
                 <div className="w-full md:w-72">
                   <RadioGroup
@@ -208,7 +208,7 @@ export default function PatientContactProfile() {
                     onValueChange={setInsuranceType}
                     className="flex flex-col gap-2 mt-2"
                   >
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-4">
                       <RadioGroupItem value="medicaid" id="medicaid" />
                       <label
                         htmlFor="medicaid"
@@ -217,7 +217,7 @@ export default function PatientContactProfile() {
                         Medicaid
                       </label>
                     </div>
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-4">
                       <RadioGroupItem value="medicare" id="medicare" />
                       <label
                         htmlFor="medicare"
@@ -226,7 +226,7 @@ export default function PatientContactProfile() {
                         Medicare
                       </label>
                     </div>
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-4">
                       <RadioGroupItem
                         value="private-insurance"
                         id="private-insurance"
@@ -238,7 +238,7 @@ export default function PatientContactProfile() {
                         Private Insurance
                       </label>
                     </div>
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-4">
                       <RadioGroupItem value="private-pay" id="private-pay" />
                       <label
                         htmlFor="private-pay"
@@ -259,7 +259,7 @@ export default function PatientContactProfile() {
                         onValueChange={setPrivatePayMethod}
                         className="flex flex-col gap-2"
                       >
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-4">
                           <RadioGroupItem
                             value="account-number"
                             id="pp-account-number"
@@ -271,7 +271,7 @@ export default function PatientContactProfile() {
                             Account Number
                           </label>
                         </div>
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-4">
                           <RadioGroupItem
                             value="credit-card"
                             id="pp-credit-card"
@@ -297,7 +297,7 @@ export default function PatientContactProfile() {
             {insuranceType === "private-pay" &&
               privatePayMethod === "account-number" && (
                 <div className="md:col-span-3">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-4 sm:gap-x-6">
                     <div className="flex flex-col gap-0.5">
                       <FormLabel required>Bank Name</FormLabel>
                       <Input placeholder="Bank Name" />
@@ -318,7 +318,7 @@ export default function PatientContactProfile() {
             {insuranceType === "private-pay" &&
               privatePayMethod === "credit-card" && (
                 <div className="md:col-span-3">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-4 sm:gap-x-6">
                     <div className="flex flex-col gap-0.5">
                       <FormLabel required>Name on Card</FormLabel>
                       <Input placeholder="Name on Card" />
@@ -332,7 +332,7 @@ export default function PatientContactProfile() {
                       <Input placeholder="MM/YY" />
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6 mt-3">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-4 sm:gap-x-6 mt-3">
                     <div className="flex flex-col gap-0.5">
                       <FormLabel required>Security Code</FormLabel>
                       <Input placeholder="CVV" />
@@ -432,8 +432,8 @@ export default function PatientContactProfile() {
           <div className="p-3 bg-sky-100 rounded-md flex flex-col items-start gap-3 w-full">
             <div className="w-full p-3 bg-white rounded-md inline-flex justify-start items-start gap-6">
               <div className="w-full inline-flex flex-col justify-start items-start gap-3">
-                <div className="w-full inline-flex justify-start items-center gap-6">
-                  <div className="flex-1 inline-flex flex-col justify-start items-start gap-0.5">
+                <div className="w-full flex flex-col sm:flex-row justify-start items-start sm:items-center gap-3 sm:gap-6">
+                  <div className="flex-1 w-full inline-flex flex-col justify-start items-start gap-0.5">
                     <FormLabel>Authorization Number</FormLabel>
                     <Input
                       placeholder="XXXXXXXXXX"
@@ -441,14 +441,14 @@ export default function PatientContactProfile() {
                       onChange={(e) => setAuthorizationNumber(e.target.value)}
                     />
                   </div>
-                  <div className="flex-1 inline-flex flex-col justify-start items-start gap-0.5">
+                  <div className="flex-1 w-full inline-flex flex-col justify-start items-start gap-0.5">
                     <FormLabel>Service Start Date</FormLabel>
                     <DatePicker
                       date={startDate}
                       setDate={setStartDate}
                     />
                   </div>
-                  <div className="flex-1 inline-flex flex-col justify-start items-start gap-0.5">
+                  <div className="flex-1 w-full inline-flex flex-col justify-start items-start gap-0.5">
                     <FormLabel>Service End Date</FormLabel>
                     <DatePicker
                       date={endDate}
@@ -457,8 +457,8 @@ export default function PatientContactProfile() {
                   </div>
                 </div>
 
-                <div className="w-full inline-flex justify-start items-center gap-6">
-                  <div className="flex-1 inline-flex flex-col justify-start items-start gap-0.5">
+                <div className="w-full flex flex-col sm:flex-row justify-start items-start sm:items-center gap-3 sm:gap-6">
+                  <div className="flex-1 w-full inline-flex flex-col justify-start items-start gap-0.5">
                     <FormLabel>Code</FormLabel>
                     <Input
                       placeholder="Code"
@@ -466,7 +466,7 @@ export default function PatientContactProfile() {
                       onChange={(e) => setCode(e.target.value)}
                     />
                   </div>
-                  <div className="flex-1 inline-flex flex-col justify-start items-start gap-0.5">
+                  <div className="flex-1 w-full inline-flex flex-col justify-start items-start gap-0.5">
                     <FormLabel>Modifier</FormLabel>
                     <Input
                       placeholder="Modifier"
@@ -474,11 +474,12 @@ export default function PatientContactProfile() {
                       onChange={(e) => setModifier(e.target.value)}
                     />
                   </div>
-                  <div className="flex-1" />
+                  <div className="flex-1 hidden sm:block" />
                 </div>
 
                 {/* Weekly hours table */}
-                <div className="w-full bg-white rounded-[10px] flex flex-col justify-start items-start">
+                <div className="w-full overflow-x-auto -mx-3 sm:mx-0">
+                <div className="min-w-[640px] bg-white rounded-[10px] flex flex-col justify-start items-start">
                   <div className="w-full rounded-t-[10px] border border-[#C7C7CC] border-b-0 inline-flex items-center">
                     {[
                       "MON (hrs)",
@@ -491,7 +492,7 @@ export default function PatientContactProfile() {
                     ].map((day) => (
                       <div
                         key={day}
-                        className="flex-1 px-3.5 py-3 text-center text-sm font-semibold text-[#1C1C1E] font-poppins"
+                        className="flex-1 px-2 sm:px-3.5 py-2 sm:py-3 text-center text-xs sm:text-sm font-semibold text-[#1C1C1E] font-poppins"
                       >
                         {day}
                       </div>
@@ -499,36 +500,37 @@ export default function PatientContactProfile() {
                   </div>
                   <div className="w-full rounded-b-[10px] border border-[#C7C7CC] border-t-0 inline-flex items-center">
                     {hoursByDay.map((value, idx) => (
-                      <div key={idx} className="flex-1 px-3.5 py-3">
+                      <div key={idx} className="flex-1 px-2 sm:px-3.5 py-2 sm:py-3">
                         <Input
                           value={value}
                           onChange={(e) =>
                             setHoursForDay(idx, e.target.value)
                           }
-                          className="text-center"
+                          className="text-center text-sm"
                         />
                       </div>
                     ))}
                   </div>
                 </div>
+                </div>
 
                 {/* Auto calculated summary */}
-                <div className="w-full inline-flex justify-start items-center gap-6 h-12">
-                  <div className="flex-1 inline-flex flex-col justify-start items-start gap-0.5">
+                <div className="w-full flex flex-col sm:flex-row justify-start items-start sm:items-center gap-3 sm:gap-6">
+                  <div className="flex-1 w-full inline-flex flex-col justify-start items-start gap-0.5">
                     <FormLabel>Day(s) of Service(s) in a Week</FormLabel>
                     <Input
                       value={`${totalServiceDays} (auto calculate)`}
                       readOnly
                     />
                   </div>
-                  <div className="flex-1 inline-flex flex-col justify-start items-start gap-0.5">
+                  <div className="flex-1 w-full inline-flex flex-col justify-start items-start gap-0.5">
                     <FormLabel>Authorized Number of Hours</FormLabel>
                     <Input
                       value={`${totalAuthorizedHours} (auto calculate)`}
                       readOnly
                     />
                   </div>
-                  <div className="flex-1" />
+                  <div className="flex-1 hidden sm:block" />
                 </div>
               </div>
             </div>
@@ -537,7 +539,7 @@ export default function PatientContactProfile() {
 
         {/* Primary Care Physician Information */}
         <CollapsibleSection title="Primary Care Physician Information">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-4 sm:gap-x-6">
             <div className="flex flex-col gap-0.5">
               <FormLabel>PCP First Name</FormLabel>
               <Input placeholder="First Name" />
@@ -596,7 +598,7 @@ export default function PatientContactProfile() {
 
         {/* Pharmacy */}
         <CollapsibleSection title="Pharmacy">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-4 sm:gap-x-6">
             <div className="flex flex-col gap-0.5">
               <FormLabel>Pharmacy Name</FormLabel>
               <Input placeholder="Pharmacy Name" />

@@ -14,40 +14,39 @@ import { DatePicker } from "@/components/ui/date-picker";
 
 const NursingFinal: React.FC = () => {
   return (
-    <div className="flex flex-col bg-white gap-6 rounded-md">
+    <div className="mx-auto px-[1px]">
+      <div className="space-y-4 sm:space-y-6 grid grid-cols-1 lg:grid-cols-2 gap-10">
       {/* Diagnosis Section */}
       <CollapsibleSection title="Diagnosis">
-        <div className="flex flex-col gap-3">
-          <div className="grid grid-cols-3 gap-6">
+        <div className="flex flex-col gap-3 px-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6">
             {/* Column 1 */}
             <div className="flex flex-col gap-3">
               {/* Primary Diagnosis Code */}
               <div className="flex flex-col gap-0.5">
-                <label className="text-xs font-semibold text-[#8E8E93] font-poppins leading-[18px]">
+                <label>
                   Patient Primary Diagnosis Code
                 </label>
                 <Input
                   placeholder="Primary Diagnosis Code"
-                  className="h-[31px] border-[#8E8E93] font-poppins text-[14px] leading-[21px] text-[#1C1C1E]"
                 />
               </div>
               {/* Secondary Diagnosis Code */}
               <div className="flex flex-col gap-0.5">
-                <label className="text-xs font-semibold text-[#8E8E93] font-poppins leading-[18px]">
+                <label>
                   Patient Secondary Diagnosis Code
                 </label>
                 <Input
                   placeholder="Secondary Diagnosis Code"
-                  className="h-[31px] border-[#8E8E93] font-poppins text-[14px] leading-[21px] text-[#1C1C1E]"
                 />
               </div>
               {/* Type of Service */}
               <div className="flex flex-col gap-0.5">
-                <label className="text-xs font-semibold text-[#8E8E93] font-poppins leading-[18px]">
+                <label>
                   Type of Service needed
                 </label>
                 <Select>
-                  <SelectTrigger className="h-[31px] border-[#8E8E93] font-poppins text-[14px] leading-[21px] text-[#1C1C1E]">
+                  <SelectTrigger>
                     <SelectValue placeholder="Service Type" />
                   </SelectTrigger>
                   <SelectContent>
@@ -62,31 +61,29 @@ const NursingFinal: React.FC = () => {
             <div className="flex flex-col gap-3">
               {/* Primary Diagnosis */}
               <div className="flex flex-col gap-0.5">
-                <label className="text-xs font-semibold text-[#8E8E93] font-poppins leading-[18px]">
+                <label>
                   Patient Primary Diagnosis
                 </label>
                 <Input
                   placeholder="Primary Diagnosis"
-                  className="h-[31px] border-[#8E8E93] font-poppins text-[14px] leading-[21px] text-[#1C1C1E]"
                 />
               </div>
               {/* Secondary Diagnosis */}
               <div className="flex flex-col gap-0.5">
-                <label className="text-xs font-semibold text-[#8E8E93] font-poppins leading-[18px]">
+                <label>
                   Patient Secondary Diagnosis
                 </label>
                 <Input
                   placeholder="Secondary Diagnosis"
-                  className="h-[31px] border-[#8E8E93] font-poppins text-[14px] leading-[21px] text-[#1C1C1E]"
                 />
               </div>
               {/* Level of Service */}
               <div className="flex flex-col gap-0.5">
-                <label className="text-xs font-semibold text-[#8E8E93] font-poppins leading-[18px]">
+                <label>
                   Level of Service needed
                 </label>
                 <Select>
-                  <SelectTrigger className="h-[31px] border-[#8E8E93] font-poppins text-[14px] leading-[21px] text-[#1C1C1E]">
+                  <SelectTrigger>
                     <SelectValue placeholder="Select Level" />
                   </SelectTrigger>
                   <SelectContent>
@@ -106,11 +103,11 @@ const NursingFinal: React.FC = () => {
 
       {/* Vaccination Status Section */}
       <CollapsibleSection title="Vaccination Status">
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 px-3">
           {/* COVID-19 Row */}
-          <div className="flex gap-6">
+          <div className="flex flex-col md:flex-row gap-3 sm:gap-6">
             <div className="flex-1">
-              <label className="text-xs font-semibold text-[#8E8E93] mb-0.5 block">
+              <label>
                 Is all COVID 19 vaccinations done?
               </label>
               <RadioGroup defaultValue="no" className="flex flex-col gap-2">
@@ -125,18 +122,18 @@ const NursingFinal: React.FC = () => {
               </RadioGroup>
             </div>
             <div className="flex-1">
-              <label className="text-xs font-semibold text-[#8E8E93] mb-0.5 block">
+              <label>
                 Notes for Covid 19 vaccine
               </label>
-              <Textarea placeholder="Enter Text" className="h-[100px]" />
+              <Textarea placeholder="Enter Text" />
             </div>
             <div className="flex-1" />
           </div>
 
           {/* Flu Row */}
-          <div className="flex gap-6">
+          <div className="flex flex-col md:flex-row gap-3 sm:gap-6">
             <div className="flex-1">
-              <label className="text-xs font-semibold text-[#8E8E93] mb-0.5 block">
+              <label>
                 Is all FLU vaccinations done?
               </label>
               <RadioGroup defaultValue="no" className="flex flex-col gap-2">
@@ -151,18 +148,18 @@ const NursingFinal: React.FC = () => {
               </RadioGroup>
             </div>
             <div className="flex-1">
-              <label className="text-xs font-semibold text-[#8E8E93] mb-0.5 block">
+              <label>
                 Notes for Flu vaccine
               </label>
-              <Textarea placeholder="Enter Text" className="h-[100px]" />
+              <Textarea placeholder="Enter Text" />
             </div>
             <div className="flex-1" />
           </div>
 
           {/* Pneumococcal Row */}
-          <div className="flex gap-6">
+          <div className="flex flex-col md:flex-row gap-3 sm:gap-6">
             <div className="flex-1">
-              <label className="text-xs font-semibold text-[#8E8E93] mb-0.5 block">
+              <label>
                 Is all Pneumococcal vaccinations done?
               </label>
               <RadioGroup defaultValue="no" className="flex flex-col gap-2">
@@ -177,10 +174,10 @@ const NursingFinal: React.FC = () => {
               </RadioGroup>
             </div>
             <div className="flex-1">
-              <label className="text-xs font-semibold text-[#8E8E93] mb-0.5 block">
+              <label>
                 Notes for Pneumococcal vaccine
               </label>
-              <Textarea placeholder="Enter Text" className="h-[100px]" />
+              <Textarea placeholder="Enter Text" />
             </div>
             <div className="flex-1" />
           </div>
@@ -189,10 +186,10 @@ const NursingFinal: React.FC = () => {
 
       {/* Signature & Date Section */}
       <CollapsibleSection title="Signature & Date">
-        <div className="flex justify-center gap-6">
-          <div className="flex flex-col gap-3 w-1/3">
+        <div className="flex justify-center gap-3 sm:gap-6 px-3">
+          <div className="flex flex-col gap-3 w-full ">
             <div>
-              <label className="text-xs font-semibold text-[#8E8E93] mb-0.5 block">
+              <label>
                 RN Signature
               </label>
               <div className="w-full h-[100px] border border-[#8E8E93] rounded" />
@@ -201,12 +198,11 @@ const NursingFinal: React.FC = () => {
               </button>
             </div>
             <div>
-              <label className="text-xs font-semibold text-[#8E8E93] mb-0.5 block">
+              <label>
                 Sign Date
               </label>
               <DatePicker
                 placeholder="MM/DD/YYYY"
-                className="h-[31px] border-[#8E8E93]"
                 date={new Date()}
                 setDate={(date) => {
                   console.log(date);
@@ -216,6 +212,7 @@ const NursingFinal: React.FC = () => {
           </div>
         </div>
       </CollapsibleSection>
+      </div>
     </div>
   );
 };

@@ -90,7 +90,7 @@ export default function DynamicContacts({
   const ContactForm = () => (
     <div className={`space-y-6 ${className}`}>
       {contacts.map((contact: Contact, index: number) => (
-        <div key={contact.id} className="space-y-3">
+        <div key={contact.id} className="space-y-3 px-3">
           {/* Contact Header with Number and Delete Button */}
           <div className="flex items-center gap-4">
             <span className="text-sm font-semibold text-[#1C1C1E] font-poppins">
@@ -110,7 +110,7 @@ export default function DynamicContacts({
           </div>
 
           {/* Contact Fields Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 gap-x-6">
+          <div className="grid grid-cols-1 md:grid-cols-2  gap-y-3 gap-x-4 sm:gap-x-6">
             {fieldConfig.map((field) => (
               <div key={field.key} className="flex flex-col gap-0.5">
                 <FormLabel required={field.required && index === 0}>

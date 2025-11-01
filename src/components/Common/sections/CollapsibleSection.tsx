@@ -36,13 +36,13 @@ export const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
     >
       <CollapsibleTrigger
         className={cn(
-          "flex flex-row items-center p-2.5 bg-[#F2DEFC] rounded-md",
+          "flex flex-row items-center p-2 bg-[#faf7fc] rounded-[2px] border-l-[#7E22CE] border-l-[5px]",
           "transition-all duration-300 ease-in-out",
           "focus:outline-none focus:ring focus:ring-[#7E22CE]",
           headerClassName
         )}
       >
-        <span className="flex-grow font-poppins font-semibold text-sm text-[#7E22CE] text-center">
+        <span className="flex-grow font-poppins font-semibold text-sm text-[#7E22CE] text-left">
           {title}
         </span>
         <div className="transition-transform duration-300 ease-in-out">

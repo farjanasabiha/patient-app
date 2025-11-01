@@ -68,10 +68,10 @@ function PatientDashboardContent({
   if (user === undefined) {
     return (
       <div className="min-h-screen bg-white">
-        <div className="bg-[#e2f7ff] rounded-lg p-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="bg-[#e2f7ff] rounded-lg p-3 sm:p-4 md:p-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
             {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="h-32 bg-white rounded-lg animate-pulse" />
+              <div key={i} className="h-28 sm:h-32 bg-white rounded-lg animate-pulse" />
             ))}
           </div>
         </div>
@@ -247,72 +247,72 @@ function PatientDashboardContent({
       )}
 
       {/* Header */}
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold text-[#1c1c1e]">
+      <div className="flex justify-between items-center mb-4 sm:mb-6">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#1c1c1e]">
           {propPatientId ? "My Dashboard" : "Patient Dashboard"}
         </h1>
       </div>
 
       {/* Patient Info and Attention Required Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
         {/* Patient Info Card */}
-        <div className=" p-3 bg-[#f8fbff] rounded-md flex flex-col justify-start items-start gap-2.5">
+        <div className="p-3 sm:p-4 bg-[#f8fbff] rounded-md flex flex-col justify-start items-start gap-2.5">
           <div className="w-full flex justify-start items-start gap-3">
-            <div className="relative w-16 h-16">
-              <div className="w-16 h-16 bg-zinc-300 rounded-full border-[1.38px] border-white" />
-              <div className="absolute bottom-0 right-0 w-5 h-5 bg-white rounded-full border border-gray-300 flex items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors">
-                <Camera className="w-3 h-3 text-gray-600" />
+            <div className="relative w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-zinc-300 rounded-full border-[1.38px] border-white" />
+              <div className="absolute bottom-0 right-0 w-4 h-4 sm:w-5 sm:h-5 bg-white rounded-full border border-gray-300 flex items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors">
+                <Camera className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-gray-600" />
               </div>
             </div>
-            <div className="flex-1 flex flex-col justify-center items-start gap-3">
-              <div className="space-y-3">
-                <div className="text-zinc-900 text-sm font-semibold">
+            <div className="flex-1 flex flex-col justify-center items-start gap-2 sm:gap-3 min-w-0">
+              <div className="space-y-2 sm:space-y-3 w-full">
+                <div className="text-zinc-900 text-sm sm:text-base font-semibold truncate">
                   {patient.name}
                 </div>
-                <div className="flex justify-start items-center gap-3">
+                <div className="flex justify-start items-center gap-2 sm:gap-3 flex-wrap">
                   <div className="px-2 py-1 bg-violet-200 rounded-2xl flex justify-center items-center gap-2.5">
-                    <div className="text-indigo-500 text-[10px] font-semibold">
+                    <div className="text-indigo-500 text-[10px] sm:text-xs font-semibold">
                       {patient.location}
                     </div>
                   </div>
                   <div className="px-2 py-1 bg-green-500 rounded-2xl flex justify-center items-center gap-2.5">
-                    <div className="text-white text-[10px] font-semibold">
+                    <div className="text-white text-[10px] sm:text-xs font-semibold">
                       Active
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="w-full flex justify-start items-start gap-6">
-                <div className="flex-1 flex flex-col justify-start items-start gap-0.5 space-y-4">
-                  <div className="w-full flex justify-start items-start gap-0.5">
-                    <div className="w-12 text-zinc-900 text-xs font-semibold">
+              <div className="w-full flex justify-start items-start">
+                <div className="flex-1 flex flex-col justify-start items-start gap-0.5 space-y-2 sm:space-y-4">
+                  <div className="w-full flex justify-start items-start gap-1 sm:gap-2">
+                    <div className="w-14 sm:w-16 text-zinc-900 text-xs sm:text-sm font-semibold flex-shrink-0">
                       DOB:
                     </div>
-                    <div className="flex-1 text-zinc-900 text-xs font-normal">
+                    <div className="flex-1 text-zinc-900 text-xs sm:text-sm font-normal break-words">
                       {patient.dob}
                     </div>
                   </div>
-                  <div className="w-full flex justify-start items-start gap-0.5">
-                    <div className="w-12 text-zinc-900 text-xs font-semibold">
+                  <div className="w-full flex justify-start items-start gap-1 sm:gap-2">
+                    <div className="w-14 sm:w-16 text-zinc-900 text-xs sm:text-sm font-semibold flex-shrink-0">
                       Age:
                     </div>
-                    <div className="flex-1 text-zinc-900 text-xs font-normal">
+                    <div className="flex-1 text-zinc-900 text-xs sm:text-sm font-normal">
                       XX years
                     </div>
                   </div>
-                  <div className="w-full flex justify-start items-start gap-0.5">
-                    <div className="w-12 text-zinc-900 text-xs font-semibold">
+                  <div className="w-full flex justify-start items-start gap-1 sm:gap-2">
+                    <div className="w-14 sm:w-16 text-zinc-900 text-xs sm:text-sm font-semibold flex-shrink-0">
                       Phone:
                     </div>
-                    <div className="flex-1 text-zinc-900 text-xs font-normal">
+                    <div className="flex-1 text-zinc-900 text-xs sm:text-sm font-normal break-all">
                       {patient.phoneNumber}
                     </div>
                   </div>
-                  <div className="w-full flex justify-start items-start gap-0.5">
-                    <div className="w-12 text-zinc-900 text-xs font-semibold">
+                  <div className="w-full flex justify-start items-start gap-1 sm:gap-2">
+                    <div className="w-14 sm:w-16 text-zinc-900 text-xs sm:text-sm font-semibold flex-shrink-0">
                       Email:
                     </div>
-                    <div className="flex-1 text-zinc-900 text-xs font-normal">
+                    <div className="flex-1 text-zinc-900 text-xs sm:text-sm font-normal break-all">
                       {patient.email}
                     </div>
                   </div>
@@ -367,32 +367,32 @@ function PatientDashboardContent({
 
       {/* Action Buttons - Only show for healthcare professionals, not patients */}
       {user?.role !== "Patient" && (
-        <div className="py-6">
-          <div className="w-full flex justify-start items-center gap-3">
+        <div className="py-4 sm:py-6">
+          <div className="w-full flex justify-start items-center gap-2 sm:gap-3 flex-wrap">
             <div
-              className="p-2 bg-teal-50 rounded-3xl border border-teal-400 inline-flex justify-start items-center gap-1 hover:bg-teal-200 transition-colors cursor-pointer group"
+              className="p-2 sm:px-3 sm:py-2 bg-teal-50 rounded-3xl border border-teal-400 inline-flex justify-start items-center gap-1 sm:gap-2 hover:bg-teal-200 transition-colors cursor-pointer group"
               onClick={() => setIsAssignRNDrawerOpen(true)}
             >
               <CaregiverIcon
-                width={24}
-                height={24}
-                className="text-teal-400 group-hover:text-white"
+                width={20}
+                height={20}
+                className="text-teal-400 group-hover:text-white sm:w-6 sm:h-6"
               />
-              <div className="text-teal-400 text-sm font-semibold group-hover:text-white">
+              <div className="text-teal-400 text-xs sm:text-sm font-semibold group-hover:text-white">
                 Assign RN
               </div>
             </div>
             <div
-              className="p-2 bg-orange-50 rounded-3xl border border-amber-500 inline-flex justify-start items-center gap-1 hover:bg-amber-200 transition-colors cursor-pointer group"
+              className="p-2 sm:px-3 sm:py-2 bg-orange-50 rounded-3xl border border-amber-500 inline-flex justify-start items-center gap-1 sm:gap-2 hover:bg-amber-200 transition-colors cursor-pointer group"
               onClick={() => setIsNoteDrawerOpen(true)}
             >
               <CopyFileIcon
 
-                width={20}
-                height={20}
-                className="text-amber-500 group-hover:text-white"
+                width={18}
+                height={18}
+                className="text-amber-500 group-hover:text-white sm:w-5 sm:h-5"
               />
-              <div className="text-amber-500 text-sm font-semibold group-hover:text-white">
+              <div className="text-amber-500 text-xs sm:text-sm font-semibold group-hover:text-white">
                 Notes
               </div>
             </div>
@@ -402,14 +402,14 @@ function PatientDashboardContent({
 
       {/* Date Section - Only show for healthcare professionals, not patients */}
       {user?.role !== "Patient" && (
-        <div className="flex items-center mb-0">
-          <button className="ml-4">
-            <PlusIcon className="text-[#8E8E93]" />
+        <div className="flex items-center mb-0 overflow-x-auto">
+          <button className="ml-2 sm:ml-4 flex-shrink-0">
+            <PlusIcon className="text-[#8E8E93] w-5 h-5 sm:w-6 sm:h-6" />
           </button>
-          <div className="flex items-center gap-4 ml-3">
+          <div className="flex items-center gap-2 sm:gap-4 ml-2 sm:ml-3">
             <button
               onClick={() => setActiveTab("current")}
-              className={`relative px-3 py-2 rounded-t-lg transition-colors cursor-pointer ${
+              className={`relative px-2 sm:px-3 py-1.5 sm:py-2 rounded-t-lg transition-colors cursor-pointer text-xs sm:text-sm whitespace-nowrap ${
                 activeTab === "current"
                   ? "bg-[#E2F7FF]"
                   : "bg-white text-[#8E8E93]"
@@ -419,7 +419,7 @@ function PatientDashboardContent({
             </button>
             <button
               onClick={() => setActiveTab("previous")}
-              className={`relative px-3 py-2 rounded-t-lg transition-colors cursor-pointer ${
+              className={`relative px-2 sm:px-3 py-1.5 sm:py-2 rounded-t-lg transition-colors cursor-pointer text-xs sm:text-sm whitespace-nowrap ${
                 activeTab === "previous"
                   ? "bg-[#E2F7FF]"
                   : "bg-white text-[#8E8E93]"
@@ -432,8 +432,8 @@ function PatientDashboardContent({
       )}
 
       {/* Documents Grid */}
-      <div className="bg-[#e2f7ff] rounded-lg p-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+      <div className="bg-[#e2f7ff] rounded-lg p-3 sm:p-4 md:p-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
           {displayedDocuments.map((item) => {
             const config = DOCUMENT_CONFIG[item.type];
             const isSimpleDocument = [
@@ -446,7 +446,7 @@ function PatientDashboardContent({
               <div
                 key={item.id}
                 onClick={() => handleDocumentClick(item)}
-                className={`rounded-lg p-4 transition-colors text-left cursor-pointer ${
+                className={`rounded-lg p-3 sm:p-4 transition-colors text-left cursor-pointer ${
                   isSimpleDocument
                     ? "bg-white hover:bg-[#F8F9FA]"
                     : item.status === "complete"
@@ -455,8 +455,8 @@ function PatientDashboardContent({
                 }`}
               >
                 {/* Top row with icon and status */}
-                <div className="flex justify-between items-center mb-4">
-                  <div className="w-9 h-9 flex items-center justify-center">
+                <div className="flex justify-between items-center mb-3 sm:mb-4">
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center flex-shrink-0">
                     <IconWrapper
                       icon={config.icon}
                       className={config.iconColor}
@@ -464,7 +464,7 @@ function PatientDashboardContent({
                   </div>
                   {!isSimpleDocument && (
                     <span
-                      className={`px-3 py-1 rounded-full text-xs text-white capitalize ${
+                      className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs text-white capitalize flex-shrink-0 ${
                         item.status === "complete"
                           ? "bg-[#30DB5B]"
                           : item.status === "incomplete"
@@ -477,38 +477,38 @@ function PatientDashboardContent({
                   )}
                 </div>
                 {/* Bottom row with title and action buttons */}
-                <div className="flex justify-between items-center">
-                  <h3 className="font-semibold">{config.title}</h3>
-                  <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0">
+                  <h3 className="font-semibold text-sm sm:text-base flex-1 min-w-0 pr-2">{config.title}</h3>
+                  <div className="flex gap-1.5 sm:gap-2 flex-shrink-0">
                     <button
                       type="button"
-                      className="bg-[#f2fbff] p-2 rounded-lg"
+                      className="bg-[#f2fbff] p-1.5 sm:p-2 rounded-lg"
                       onClick={(e) => {
                         e.stopPropagation();
                         console.log("View document");
                       }}
                     >
-                      <FileText className="text-[#3fe0d0]" size={18} />
+                      <FileText className="text-[#3fe0d0]" size={16} />
                     </button>
                     <button
                       type="button"
-                      className="bg-[#f2fbff] p-2 rounded-lg"
+                      className="bg-[#f2fbff] p-1.5 sm:p-2 rounded-lg"
                       onClick={(e) => {
                         e.stopPropagation();
                         console.log("Preview document");
                       }}
                     >
-                      <Eye className="text-[#0040dd]" size={18} />
+                      <Eye className="text-[#0040dd]" size={16} />
                     </button>
                     <button
                       type="button"
-                      className="bg-[#f2fbff] p-2 rounded-lg"
+                      className="bg-[#f2fbff] p-1.5 sm:p-2 rounded-lg"
                       onClick={(e) => {
                         e.stopPropagation();
                         console.log("Edit document");
                       }}
                     >
-                      <FileEdit className="text-[#248a3d]" size={18} />
+                      <FileEdit className="text-[#248a3d]" size={16} />
                     </button>
                   </div>
                 </div>
@@ -539,33 +539,33 @@ function PatientDashboardContent({
 function PatientDashboardLoading() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="flex items-center gap-2 text-sm mb-4">
-        <div className="h-4 w-32 bg-gray-200 rounded animate-pulse" />
+      <div className="flex items-center gap-2 text-xs sm:text-sm mb-3 sm:mb-4">
+        <div className="h-3 sm:h-4 w-24 sm:w-32 bg-gray-200 rounded animate-pulse" />
         <span className="text-gray-400">&gt;</span>
-        <div className="h-4 w-40 bg-gray-200 rounded animate-pulse" />
+        <div className="h-3 sm:h-4 w-32 sm:w-40 bg-gray-200 rounded animate-pulse" />
       </div>
 
-      <div className="flex justify-between items-center mb-6">
-        <div className="h-8 w-48 bg-gray-200 rounded animate-pulse" />
+      <div className="flex justify-between items-center mb-4 sm:mb-6">
+        <div className="h-6 sm:h-8 w-36 sm:w-48 bg-gray-200 rounded animate-pulse" />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-        <div className="lg:col-span-2 h-32 bg-gray-200 rounded-[6px] animate-pulse" />
-        <div className="h-64 bg-gray-200 rounded-[6px] animate-pulse" />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 mb-4 sm:mb-6">
+        <div className="lg:col-span-2 h-32 sm:h-40 bg-gray-200 rounded-[6px] animate-pulse" />
+        <div className="h-48 sm:h-64 bg-gray-200 rounded-[6px] animate-pulse" />
       </div>
 
       <div className="flex items-center mb-0">
-        <div className="ml-4 h-6 w-6 bg-gray-200 rounded animate-pulse" />
-        <div className="flex items-center gap-4 ml-3">
-          <div className="h-8 w-24 bg-gray-200 rounded animate-pulse" />
-          <div className="h-8 w-20 bg-gray-200 rounded animate-pulse" />
+        <div className="ml-2 sm:ml-4 h-5 w-5 sm:h-6 sm:w-6 bg-gray-200 rounded animate-pulse" />
+        <div className="flex items-center gap-2 sm:gap-4 ml-2 sm:ml-3">
+          <div className="h-6 sm:h-8 w-20 sm:w-24 bg-gray-200 rounded animate-pulse" />
+          <div className="h-6 sm:h-8 w-16 sm:w-20 bg-gray-200 rounded animate-pulse" />
         </div>
       </div>
 
-      <div className="bg-[#e2f7ff] rounded-lg p-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="bg-[#e2f7ff] rounded-lg p-3 sm:p-4 md:p-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
           {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className="h-32 bg-white rounded-lg animate-pulse" />
+            <div key={i} className="h-28 sm:h-32 bg-white rounded-lg animate-pulse" />
           ))}
         </div>
       </div>

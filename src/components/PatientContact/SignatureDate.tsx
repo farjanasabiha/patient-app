@@ -44,11 +44,12 @@ export default function SignatureDate() {
             </p>
           </div>
 
-          {/* Signature & Date Section */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {/* Signature & Date Section */}
           <CollapsibleSection title="Signature & Date" className="mb-6">
             <div className="mt-6 space-y-3">
               {/* Office Representative Section */}
-              <div className="grid grid-cols-3 gap-6">
+              <div className="">
                 {/* Signature Field - Centered */}
                 <div className="col-start-2 flex flex-col gap-0.5">
                   <SignaturePad
@@ -65,8 +66,6 @@ export default function SignatureDate() {
                 </div>
               </div>
 
-              {/* Date Field - Centered */}
-              <div className="grid grid-cols-3 gap-6">
                 <div className="col-start-2 flex flex-col gap-0.5">
                   <FormLabel>Sign Date</FormLabel>
                   <DatePicker
@@ -74,15 +73,11 @@ export default function SignatureDate() {
                     setDate={setOfficeSignDate}
                   />
                 </div>
-              </div>
 
-              {/* Title Field - Centered */}
-              <div className="grid grid-cols-3 gap-6">
                 <div className="col-start-2 flex flex-col gap-0.5">
                   <FormLabel>Title of Office Representative</FormLabel>
                   <Input placeholder="Title" />
                 </div>
-              </div>
             </div>
           </CollapsibleSection>
 
@@ -208,7 +203,7 @@ export default function SignatureDate() {
 
               <div className="mt-6 space-y-6">
                 {/* Patient Signature Field - Centered */}
-                <div className="grid grid-cols-3 gap-6">
+                <div className="">
                   <div className="col-start-2 flex flex-col gap-0.5">
                     <SignaturePad
                       label="Patient/Patient's Representative Signature"
@@ -225,7 +220,7 @@ export default function SignatureDate() {
                 </div>
 
                 {/* Patient Date Field - Centered */}
-                <div className="grid grid-cols-3 gap-6">
+                <div className="">
                   <div className="col-start-2 flex flex-col gap-0.5">
                     <FormLabel>Patient Sign Date</FormLabel>
                     <DatePicker
@@ -237,6 +232,7 @@ export default function SignatureDate() {
               </div>
             </div>
           </CollapsibleSection>
+</div>
         </div>
       </div>
     </div>
