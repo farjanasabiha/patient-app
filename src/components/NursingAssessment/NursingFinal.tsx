@@ -105,12 +105,12 @@ const NursingFinal: React.FC = () => {
       <CollapsibleSection title="Vaccination Status">
         <div className="flex flex-col gap-3 px-3">
           {/* COVID-19 Row */}
-          <div className="flex flex-col md:flex-row gap-3 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6">
             <div className="flex-1">
               <label>
                 Is all COVID 19 vaccinations done?
               </label>
-              <RadioGroup defaultValue="no" className="flex flex-col gap-2">
+              <RadioGroup defaultValue="no" className="flex  gap-5">
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="yes" id="covid-yes" />
                   <label htmlFor="covid-yes">Yes</label>
@@ -131,12 +131,12 @@ const NursingFinal: React.FC = () => {
           </div>
 
           {/* Flu Row */}
-          <div className="flex flex-col md:flex-row gap-3 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6">
             <div className="flex-1">
               <label>
                 Is all FLU vaccinations done?
               </label>
-              <RadioGroup defaultValue="no" className="flex flex-col gap-2">
+              <RadioGroup defaultValue="no" className="flex gap-5">
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="yes" id="flu-yes" />
                   <label htmlFor="flu-yes">Yes</label>
@@ -157,12 +157,12 @@ const NursingFinal: React.FC = () => {
           </div>
 
           {/* Pneumococcal Row */}
-          <div className="flex flex-col md:flex-row gap-3 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6">
             <div className="flex-1">
               <label>
                 Is all Pneumococcal vaccinations done?
               </label>
-              <RadioGroup defaultValue="no" className="flex flex-col gap-2">
+              <RadioGroup defaultValue="no" className="flex gap-5">
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="yes" id="pneumo-yes" />
                   <label htmlFor="pneumo-yes">Yes</label>

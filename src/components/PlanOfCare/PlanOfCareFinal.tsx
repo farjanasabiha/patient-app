@@ -39,11 +39,11 @@ export default function PlanOfCareFinal() {
 
   return (
     <div className="mx-auto px-[1px]">
-      <div className="space-y-6 grid grid-cols-2 gap-10">
+      <div className="space-y-6 ">
       {/* Acknowledgement Section */}
       <CollapsibleSection title="Acknowledgement">
         <div className="px-3">
-        <div className="space-y-4">
+        <div className="space-y-4 ">
           <FormLabel className="text-xs font-semibold text-neutral-400">
             The following information has been provided and/or discussed with
             the Client

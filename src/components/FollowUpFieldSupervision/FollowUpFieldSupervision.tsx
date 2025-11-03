@@ -26,7 +26,7 @@ const FollowUpFieldSupervision: FC = () => {
 
   return (
     <div className="mx-auto px-[1px]">
-      <div className="space-y-6 grid grid-cols-3 gap-10">
+      <div className="space-y-4 sm:space-y-6 grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10">
         {/* Initial Field Supervision Section */}
         <CollapsibleSection title="Follow Up Field Supervision">
           <div className="grid grid-cols-1 md:grid-cols-2 items-start justify-between gap-3 px-3">

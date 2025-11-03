@@ -42,18 +42,18 @@ const ReportsAndDocumentsUpload: React.FC = () => {
       accessor: () => "",
       width: "20%",
       cellRenderer: (ReportsAndDocuments) => (
-        <div className="flex gap-5">
+        <div className="flex gap-2 sm:gap-3 md:gap-5">
           <button
             type="button"
-            className="bg-[#e6ecfc] p-2 rounded-full"
+            className="bg-[#e6ecfc] p-1.5 sm:p-2 rounded-full hover:bg-[#d0dcf7] transition-colors"
           >
-            <Eye className="text-[#0040dd]" size={20} />
+            <Eye className="text-[#0040dd]" size={16} />
           </button>
           <button
             type="button"
-            className="bg-[#e9f3ec] p-2 rounded-full"
+            className="bg-[#e9f3ec] p-1.5 sm:p-2 rounded-full hover:bg-[#d4e8da] transition-colors"
           >
-            <Pencil className="text-[#248a3d]" size={20} />
+            <Pencil className="text-[#248a3d]" size={16} />
           </button>
         </div>
       ),
@@ -67,29 +67,29 @@ const ReportsAndDocumentsUpload: React.FC = () => {
 
 
   return (
-    <div className="flex flex-col h-full bg-white rounded-[10px]">
+    <div className="flex flex-col h-full bg-white rounded-[10px] p-3 sm:p-4 md:p-6">
       {/* Header section with title and badge */}
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="font-poppins font-bold text-2xl text-[#1C1C1E]">
+      <div className="flex justify-between items-center mb-4 sm:mb-6">
+        <h1 className="font-poppins font-bold text-lg sm:text-xl md:text-2xl text-[#1C1C1E]">
           Reports And Documents Upload
         </h1>
       </div>
 
-<div className="flex items-center justify-start gap-5">
+<div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-3 sm:gap-5">
           {/* Add button */}
       <PrimaryButton
         variant="primary"
         icon={PlusIcon}
-        className="w-[162px] h-[32px] px-2 py-1 gap-1 mb-[12px]"
+        className="w-full sm:w-auto mb-3 sm:mb-[12px]"
         onClick={handleAddPatient}
       >
         Add New Reports
       </PrimaryButton>
-            {/* Add button */}
+            {/* Upload button */}
       <PrimaryButton
         variant="primary"
         icon={FileUp}
-        className="w-[162px] h-[32px] px-2 py-1 gap-1 mb-[12px]"
+        className="w-full sm:w-auto mb-3 sm:mb-[12px]"
         onClick={handleAddPatient}
       >
         Upload Document
@@ -98,7 +98,7 @@ const ReportsAndDocumentsUpload: React.FC = () => {
 
 
       {/* Table */}
-      <div className="flex-grow flex-shrink-0 min-h-[calc(100vh-350px)]">
+      <div className="flex-grow flex-shrink-0 min-h-[calc(100vh-400px)] sm:min-h-[calc(100vh-350px)] overflow-x-auto">
         <ReusableTable<ReportsAndDocuments>
           columns={columns}     
           keyField="id"
@@ -106,7 +106,7 @@ const ReportsAndDocumentsUpload: React.FC = () => {
           emptyStateMessage="No patients found"
           initialRowsPerPage={10}
           rowsPerPageOptions={[5, 10, 15, 20, 25]}
-          gridTemplateColumns="8% 10% 10% 20% 13%"
+          gridTemplateColumns="15% 15% 15% 45% 15%"
         />
       </div>
     </div>

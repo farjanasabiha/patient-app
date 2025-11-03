@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 // Base styles for all label variants
 const baseStyles =
-  "w-full font-poppins font-normal pb-2 leading-normal text-black text-base font-feature-settings-case";
+  "w-full font-poppins font-normal text-base leading-normal text-black/60 font-feature-settings-case";
 
 const labelVariants = cva(baseStyles);
 
@@ -41,7 +41,7 @@ const FormLabel = React.forwardRef<
     {...props}
   >
     {children}
-    {required && <span className="text-black text-base ml-0.5 ">*</span>}
+    {required && <span className="text-[#FF3B30] ml-0.5">*</span>}
   </LabelPrimitive.Root>
 ));
 FormLabel.displayName = "FormLabel";
@@ -56,7 +56,7 @@ const RequiredLabel = React.forwardRef<
     {...props}
   >
     {children}
-    <span className="text-black text-base ml-0.5">*</span>
+    <span className="text-[#FF3B30] ml-0.5">*</span>
   </LabelPrimitive.Root>
 ));
 RequiredLabel.displayName = "RequiredLabel";

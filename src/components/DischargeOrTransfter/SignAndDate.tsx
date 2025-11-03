@@ -11,11 +11,11 @@ const SignAndDate = () => {
   const [position, setPosition] = useState<string>("RN Position");
 
   return (
-    <div className="w-full bg-white rounded-md flex flex-col space-y-6 p-6">
+    <div className="w-full bg-white rounded-md flex flex-col space-y-4 sm:space-y-6 p-3 sm:p-6">
       <CollapsibleSection title="Sign & Date">
-        <div className="w-full flex-1 flex justify-center items-start gap-6">
-          <div className="w-[33%] flex flex-col gap-3">
-            <div className="w-full flex flex-col items-end gap-3">
+        <div className="w-full flex-1 flex justify-center items-start gap-4 sm:gap-6">
+          <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[50%] xl:w-[33%] flex flex-col gap-3">
+            <div className="w-full flex flex-col items-end gap-2 sm:gap-3">
               <SignaturePad
                 label="RN Signature"
                 value={rnSignature}
@@ -28,11 +28,11 @@ const SignAndDate = () => {
                 clearButtonSize="sm"
               />
             </div>
-            <div className="w-full flex flex-col gap-0.5">
+            <div className="w-full flex flex-col gap-2">
               <FormLabel>RN Sign Date</FormLabel>
               <DatePicker date={rnSignDate} setDate={setRnSignDate} />
             </div>
-            <div className="w-full flex flex-col gap-0.5">
+            <div className="w-full flex flex-col gap-2">
               <FormLabel>Position</FormLabel>
               <Input
                 value={position}

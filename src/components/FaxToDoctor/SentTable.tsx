@@ -48,23 +48,29 @@ const SentTable = () => {
   );
 
   return (
-    <div className="self-stretch p-3 bg-[#E2F7FF] rounded-md">
+    <div className="self-stretch p-2 sm:p-3 bg-[#E2F7FF] rounded-md">
       <div className="flex-1 flex flex-col gap-3">
-        <div className="bg-white rounded-[10px] flex flex-col border border-stone-300">
+        <div className="bg-white rounded-[10px] overflow-x-auto">
+        <div className="min-w-[700px] flex flex-col border border-stone-300 rounded-[10px]">
           {/* Table Header */}
-          <div className="bg-white rounded-t-[10px] flex border-b border-stone-300">
-            <TableCell width="w-40">
-              <TableText variant="semibold">Patient Name</TableText>
-            </TableCell>
-            <TableCell width="w-40">
-              <TableText variant="semibold">Faxed to</TableText>
-            </TableCell>
-            <TableCell width="w-40">
-              <TableText variant="semibold">Faxed to Doctor</TableText>
-            </TableCell>
-            <TableCell width="w-40">
-              <TableText variant="semibold">Sent Date</TableText>
-            </TableCell>
+          <div className="bg-white rounded-t-[10px] flex justify-between border-b border-stone-300">
+            <div className="flex flex-1">
+              <TableCell width="w-40">
+                <TableText variant="semibold">Patient Name</TableText>
+              </TableCell>
+              <TableCell width="w-40">
+                <TableText variant="semibold">Faxed to</TableText>
+              </TableCell>
+              <TableCell width="w-40">
+                <TableText variant="semibold">Faxed to Doctor</TableText>
+              </TableCell>
+              <TableCell width="w-40">
+                <TableText variant="semibold">Sent Date</TableText>
+              </TableCell>
+            </div>
+            <div className="w-[100px] px-3.5 py-3 flex items-center justify-center">
+              <TableText variant="semibold">Actions</TableText>
+            </div>
           </div>
 
           {/* Table Rows */}
@@ -75,7 +81,7 @@ const SentTable = () => {
                 index === dummyData.length - 1 ? "rounded-b-[10px]" : ""
               }`}
             >
-              <div className="flex">
+              <div className="flex flex-1">
                 <TableCell width="w-40">
                   <div className="w-40 h-5 relative">
                     <TableText variant="patient">{fax.patientName}</TableText>
@@ -92,12 +98,13 @@ const SentTable = () => {
                 </TableCell>
               </div>
 
-              <div className="px-3.5 py-1 flex gap-2.5">
+              <div className="w-[100px] px-2 sm:px-3.5 py-1 flex gap-2 sm:gap-2.5 justify-center">
                 <ActionButton color="blue" />
                 <ActionButton color="green" />
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </div>

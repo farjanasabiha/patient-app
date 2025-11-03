@@ -10,7 +10,7 @@ const STYLES = {
   formLabel: "text-xs font-semibold text-[#8E8E93] font-['Poppins']",
   optionLabel:
     "text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none",
-  questionGrid: "grid grid-cols-3 gap-6",
+  questionGrid: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6",
 };
 
 // RadioQuestion component for reuse
@@ -27,12 +27,12 @@ const RadioQuestion: React.FC<RadioQuestionProps> = ({
   value,
   onChange,
 }) => (
-  <div className="flex flex-col items-start gap-1">
+  <div className="flex flex-col items-start gap-2">
     <FormLabel className={STYLES.formLabel}>{label}</FormLabel>
     <RadioGroup
       value={value || ""}
       onValueChange={(newValue) => onChange(id, newValue)}
-      className="flex flex-col gap-2 w-full"
+      className="flex gap-4 sm:gap-5 w-full"
     >
       <div className="flex items-center gap-2">
         <RadioGroupItem value="yes" id={`${id}-yes`} />
@@ -412,10 +412,10 @@ const HomeSafetyChecklist = () => {
 
   return (
     <div className="mx-auto px-[1px]">
-      <div className="space-y-6 grid grid-cols-2 gap-10">
+      <div className="space-y-4 sm:space-y-6 grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10">
         {categories.map((category) => (
           <CollapsibleSection key={category.title} title={category.title}>
-            <div className="flex flex-col gap-6 px-3">
+            <div className="flex flex-col gap-4 sm:gap-6 px-3">
               {chunkArray(category.questions, 3).map((row, rowIndex) => (
                 <div key={rowIndex} className={STYLES.questionGrid}>
                   {row.map((question) => (

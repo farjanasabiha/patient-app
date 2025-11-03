@@ -9,7 +9,7 @@ import DynamicEmergencyContacts from "@/components/Common/Forms/DynamicEmergency
 const EmergencyContactsProviders = () => {
   return (
     <div className="mx-auto px-[1px]">
-      <div className="space-y-6 grid grid-cols-3 gap-10">
+      <div className="space-y-4 sm:space-y-6 grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10">
         {/* Emergency Contact Information Section */}
         <DynamicEmergencyContacts
           title="Emergency Contact Information"
@@ -210,7 +210,7 @@ const EmergencyContactsProviders = () => {
                 <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
                   Emergency Survival Kit
                 </FormLabel>
-                <RadioGroup defaultValue="no" className="flex flex-col gap-2">
+                <RadioGroup defaultValue="no" className="flex  gap-5">
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="yes" id="survival-kit-yes" />
                     <label
@@ -237,7 +237,7 @@ const EmergencyContactsProviders = () => {
                 <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
                   Is the patient using oxygen?
                 </FormLabel>
-                <RadioGroup defaultValue="no" className="flex flex-col gap-2">
+                <RadioGroup defaultValue="no" className="flex gap-5">
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="yes" id="oxygen-yes" />
                     <label
@@ -264,7 +264,7 @@ const EmergencyContactsProviders = () => {
                 <FormLabel className="text-xs font-semibold text-[#8E8E93] font-['Poppins']">
                   Ventilator/Light support equipment
                 </FormLabel>
-                <RadioGroup defaultValue="no" className="flex flex-col gap-2">
+                <RadioGroup defaultValue="no" className="flex gap-5">
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="yes" id="ventilator-yes" />
                     <label
@@ -292,7 +292,7 @@ const EmergencyContactsProviders = () => {
                   Food and Water store for 3 days for each person (1 Gallon per
                   day per person)
                 </FormLabel>
-                <RadioGroup defaultValue="no" className="flex flex-col gap-2">
+                <RadioGroup defaultValue="no" className="flex gap-5">
                   <div className="flex items-center gap-2">
                     <RadioGroupItem value="yes" id="food-water-yes" />
                     <label

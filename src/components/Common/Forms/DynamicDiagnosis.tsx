@@ -70,7 +70,7 @@ export default function DynamicDiagnosis({
           </div>
 
           {/* Diagnosis Fields */}
-          <div className="flex flex-row items-center gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3  items-center gap-6">
             <div className="flex flex-col gap-0.5 flex-1">
               <FormLabel>
                 Patient {getDiagnosisLabel(index)} Diagnosis Code

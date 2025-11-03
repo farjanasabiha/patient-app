@@ -145,14 +145,14 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
     children: React.ReactNode;
     className?: string;
   }) => (
-    <div className={`${className} flex flex-col gap-0.5`}>
+    <div className={`${className} flex flex-col gap-2`}>
       <FormLabel>{label}</FormLabel>
       {children}
     </div>
   );
 
   const FormRow = ({ children }: { children: React.ReactNode }) => (
-    <div className="flex gap-6">{children}</div>
+    <div className="flex flex-col md:flex-row gap-4 md:gap-6">{children}</div>
   );
 
   const Separator = () => <div className="h-0 border-t border-stone-300" />;
@@ -169,7 +169,7 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
     const fieldValue = formData[field as keyof typeof formData] as string[];
 
     return (
-      <div className="flex-1 flex items-center gap-2">
+      <div className="flex-1 flex items-start gap-2">
         <Checkbox
           checked={fieldValue?.includes(value) || false}
           onCheckedChange={(checked) =>
@@ -191,10 +191,10 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
     }
   };
   return (
-    <div className="w-full p-3 bg-sky-100 rounded-tr-md rounded-bl-md rounded-br-md">
-      <div className="w-full p-3 bg-white rounded-md">
-        <div className="flex-1 flex flex-col gap-6">
-          <div className="flex flex-col gap-3">
+    <div className="w-full p-2 sm:p-3 bg-sky-100 rounded-tr-md rounded-bl-md rounded-br-md">
+      <div className="w-full p-2 sm:p-3 bg-white rounded-md">
+        <div className="flex-1 flex flex-col gap-4 sm:gap-6">
+          <div className="flex flex-col gap-3 sm:gap-4">
             {/* Header Section */}
             <FormRow>
               <FormField label="To">
@@ -267,7 +267,7 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   className="bg-sky-50"
                 />
               </FormField>
-              <FormField label="Date" className="w-72">
+              <FormField label="Date" className="w-full md:w-72">
                 <DatePicker
                   date={formData.date}
                   setDate={(date) => handleInputChange("date", date)}
@@ -370,7 +370,7 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   className="bg-sky-50"
                 />
               </FormField>
-              <div className="flex-1 h-12" />
+              <div className="flex-1 h-12 hidden md:block" />
             </FormRow>
 
             <Separator />
@@ -530,7 +530,7 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   className="bg-sky-50"
                 />
               </FormField>
-              <div className="flex-1 h-12" />
+              <div className="flex-1 h-12 hidden md:block" />
             </FormRow>
 
             <Separator />
@@ -631,7 +631,7 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   className="bg-sky-50"
                 />
               </FormField>
-              <div className="flex-1 h-12" />
+              <div className="flex-1 h-12 hidden md:block" />
             </FormRow>
 
             <Separator />
@@ -674,7 +674,7 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   </SelectContent>
                 </Select>
               </FormField>
-              <div className="flex-1 h-12" />
+              <div className="flex-1 h-12 hidden md:block" />
             </FormRow>
 
             <Separator />
@@ -734,8 +734,8 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
 
             <Separator />
 
-            <div className="flex gap-3">
-              <div className="flex-1 flex gap-6">
+            <div className="flex flex-col md:flex-row gap-3 md:gap-4">
+              <div className="flex-1 flex flex-col md:flex-row gap-4 md:gap-6">
                 <FormField label="Nutritional Requirements">
                   <Input
                     value={formData.nutritionalRequirements}
@@ -793,9 +793,9 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
             <Separator />
 
             {/* Functional Limitations */}
-            <div className="flex flex-col gap-0.5">
+            <div className="flex flex-col gap-2">
               <FormLabel>Functional Limitations</FormLabel>
-              <div className="flex gap-6">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6">
                 <CheckboxField
                   field="functionalLimitations"
                   value="amputation"
@@ -812,7 +812,7 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   label="Legally Blind"
                 />
               </div>
-              <div className="flex gap-6">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6">
                 <CheckboxField
                   field="functionalLimitations"
                   value="bowelBladder"
@@ -829,7 +829,7 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   label="Dyspnea with minimal exertion"
                 />
               </div>
-              <div className="flex gap-6">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6">
                 <CheckboxField
                   field="functionalLimitations"
                   value="contracture"
@@ -846,7 +846,7 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   label="Other (Specify)"
                 />
               </div>
-              <div className="flex gap-6">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6">
                 <CheckboxField
                   field="functionalLimitations"
                   value="hearing"
@@ -857,7 +857,7 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   value="speech"
                   label="Speech"
                 />
-                <div className="flex-1 h-8">
+                <div className="flex-1 min-w-[200px]">
                   <Input
                     value={formData.functionalLimitationsOther}
                     onChange={(e) =>
@@ -875,9 +875,9 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
             <Separator />
 
             {/* Activities Permitted */}
-            <div className="flex flex-col gap-0.5">
+            <div className="flex flex-col gap-2">
               <FormLabel>Activities Permitted</FormLabel>
-              <div className="flex gap-6">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6">
                 <CheckboxField
                   field="activitiesPermitted"
                   value="completeBedrest"
@@ -894,7 +894,7 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   label="Wheelchair"
                 />
               </div>
-              <div className="flex gap-6">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6">
                 <CheckboxField
                   field="activitiesPermitted"
                   value="bedrestBRP"
@@ -911,7 +911,7 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   label="Walker"
                 />
               </div>
-              <div className="flex gap-6">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6">
                 <CheckboxField
                   field="activitiesPermitted"
                   value="upAsTolerated"
@@ -928,7 +928,7 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   label="No restrictions"
                 />
               </div>
-              <div className="flex gap-6">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6">
                 <CheckboxField
                   field="activitiesPermitted"
                   value="transferBedChair"
@@ -945,14 +945,13 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   label="Other (Specify)"
                 />
               </div>
-              <div className="flex gap-6">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6">
                 <CheckboxField
                   field="activitiesPermitted"
                   value="exercisesPrescribed"
                   label="Exercises Prescribed"
                 />
-                <div className="flex-1 h-6" />
-                <div className="flex-1 h-8">
+                <div className="flex-1 min-w-[200px]">
                   <Input
                     value={formData.activitiesPermittedOther}
                     onChange={(e) =>
@@ -970,9 +969,9 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
             <Separator />
 
             {/* Mental Status */}
-            <div className="flex flex-col gap-0.5">
+            <div className="flex flex-col gap-2">
               <FormLabel>Mental Status</FormLabel>
-              <div className="flex gap-6">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6">
                 <CheckboxField
                   field="mentalStatus"
                   value="oriented"
@@ -989,7 +988,7 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   label="Agitated"
                 />
               </div>
-              <div className="flex gap-6">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6">
                 <CheckboxField
                   field="mentalStatus"
                   value="comatose"
@@ -1006,7 +1005,7 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   label="Other (Specify)"
                 />
               </div>
-              <div className="flex gap-6">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6">
                 <CheckboxField
                   field="mentalStatus"
                   value="forgetful"
@@ -1017,7 +1016,7 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   value="lethargic"
                   label="Lethargic"
                 />
-                <div className="flex-1 h-8">
+                <div className="flex-1 min-w-[200px]">
                   <Input
                     value={formData.mentalStatusOther}
                     onChange={(e) =>
@@ -1032,8 +1031,8 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
             <Separator />
 
             {/* Prognosis */}
-            <div className="h-36 flex items-center gap-6">
-              <FormField label="Prognosis">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
+              <FormField label="Prognosis" className="w-full md:flex-1">
                 <RadioGroup
                   value={formData.prognosis}
                   onValueChange={(value) =>
@@ -1091,8 +1090,8 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
                   </div>
                 </RadioGroup>
               </FormField>
-              <div className="flex-1 h-24" />
-              <div className="flex-1 h-24" />
+              <div className="flex-1 h-24 hidden md:block" />
+              <div className="flex-1 h-24 hidden md:block" />
             </div>
 
             <Separator />
@@ -1129,8 +1128,8 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
 
             <Separator />
 
-            <div className="flex justify-center gap-6">
-              <div className="w-[32%] flex flex-col gap-3">
+            <div className="flex justify-center gap-4 sm:gap-6">
+              <div className="w-full sm:w-[80%] md:w-[50%] lg:w-[32%] flex flex-col gap-3">
                 <div className="flex flex-col justify-end gap-3">
                   <SignaturePad
                     label="RN Signature"
@@ -1174,19 +1173,19 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
 
 
                 {/* Form Actions */}
-                <div className="flex items-center justify-between gap-10">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-10">
                   <PrimaryButton
                     variant="outline"
-                    className="px-14 py-2"
-onClick={handleBackClick}
+                    className="w-full sm:w-auto px-8 sm:px-14 py-2"
+                    onClick={handleBackClick}
                   >
                     Back
                   </PrimaryButton>
           
                   <PrimaryButton
-                    className="px-14 py-2"
+                    className="w-full sm:w-auto px-8 sm:px-14 py-2"
                   >
-Preview
+                    Preview
                   </PrimaryButton>
                 </div>
         </div>

@@ -17,27 +17,27 @@ const SummaryofCare = () => {
   const [familyAbility, setFamilyAbility] = useState<string>(""); 
 
   return (
-    <div className="w-full bg-white rounded-md flex flex-col space-y-6">
+    <div className="w-full bg-white rounded-md flex flex-col space-y-4 sm:space-y-6">
       <CollapsibleSection title="Summary of Care">
-        <div className="w-full flex flex-col space-y-3">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="flex flex-col gap-0.5">
+        <div className="w-full flex flex-col space-y-3 sm:space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            <div className="flex flex-col gap-2">
               <FormLabel>Effective Date</FormLabel>
               <DatePicker date={effectiveDate} setDate={setEffectiveDate} />
             </div>
             <div className="md:col-span-2"></div>
           </div>
-          <div className="w-full text-center text-zinc-900 text-sm font-normal font-poppins">
+          <div className="w-full text-center text-zinc-900 text-xs sm:text-sm font-normal font-poppins px-2">
             Please be advised that, effective [insert date], the patient will be
             discharged from the services provided by Axzons Health System Corp.
           </div>
-          <div className="w-full flex flex-col lg:flex-row gap-6 min-h-[600px]">
-            <div className="w-full lg:w-72 flex flex-col gap-0.5">
+          <div className="w-full flex flex-col lg:flex-row gap-4 sm:gap-6">
+            <div className="w-full lg:w-72 flex flex-col gap-2">
               <FormLabel>Discharge Reason</FormLabel>
               <RadioGroup
                 value={dischargeReason}
                 onValueChange={setDischargeReason}
-                className="space-y-2"
+                className="space-y-2 sm:space-y-3"
               >
                 <div className="w-full flex items-center gap-2">
                   <RadioGroupItem value="hospital" id="hospital" />
@@ -206,29 +206,29 @@ const SummaryofCare = () => {
                 </div>
               </RadioGroup>
             </div>
-            <div className="flex-1 flex flex-col gap-3">
-              <div className="w-full flex-1 flex gap-6">
-                <div className="flex-1 flex flex-col gap-0.5">
+            <div className="flex-1 flex flex-col gap-3 sm:gap-4">
+              <div className="w-full flex flex-col md:flex-row gap-4 sm:gap-6">
+                <div className="flex-1 flex flex-col gap-2">
                   <FormLabel>Summary of care provided</FormLabel>
                   <Textarea
                     value={summaryOfCare}
                     onChange={(e) => setSummaryOfCare(e.target.value)}
                     placeholder="Enter Text"
-                    className="w-full flex-1 resize-none"
+                    className="w-full min-h-[150px] md:min-h-[200px] lg:min-h-[250px] resize-none"
                   />
                 </div>
-                <div className="flex-1 flex flex-col gap-0.5">
+                <div className="flex-1 flex flex-col gap-2">
                   <FormLabel>Summary of Patient Progress</FormLabel>
                   <Textarea
                     value={summaryOfProgress}
                     onChange={(e) => setSummaryOfProgress(e.target.value)}
                     placeholder="Enter Text"
-                    className="w-full flex-1 resize-none"
+                    className="w-full min-h-[150px] md:min-h-[200px] lg:min-h-[250px] resize-none"
                   />
                 </div>
               </div>
-              <div className="w-full flex-1 flex gap-6">
-                <div className="flex-1 flex flex-col gap-0.5">
+              <div className="w-full flex flex-col md:flex-row gap-4 sm:gap-6">
+                <div className="flex-1 flex flex-col gap-2">
                   <FormLabel>
                     Patient status and the description of any remaining needs
                     for patient care and supportive services upon discharge
@@ -237,10 +237,10 @@ const SummaryofCare = () => {
                     value={patientStatus}
                     onChange={(e) => setPatientStatus(e.target.value)}
                     placeholder="Enter Text"
-                    className="w-full flex-1 resize-none"
+                    className="w-full min-h-[150px] md:min-h-[200px] lg:min-h-[250px] resize-none"
                   />
                 </div>
-                <div className="flex-1 flex flex-col gap-0.5">
+                <div className="flex-1 flex flex-col gap-2">
                   <FormLabel>
                     Patient or family&apos;s ability to self-manage in relation
                     to any remaining problems, and recommendations and referral
@@ -250,7 +250,7 @@ const SummaryofCare = () => {
                     value={familyAbility}
                     onChange={(e) => setFamilyAbility(e.target.value)}
                     placeholder="Enter Text"
-                    className="w-full flex-1 resize-none"
+                    className="w-full min-h-[150px] md:min-h-[200px] lg:min-h-[250px] resize-none"
                   />
                 </div>
               </div>

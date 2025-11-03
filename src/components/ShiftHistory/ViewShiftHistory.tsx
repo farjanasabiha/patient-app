@@ -111,9 +111,9 @@ const ViewShiftHistory: React.FC<ViewShiftHistoryProps> = ({
 
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="flex flex-col gap-[12px]">
+      <div className="flex flex-col gap-3 sm:gap-4">
         {/* Breadcrumb Navigation */}
-        <div className="mb-4">
+        <div className="mb-2 sm:mb-4">
           <Breadcrumb
             items={
               breadcrumbItems || [
@@ -134,48 +134,48 @@ const ViewShiftHistory: React.FC<ViewShiftHistoryProps> = ({
 
         {/* Conditional Filters Section (only for DFS) */}
         {showFilters && (
-          <div className="flex flex-col items-start gap-0.5 w-full h-[74px]">
+          <div className="flex flex-col items-start gap-2 sm:gap-3 w-full">
             {/* Filters Title */}
-            <div className="w-full h-[21px] font-poppins font-semibold text-[14px] leading-[21px] text-[#1C1C1E]">
+            <div className="w-full font-poppins font-semibold text-sm sm:text-[14px] text-[#1C1C1E]">
               Filters
             </div>
 
             {/* Filters Content */}
-            <div className="flex flex-row items-center gap-6 w-full h-[51px]">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-6 w-full">
               {/* Date Range: From */}
-              <div className="flex flex-col items-start gap-0.5 flex-grow h-[51px]">
-                <label className="w-full h-[18px] font-poppins font-semibold text-[12px] leading-[18px] text-[#8E8E93]">
+              <div className="flex flex-col items-start gap-1 sm:gap-2 flex-grow w-full sm:w-auto">
+                <label className="w-full font-poppins font-semibold text-xs sm:text-[12px] text-[#8E8E93]">
                   Date Range: From
                 </label>
                 <DatePicker
                   date={dateFrom}
                   setDate={setDateFrom}
                   placeholder="From"
-                  className="h-[31px] border-[#8E8E93] rounded-[3px] px-[10px] font-poppins"
+                  className="h-[31px] border-[#8E8E93] rounded-[3px] px-[10px] font-poppins w-full"
                   format="MM/dd/yyyy"
                 />
               </div>
 
               {/* Date Range: To */}
-              <div className="flex flex-col items-start gap-0.5 flex-grow h-[51px]">
-                <label className="w-full h-[18px] font-poppins font-semibold text-[12px] leading-[18px] text-[#8E8E93]">
+              <div className="flex flex-col items-start gap-1 sm:gap-2 flex-grow w-full sm:w-auto">
+                <label className="w-full font-poppins font-semibold text-xs sm:text-[12px] text-[#8E8E93]">
                   Date Range: To
                 </label>
                 <DatePicker
                   date={dateTo}
                   setDate={setDateTo}
                   placeholder="To"
-                  className="h-[31px] border-[#8E8E93] rounded-[3px] px-[10px] font-poppins"
+                  className="h-[31px] border-[#8E8E93] rounded-[3px] px-[10px] font-poppins w-full"
                   format="MM/dd/yyyy"
                 />
               </div>
 
               {/* Clear Filters Button Container */}
-              <div className="flex flex-col justify-center items-end gap-0.5 flex-grow h-[31px]">
+              <div className="flex flex-col justify-center sm:justify-end items-stretch sm:items-end gap-1 sm:gap-2 w-full sm:w-auto sm:flex-grow">
                 <PrimaryButton
                   variant="outline"
                   onClick={handleClearFilters}
-                  className="w-[125px] h-[31px] px-5 py-[5px] border-[#7E22CE] text-[#7E22CE] font-poppins font-semibold text-[14px] leading-[21px] hover:bg-gray-50"
+                  className="w-full sm:w-[125px] h-[31px] px-5 py-[5px] border-[#7E22CE] text-[#7E22CE] font-poppins font-semibold text-sm sm:text-[14px] hover:bg-gray-50"
                 >
                   Clear Filters
                 </PrimaryButton>
@@ -184,7 +184,7 @@ const ViewShiftHistory: React.FC<ViewShiftHistoryProps> = ({
           </div>
         )}
         {/* Date Navigation */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mt-2 sm:mt-0">
           <DateNavigation
             currentDate={formatDate()}
             onPrevious={handlePreviousWeek}
@@ -193,7 +193,7 @@ const ViewShiftHistory: React.FC<ViewShiftHistoryProps> = ({
         </div>
 
         {/* Mobile scroll indicator */}
-        <div className="flex sm:hidden items-center justify-center py-2 px-4 text-xs text-[#8E8E93] bg-[#F8F8F8] border border-[#C7C7CC] rounded-t-[10px]">
+        <div className="flex lg:hidden items-center justify-center py-2 px-4 text-xs text-[#8E8E93] bg-[#F8F8F8] border border-[#C7C7CC] rounded-t-[10px]">
           <svg
             className="w-4 h-4 mr-1 text-[#8E8E93]"
             fill="none"
@@ -211,17 +211,17 @@ const ViewShiftHistory: React.FC<ViewShiftHistoryProps> = ({
         </div>
 
         {/* First Table - Days and caregiver info */}
-        <div className="overflow-x-auto">
-          <div className="min-w-[800px]">
-            <div className="flex flex-col bg-white rounded-[10px] overflow-hidden border border-[#C7C7CC]">
+        <div className="overflow-x-auto -mx-2 sm:mx-0">
+          <div className="min-w-[800px] px-2 sm:px-0">
+            <div className="flex flex-col bg-white rounded-[10px] overflow-hidden border border-[#C7C7CC] shadow-sm">
               <div className="flex flex-row w-full border-b border-[#C7C7CC]">
-                <div className="flex-[0_0_260px] flex items-center p-3 font-poppins font-semibold text-[14px] leading-[21px] text-[#1C1C1E]">
+                <div className="flex-[0_0_260px] flex items-center p-2 sm:p-3 font-poppins font-semibold text-xs sm:text-[14px] text-[#1C1C1E]">
                   Day
                 </div>
                 {days.map((day) => (
                   <div
                     key={day}
-                    className="flex-1 flex justify-center items-center p-3 font-poppins font-semibold text-[14px] leading-[21px] text-[#1C1C1E]"
+                    className="flex-1 flex justify-center items-center p-2 sm:p-3 font-poppins font-semibold text-xs sm:text-[14px] text-[#1C1C1E]"
                   >
                     {day}
                   </div>
@@ -229,13 +229,13 @@ const ViewShiftHistory: React.FC<ViewShiftHistoryProps> = ({
               </div>
 
               <div className="flex flex-row w-full border-b border-[#C7C7CC]">
-                <div className="flex-[0_0_260px] flex items-center p-3 font-poppins text-[14px] leading-[21px] text-[#8E8E93]">
+                <div className="flex-[0_0_260px] flex items-center p-2 sm:p-3 font-poppins text-xs sm:text-[14px] text-[#8E8E93]">
                   Caregiver Name
                 </div>
                 {days.map((day) => (
                   <div
                     key={day}
-                    className="flex-1 flex justify-center items-center p-3 font-poppins text-[14px] leading-[21px] text-[#8E8E93]"
+                    className="flex-1 flex justify-center items-center p-2 sm:p-3 font-poppins text-xs sm:text-[14px] text-[#8E8E93]"
                   >
                     Name
                   </div>
@@ -243,13 +243,13 @@ const ViewShiftHistory: React.FC<ViewShiftHistoryProps> = ({
               </div>
 
               <div className="flex flex-row w-full border-b border-[#C7C7CC]">
-                <div className="flex-[0_0_260px] flex items-center p-3 font-poppins text-[14px] leading-[21px] text-[#8E8E93]">
+                <div className="flex-[0_0_260px] flex items-center p-2 sm:p-3 font-poppins text-xs sm:text-[14px] text-[#8E8E93]">
                   Date
                 </div>
                 {weekDates.map((date, i) => (
                   <div
                     key={i}
-                    className="flex-1 flex justify-center items-center p-3 font-poppins text-[14px] leading-[21px] text-[#8E8E93]"
+                    className="flex-1 flex justify-center items-center p-2 sm:p-3 font-poppins text-xs sm:text-[14px] text-[#8E8E93]"
                   >
                     {date}
                   </div>
@@ -257,13 +257,13 @@ const ViewShiftHistory: React.FC<ViewShiftHistoryProps> = ({
               </div>
 
               <div className="flex flex-row w-full border-b border-[#C7C7CC]">
-                <div className="flex-[0_0_260px] flex items-center p-3 font-poppins text-[14px] leading-[21px] text-[#8E8E93]">
+                <div className="flex-[0_0_260px] flex items-center p-2 sm:p-3 font-poppins text-xs sm:text-[14px] text-[#8E8E93]">
                   Clock In
                 </div>
                 {days.map((day) => (
                   <div
                     key={day}
-                    className="flex-1 flex justify-center items-center p-3 font-poppins text-[14px] leading-[21px] text-[#8E8E93]"
+                    className="flex-1 flex justify-center items-center p-2 sm:p-3 font-poppins text-xs sm:text-[14px] text-[#8E8E93]"
                   >
                     09:00 AM
                   </div>
@@ -271,13 +271,13 @@ const ViewShiftHistory: React.FC<ViewShiftHistoryProps> = ({
               </div>
 
               <div className="flex flex-row w-full border-b border-[#C7C7CC]">
-                <div className="flex-[0_0_260px] flex items-center p-3 font-poppins text-[14px] leading-[21px] text-[#8E8E93]">
+                <div className="flex-[0_0_260px] flex items-center p-2 sm:p-3 font-poppins text-xs sm:text-[14px] text-[#8E8E93]">
                   Clock Out
                 </div>
                 {days.map((day) => (
                   <div
                     key={day}
-                    className="flex-1 flex justify-center items-center p-3 font-poppins text-[14px] leading-[21px] text-[#8E8E93]"
+                    className="flex-1 flex justify-center items-center p-2 sm:p-3 font-poppins text-xs sm:text-[14px] text-[#8E8E93]"
                   >
                     05:00 PM
                   </div>
@@ -285,13 +285,13 @@ const ViewShiftHistory: React.FC<ViewShiftHistoryProps> = ({
               </div>
 
               <div className="flex flex-row w-full">
-                <div className="flex-[0_0_260px] flex items-center p-3 font-poppins text-[14px] leading-[21px] text-[#8E8E93]">
+                <div className="flex-[0_0_260px] flex items-center p-2 sm:p-3 font-poppins text-xs sm:text-[14px] text-[#8E8E93]">
                   Location
                 </div>
                 {days.map((day) => (
                   <div
                     key={day}
-                    className="flex-1 flex justify-center items-center p-3"
+                    className="flex-1 flex justify-center items-center p-2 sm:p-3"
                   >
                     <button
                       className="w-9 h-9 rounded-full bg-[#F2F9E6] flex items-center justify-center hover:bg-[#e5f4d0] transition-colors"

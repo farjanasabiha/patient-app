@@ -918,7 +918,7 @@ export default function DailyLiving() {
                                 id="exercise-other"
                               />
                             </div>
-                            <div className="flex flex-col justify-center items-start gap-0.5 w-[calc((66.67vw/3)-3.3rem)] order-1 h-[54px]">
+                            <div className="flex flex-col justify-center items-start gap-0.5 w-full lg:w-[calc((66.67vw/3)-3.3rem)] order-1 h-[54px]">
                               <FormLabel className="text-sm font-normal text-[#1C1C1E] w-full h-[21px] flex items-center pointer-events-none font-['Poppins']">
                                 Other
                               </FormLabel>
@@ -940,7 +940,7 @@ export default function DailyLiving() {
                       <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
                         Time and/or distance
                       </FormLabel>
-                      <div className="w-[calc(66.67vw/3)]">
+                      <div className="w-full lg:w-[calc(66.67vw/3)]">
                         <Input
                           placeholder="Enter Text"
                           className="h-[31px] px-2.5 py-1.5 border border-[#8E8E93] rounded text-sm font-normal text-[#1C1C1E] font-['Poppins'] w-full"
@@ -956,7 +956,7 @@ export default function DailyLiving() {
                       <FormLabel className="text-sm font-normal text-[#1C1C1E] font-['Poppins'] pointer-events-none">
                         Recent changes to exercise regime
                       </FormLabel>
-                      <div className="w-[calc(66.67vw/3)]">
+                      <div className="w-full lg:w-[calc(66.67vw/3)]">
                         <Input
                           placeholder="Enter Text"
                           className="h-[31px] px-2.5 py-1.5 border border-[#8E8E93] rounded text-sm font-normal text-[#1C1C1E] font-['Poppins'] w-full"
