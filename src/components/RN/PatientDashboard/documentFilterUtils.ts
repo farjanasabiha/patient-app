@@ -17,7 +17,6 @@ export const filterDocumentsByRole = (
   // If it's a patient viewing their own dashboard, show only specific documents
   if (isPatientView) {
     return documents.filter(doc =>
-      doc.type === DocumentType.PATIENT_ADMISSION_PACKET ||
       doc.type === DocumentType.HOME_HEALTH_QUALITY_MEASURE
     );
   }
@@ -32,7 +31,6 @@ export const filterDocumentsByRole = (
     case "Patient":
       // Patients should only see Patient Admission Packet and Home Health Quality Measure
       return documents.filter(doc =>
-        doc.type === DocumentType.PATIENT_ADMISSION_PACKET ||
         doc.type === DocumentType.HOME_HEALTH_QUALITY_MEASURE
       );
 
@@ -47,22 +45,19 @@ export const filterDocumentsByRole = (
     case "RN":
       // RNs should see all documents except Incident Reports, DFS, Communication, and Patient Admission Packet
       return documents.filter(doc =>
-        doc.type !== DocumentType.INCIDENT_REPORTS &&
-        doc.type !== DocumentType.DFS &&
-        doc.type !== DocumentType.COMMUNICATION &&
-        doc.type !== DocumentType.PATIENT_ADMISSION_PACKET
+        doc.type !== DocumentType.DFS
       );
 
     case "SuperAdmin":
       // SuperAdmins see all documents except Patient Admission Packet (patient-only)
       return documents.filter(doc =>
-        doc.type !== DocumentType.PATIENT_ADMISSION_PACKET
+        doc.type !== DocumentType.REPORTS_AND_DOCUMENTS_UPLOAD
       );
 
     default:
       // For any other role, show all documents except Patient Admission Packet
       return documents.filter(doc =>
-        doc.type !== DocumentType.PATIENT_ADMISSION_PACKET
+        doc.type !== DocumentType.REPORTS_AND_DOCUMENTS_UPLOAD
       );
   }
 };

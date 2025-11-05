@@ -13,3 +13,18 @@ export const ROUTES = {
     DFS: '/dfs',
     PATIENT_ADMISSION_PACKET: '/patient-admission-packet',
 } as const;
+
+
+export const ROUTES_RN = {
+    PATIENT_CONTRACT: '/RN/patient-contract-form',
+    PRE_ASSESSMENT: '/RN/pre-assessment',
+    NURSING_ASSESSMENT: '/RN/nursing-assessment',
+    PLAN_OF_CARE: '/RN/plan-of-care',
+    PATIENT_EMERGENCY: '/RN/patient-emergency',
+    FOLLOW_UP_FIELD_SUPERVISION: '/RN/follow-up-field-supervision',
+    FAX_TO_DOCTOR: '/RN/fax-to-doctor',
+    HOME_HEALTH_QUALITY_MEASURE: '/RN/home-health-quality-measure',
+    DISCHARGE_TRANSFER: '/RN/discharge-transfer',
+} as const;
+
+

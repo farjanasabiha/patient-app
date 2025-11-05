@@ -3,14 +3,14 @@ import { EmergencyIcon } from "@/components/ui/icons/EmergencyIcon";
 import { FaxIcon } from "@/components/ui/icons/FaxIcon";
 import { StarIcon } from "@/components/ui/icons/StarIcon";
 import { SupervisionIcon } from "@/components/ui/icons/SupervisionIcon";
-import { FileText, Clock } from "lucide-react";
+import { FileText } from "lucide-react";
 import { IconComponent } from "./icons";
 import { CareIcon } from "@/components/ui/icons/CareIcon";
 import { FileCheckIcon } from "@/components/ui/icons";
 import { DischargedIcon } from "@/components/ui/icons/DischargedIcon";
 
 
-export enum DocumentType {
+export enum DocumentType_RN {
     PATIENT_CONTRACT = "PATIENT_CONTRACT",
     PRE_ASSESSMENT = "PRE_ASSESSMENT",
     NURSING_ASSESSMENT = "NURSING_ASSESSMENT",
@@ -20,9 +20,6 @@ export enum DocumentType {
     FAX_TO_DOCTOR = "FAX_TO_DOCTOR",
     HOME_HEALTH_QUALITY_MEASURE = "HOME_HEALTH_QUALITY_MEASURE",
     DISCHARGE_TRANSFER = "DISCHARGE_TRANSFER",
-    REPORTS_AND_DOCUMENTS_UPLOAD = "REPORTS_AND_DOCUMENTS_UPLOAD",
-    AUTHORIZATION = "AUTHORIZATION",
-    DFS = "DFS",
 }
 
 export enum DocumentStatus {
@@ -37,78 +34,61 @@ export interface DocumentConfig {
     iconColor: string;
 }
 
-export const DOCUMENT_CONFIG: Record<DocumentType, DocumentConfig> = {
-    [DocumentType.PATIENT_CONTRACT]: {
+
+export const DOCUMENT_CONFIG_RN: Record<DocumentType_RN, DocumentConfig> = {
+    [DocumentType_RN.PATIENT_CONTRACT]: {
         title: "Patient Contract",
         icon: FileText,
         iconColor: "text-[#FF9F0A]"
     },
-    [DocumentType.NURSING_ASSESSMENT]: {
+    [DocumentType_RN.NURSING_ASSESSMENT]: {
         title: "Nursing Assessment",
         icon: CaregiverIcon,
         iconColor: "text-[#FF3D8C]"
     },
-    [DocumentType.PRE_ASSESSMENT]: {
+    [DocumentType_RN.PRE_ASSESSMENT]: {
         title: "Pre-Assessment",
         icon: FileCheckIcon,
         iconColor: "text-[#FFD60A]"
     },
-    [DocumentType.PLAN_OF_CARE]: {
+    [DocumentType_RN.PLAN_OF_CARE]: {
         title: "Plan of Care",
         icon: CareIcon,
         iconColor: "text-[#bf5af2]"
     },
-    [DocumentType.PATIENT_EMERGENCY]: {
+    [DocumentType_RN.PATIENT_EMERGENCY]: {
         title: "Patient Emergency",
         icon: EmergencyIcon,
         iconColor: "text-[#ff0d00]"
     },
-    [DocumentType.FOLLOW_UP_FIELD_SUPERVISION]: {
+    [DocumentType_RN.FOLLOW_UP_FIELD_SUPERVISION]: {
         title: "Follow Up Field Supervision",
         icon: SupervisionIcon,
         iconColor: "text-[#7E22CE]"
     },
-    [DocumentType.FAX_TO_DOCTOR]: {
+    [DocumentType_RN.FAX_TO_DOCTOR]: {
         title: "Fax to Doctor",
         icon: FaxIcon,
         iconColor: "text-[#0071a4]"
     },
-    [DocumentType.HOME_HEALTH_QUALITY_MEASURE]: {
+    [DocumentType_RN.HOME_HEALTH_QUALITY_MEASURE]: {
         title: "Home Health Quality Measure",
         icon: StarIcon,
         iconColor: "text-[#3fe0d0]"
     },
-    [DocumentType.DISCHARGE_TRANSFER]: {
+    [DocumentType_RN.DISCHARGE_TRANSFER]: {
         title: "Discharge / Transfer",
         icon: DischargedIcon,
         iconColor: "text-[#3FE0D0]"
     },
-    [DocumentType.REPORTS_AND_DOCUMENTS_UPLOAD]: {
-        title: "Reports and Documents Upload",
-        icon: FileText,
-        iconColor: "text-[#248A3D]"
-    },
-    [DocumentType.AUTHORIZATION]: {
-        title: "Authorization",
-        icon: FileCheckIcon,
-        iconColor: "text-[#0071a4]"
-    },
-    [DocumentType.DFS]: {
-        title: "DFS",
-        icon: Clock,
-        iconColor: "text-[#7EC000]"
-    }
 };
-
-
-
 
 export interface DocumentItem {
     id: string;
-    type: DocumentType;
+    type: DocumentType_RN;
     status: DocumentStatus;
     date: string;
 }
 
 // Re-export to force TypeScript refresh
-export { DocumentType as DocumentTypeRefresh };
+export { DocumentType_RN as DocumentTypeRefresh };

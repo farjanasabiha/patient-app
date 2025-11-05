@@ -184,11 +184,19 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
   };
 
   const handleBackClick = () => {
-    if (patientId) {
-      router.push(`/patient/${patientId}`);
-    } else {
-      router.back();
-    }
+    // For RN users, go back to RN patient dashboard
+    router.push("/RN/patient-dashboard");
+  };
+
+  const handlePreview = () => {
+    // Handle form submission
+    console.log("Fax to Doctor form submitted");
+    alert("Fax to Doctor submitted successfully!");
+    
+    // Redirect to RN patient dashboard
+    setTimeout(() => {
+      router.push("/RN/patient-dashboard?source=fax-to-doctor");
+    }, 100);
   };
   return (
     <div className="w-full p-2 sm:p-3 bg-sky-100 rounded-tr-md rounded-bl-md rounded-br-md">
@@ -1184,8 +1192,9 @@ const FaxToDoctor: React.FC<FaxToDoctorProps> = ({ patientId }) => {
           
                   <PrimaryButton
                     className="w-full sm:w-auto px-8 sm:px-14 py-2"
+                    onClick={handlePreview}
                   >
-                    Preview
+                    Submit
                   </PrimaryButton>
                 </div>
         </div>

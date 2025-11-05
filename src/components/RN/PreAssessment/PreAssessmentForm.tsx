@@ -234,7 +234,7 @@ const PreAssessmentForm = () => {
       
       // Use setTimeout to ensure redirect happens after alert is dismissed
       setTimeout(() => {
-        const redirectUrl = `/RN/patient/${patientData.id}?source=pre-assessment`;
+        const redirectUrl = `/RN/patient-dashboard?source=pre-assessment`;
         router.push(redirectUrl);
       }, 100);
     } catch (error) {
