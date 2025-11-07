@@ -14,7 +14,6 @@ export const ROUTES = {
     PATIENT_ADMISSION_PACKET: '/patient-admission-packet',
 } as const;
 
-
 export const ROUTES_RN = {
     PATIENT_CONTRACT: '/RN/patient-contract-form',
     PRE_ASSESSMENT: '/RN/pre-assessment',
@@ -26,5 +25,3 @@ export const ROUTES_RN = {
     HOME_HEALTH_QUALITY_MEASURE: '/RN/home-health-quality-measure',
     DISCHARGE_TRANSFER: '/RN/discharge-transfer',
 } as const;
-
-
